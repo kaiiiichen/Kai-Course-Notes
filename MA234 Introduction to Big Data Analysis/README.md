@@ -1,3 +1,7 @@
+# MA234 Introduction to Big Data Analysis
+
+### by Prof. Zhen Zhang
+
 This is the first course I take about machine learning.
 
 I get familiar with many classical algorithms, theoretically. But I find myself still a freshman in this area.
