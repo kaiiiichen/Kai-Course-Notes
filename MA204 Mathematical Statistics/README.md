@@ -1,5 +1,7 @@
 # MA204 Mathematical Statistics
 
+### by Prof. Guoliang Tian
+
 I took this  course in Spring 2026, after taking Probability Theory, which is a must-learn course for class 2027 in the Math Department, in Fall 2025. Thses two courses are the most important courses for students majoring Statistics, also providing useful tools/theories for machine learning, etc.
 
 Mathematical Statistics is a subjest lying on Probability Theory. Its basis is the philosophy statistians had been building for over 100 years.
