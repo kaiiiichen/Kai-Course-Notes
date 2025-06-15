@@ -1,6 +1,6 @@
 # MA234 Introduction to Big Data Analysis (Spring 2025)
 
-### by Prof. Zhen Zhang
+### by Prof. [Zhen Zhang](https://math.sustech.edu.cn/c/zhangzhen)
 
 This is the first course I take about machine learning.
 
