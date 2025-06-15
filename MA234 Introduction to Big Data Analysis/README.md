@@ -1,4 +1,4 @@
-# MA234 Introduction to Big Data Analysis
+# MA234 Introduction to Big Data Analysis (Spring 2025)
 
 ### by Prof. Zhen Zhang
 
