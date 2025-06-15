@@ -1,4 +1,4 @@
-# MA204 Mathematical Statistics
+# MA204 Mathematical Statistics (Spring 2025)
 
 ### by Prof. Guoliang Tian
 
