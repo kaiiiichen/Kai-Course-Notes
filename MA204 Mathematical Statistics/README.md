@@ -1,6 +1,6 @@
 # MA204 Mathematical Statistics (Spring 2025)
 
-### by Prof. Guoliang Tian
+### by Prof. [Guoliang Tian](https://faculty.sustech.edu.cn/?tagid=tiangl&iscss=1&snapid=1&orderby=date&go=2)
 
 I took this  course in Spring 2025, after taking Probability Theory in Fall 2024, which is a must-learn course for class 2027 in the Math Department. Thses two courses are the most important courses for students majoring Statistics, also providing useful tools/theories for machine learning, etc.
 
