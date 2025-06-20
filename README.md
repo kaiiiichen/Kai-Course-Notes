@@ -4,4 +4,4 @@ This is where I stored my Mathematics learning notes and materials at Southern U
 
 I started this repository in 2026. Courses I took before will be updated around July to August this year.
 
-As a public repository, all the resources could be used safely under the lisence's protection.
+As a public repository, it guarantees that all the resources could be used safely under the lisence's protection.
