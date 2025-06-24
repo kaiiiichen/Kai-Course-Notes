@@ -2,7 +2,7 @@
 
 ### by Prof. [Guoliang Tian](https://faculty.sustech.edu.cn/?tagid=tiangl&iscss=1&snapid=1&orderby=date&go=2)
 
-I took this  course in Spring 2025, after taking Probability Theory in Fall 2024, which is a must-learn course for class 2027 in the Math Department. Thses two courses are the most important courses for students majoring Statistics, also providing useful tools/theories for machine learning, etc.
+I took this  course in Spring 2025, after taking [Probability Theory(MA215)](https://github.com/kaichen2005/SUSTech-Kai-Notes/tree/main/MA215%20Probability%20Theory) in Fall 2024, which is a must-learn course for class 2027 in the Math Department. Thses two courses are the most important courses for students majoring Statistics, also providing useful tools/theories for machine learning, etc.
 
 Mathematical Statistics is a subjest lying on Probability Theory. Its basis is the philosophy statistians had been building for over 100 years.
 
