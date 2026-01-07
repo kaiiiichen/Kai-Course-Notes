@@ -1,6 +1,6 @@
 # MAT7092 Stochastic Processes (Fall 2025)
 
-### by Prof. [Wangjun Yuan](https://math.sustech.edu.cn/c/yuanwangjun)
+### by Prof. [Wangjun Yuan](https://sites.google.com/view/ywangjun)
 
 It's my first time taking a graduate level course at SUSTech.
 
