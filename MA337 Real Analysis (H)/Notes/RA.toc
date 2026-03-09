@@ -1,0 +1,82 @@
+\contentsline {section}{\numberline {1}Set Theory}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Elements of Set Theory}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Functions between Sets}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Mappings, Functions}{5}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Equivalence Relations}{5}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Cardinals, Countable Sets}{6}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}Standard Equivalences}{8}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Important Examples}{8}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Continual Sets, Cantor's Theorem}{9}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Comparing Cardinals}{11}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Ordered Sets}{11}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Zermelo's theorem, Cantor-Bernshtain Theorem}{12}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Continuum Hypothesis and Exercises}{14}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Continuum Hypothesis}{14}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}A Few Exercises}{14}{subsubsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.6}Axiom of Choice and Zorn's Lemma}{15}{subsection.1.6}%
+\contentsline {section}{\numberline {2}Metric Space}{17}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Metric Space and Normed Space}{18}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Topology of Metric Spaces}{20}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Continuous Map}{23}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Compactness}{25}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Compact Sets}{25}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Sequential Compactness}{26}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Totally Boundedness}{28}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Continuous Functions on Compact Sets -- $C(K)$}{30}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Properties of $C(K)$}{30}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Compactness in $C(K)$}{31}{subsubsection.2.6.2}%
+\contentsline {subsubsection}{\numberline {2.6.3}Approximation in $C(K)$}{32}{subsubsection.2.6.3}%
+\contentsline {section}{\numberline {3}Measure}{33}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Semi-ring, Ring, Algebra, $\sigma $-Algebra, Borel $\sigma $-Algebra}{34}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Measure, Measure Space}{39}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Measure}{39}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}$\sigma $-Additivive Measure}{41}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Outer Lebesgue Measure}{43}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Measurable Sets}{47}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Lebesgue Extension of a $\sigma $-Additive Measure}{50}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Measure Space}{52}{subsubsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.3}Lebesgue Measure in $\mathbb {R}^n$}{54}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Construction of a Non-Measurable Set(!)}{54}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Standard and General Cantor Set}{54}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Cantor Staircase Function}{56}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Construction of a Non-Borel Measurable Set(!)}{56}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Completeness and Regularity of Measures}{58}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Completion of a Measure Space}{58}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Regularity of Measures}{59}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Dynkin Classes}{60}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}$\pi $-systems and $\lambda $-systems}{60}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}$\pi $-$\lambda $ Theorem}{61}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Application: Uniqueness of Measure Extension}{61}{subsubsection.3.5.3}%
+\contentsline {section}{\numberline {4}Measurable Function}{63}{section.4}%
+\contentsline {subsection}{\numberline {4.1}What Kind of Functions are Measurable(?)}{64}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Properties of Measurable Functions}{65}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Almost Everywhere Properties}{66}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Egorov's Theorem}{68}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Lusin's Theorem}{70}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Convergence in Measure}{71}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Lebesgue Integration with a Finite Complete Measure}{73}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Simple Function}{74}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Lebesgue Integral with a Finite Complete Measure}{77}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Three Convergence Theorems}{84}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Dominated Convergence Theorem}{84}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Monotone Convergence Theorem}{84}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Fatou's Lemma}{84}{subsubsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.4}Comparison of Riemann and Lebesgue Integrals}{86}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Product Measure}{89}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Direct Product of Measures}{90}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Fubini Theorem}{91}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Lebesgue Integration with $\sigma $-additive Measure \& of $\infty $-valued Function}{92}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Lebesgue Integration with $\sigma $-additive Measure}{93}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Three Convergence Theorems}{96}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Monotone Convergence Theorem}{96}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Fatou's Lemma}{96}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Dominated Convergence Theorem}{96}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}What kinds of $\infty $-valued Functions are measurable(?)}{99}{subsection.7.3}%
+\contentsline {section}{\numberline {8}$\mathcal {L}^p$ Space}{101}{section.8}%
+\contentsline {subsection}{\numberline {8.1}$\mathcal {L}^{1}$ Space}{102}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}$\mathcal {L}^p$ Space with $1 < p < \infty $}{104}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Separable $\mathcal {L}^p$ Space}{107}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Charge(Generalized Measure)}{109}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Charge(Generalized Measure)}{110}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Absolutely Continuous Charge}{112}{subsection.9.2}%
+\contentsline {section}{Index}{113}{section*.2}%
