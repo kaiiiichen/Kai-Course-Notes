@@ -12,7 +12,6 @@ Launched in 2025, [SUSTech-Kai-Notes](https://github.com/kaiiiichen/SUSTech-Kai-
 
 | Course | Term |
 |--------|------|
-| [MA204 Mathematical Statistics](./MA204%20Mathematical%20Statistics) | Spring 2025 |
 | [MA215 Probability Theory](./MA215%20Probability%20Theory) | Fall 2024 |
 | [MA217 Mathematical Experiments](./MA217%20Mathematical%20Experiments) | Fall 2024 |
 | [MA219 Abstract Algebra (H)](./MA219%20Abstract%20Algebra%20(H)) | Fall 2024 |
@@ -40,6 +39,7 @@ Launched in 2025, [SUSTech-Kai-Notes](https://github.com/kaiiiichen/SUSTech-Kai-
 | Course | Term |
 |--------|------|
 | [STA203 Foundation of Probability Theory](./STA203%20Foudation%20of%20Probability%20Theory) | Fall 2024 |
+| [MA204 Mathematical Statistics](./MA204%20Mathematical%20Statistics) | Spring 2025 |
 
 ### General Studies
 
