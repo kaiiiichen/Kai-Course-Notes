@@ -1,6 +1,6 @@
 # SUSTech-Kai-Notes
 
-Launched in 2025, [SUSTech-Kai-Notes](https://github.com/kaiiiichen/SUSTech-Kai-Notes) is a personal notes initiative motivated by [Cambridge Notes](https://dec41.user.srcf.net/notes/). It mainly includes course resources I used or collected during my study at [SUSTech](https://www.sustech.edu.cn), and also includes a few courses taken at other universities for general study credits.
+Launched in 2025, [SUSTech-Kai-Notes](https://github.com/kaiiiichen/SUSTech-Kai-Notes) is a personal initiative motivated by [Cambridge Notes](https://dec41.user.srcf.net/notes/). It mainly includes course resources I used or collected during my study at [SUSTech](https://www.sustech.edu.cn), and also includes a few courses taken at other universities for general study credits.
 
 > **Please also refer to the [Wiki](https://github.com/kaiiiichen/SUSTech-Kai-Notes/wiki) for more details.**
 
