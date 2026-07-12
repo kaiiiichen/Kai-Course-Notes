@@ -4,8 +4,6 @@
 
 A full tour of modern generative modeling in one intensive summer course: autoencoders → variational autoencoders → autoregressive models → normalizing flows → GANs → diffusion models → self-supervised & contrastive learning, closing with NLP and generative AI for science.
 
-🌐 **Interactive showcase with results & write-ups:** [kaichen.dev/projects/oxford-dul-2025](https://kaichen.dev/projects/oxford-dul-2025)
-
 ## Projects
 
 Six hands-on projects; `Showcase/` holds the result images produced by my own models, as featured on my website.
