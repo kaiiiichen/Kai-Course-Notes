@@ -57,7 +57,7 @@ Repository layout: `<University>/<Course>/…` — each course folder has its ow
 
 | Course | Term |
 |--------|------|
-| [Deep Unsupervised Learning](<Oxford/Deep Unsupervised Learning>) ([showcase](https://kaichen.dev/projects/oxford-dul-2025)) | Summer 2025 |
+| [Deep Unsupervised Learning](<Oxford/Deep Unsupervised Learning>) | Summer 2025 |
 
 ## Other
 
