@@ -76,6 +76,10 @@ Everything **I authored** — handwritten & LaTeX notes (with sources), homework
 - **University of Oxford** — under my programme's enrolment agreement, all college-provided materials remain the college's intellectual property and are not redistributed. Only my own project results appear here.
 - **All schools** — no published textbooks (each course README lists the reference books instead; please obtain them through proper channels), and no homework/exam solutions or OJ reference programs, ever.
 
+## Contact
+
+**For instructors and rights holders:** if you would prefer that any of your material not appear here, email me directly at **[kaichen.dev.37@gmail.com](mailto:kaichen.dev.37@gmail.com)** — no GitHub account needed — or open a [takedown request](https://github.com/kaiiiichen/Kai-Course-Notes/issues/new/choose). Removal is honored promptly, and per the license note below, prior downloads of removed material become unauthorized.
+
 ## License
 
 Without specific clarification, all original content within this repository is protected under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
