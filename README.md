@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kaiiiichen/kai-course-notes.kaichen.dev/main/img/logo.svg" width="112" alt="Kai Course Notes logo"/>
+</div>
+
 # Kai Course Notes
 
 Launched in 2025 (as *SUSTech-Kai-Notes*), [Kai Course Notes](https://github.com/kaiiiichen/Kai-Course-Notes) is a personal initiative motivated by [Cambridge Notes](https://dec41.user.srcf.net/notes/). It collects the course notes and materials from my studies at [SUSTech](https://www.sustech.edu.cn/en/), [UC Berkeley](https://www.berkeley.edu), the [University of Oxford](https://www.ox.ac.uk), and elsewhere.
