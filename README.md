@@ -22,56 +22,56 @@ Repository layout: `<University>/<Course>/…` — each course folder has its ow
 
 ### Mathematics
 
-| Course | Term |
-|--------|------|
-| [MA215 Probability Theory](<SUSTech/MA215 Probability Theory>) | Fall 2024 |
-| [MA217 Mathematical Experiments](<SUSTech/MA217 Mathematical Experiments>) | Fall 2024 |
-| [MA219 Abstract Algebra (H)](<SUSTech/MA219 Abstract Algebra (H)>) | Fall 2024 |
-| [MA230 Ordinary Differential Equations A (H)](<SUSTech/MA230 Ordinary Differential Equations A (H)>) | Spring 2025 |
-| [MA231 Mathematical Analysis III (H)](<SUSTech/MA231 Mathematical Analysis III (H)>) | Fall 2024 |
-| [MA232 Complex Analysis (H)](<SUSTech/MA232 Complex Analysis (H)>) | Spring 2025 |
-| [MA234 Introduction to Big Data Analysis](<SUSTech/MA234 Introduction to Big Data Analysis>) | Spring 2025 |
-| [MA305 Numerical Analysis](<SUSTech/MA305 Numerical Analysis>) | Fall 2025 |
-| [MA336 Partial Differential Equations (H)](<SUSTech/MA336 Partial Differential Equations (H)>) | Fall 2025 |
-| [MA337 Real Analysis (H)](<SUSTech/MA337 Real Analysis (H)>) | Fall 2025 |
-| [MA340 Fourier Analysis Seminar](<SUSTech/MA340 Fourier Analysis Seminar>) | Spring 2025 |
-| [MAT7092 Stochastic Processes](<SUSTech/MAT7092 Stochastic Processes>) | Fall 2025 |
+| Course | Term | Download |
+|--------|------|----------|
+| [MA215 Probability Theory](<SUSTech/MA215 Probability Theory>) | Fall 2024 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA215-Probability-Theory.zip) |
+| [MA217 Mathematical Experiments](<SUSTech/MA217 Mathematical Experiments>) | Fall 2024 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA217-Mathematical-Experiments.zip) |
+| [MA219 Abstract Algebra (H)](<SUSTech/MA219 Abstract Algebra (H)>) | Fall 2024 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA219-Abstract-Algebra-H.zip) |
+| [MA230 Ordinary Differential Equations A (H)](<SUSTech/MA230 Ordinary Differential Equations A (H)>) | Spring 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA230-Ordinary-Differential-Equations-A-H.zip) |
+| [MA231 Mathematical Analysis III (H)](<SUSTech/MA231 Mathematical Analysis III (H)>) | Fall 2024 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA231-Mathematical-Analysis-III-H.zip) |
+| [MA232 Complex Analysis (H)](<SUSTech/MA232 Complex Analysis (H)>) | Spring 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA232-Complex-Analysis-H.zip) |
+| [MA234 Introduction to Big Data Analysis](<SUSTech/MA234 Introduction to Big Data Analysis>) | Spring 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA234-Introduction-to-Big-Data-Analysis.zip) |
+| [MA305 Numerical Analysis](<SUSTech/MA305 Numerical Analysis>) | Fall 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA305-Numerical-Analysis.zip) |
+| [MA336 Partial Differential Equations (H)](<SUSTech/MA336 Partial Differential Equations (H)>) | Fall 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA336-Partial-Differential-Equations-H.zip) |
+| [MA337 Real Analysis (H)](<SUSTech/MA337 Real Analysis (H)>) | Fall 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA337-Real-Analysis-H.zip) |
+| [MA340 Fourier Analysis Seminar](<SUSTech/MA340 Fourier Analysis Seminar>) | Spring 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA340-Fourier-Analysis-Seminar.zip) |
+| [MAT7092 Stochastic Processes](<SUSTech/MAT7092 Stochastic Processes>) | Fall 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MAT7092-Stochastic-Processes.zip) |
 
 ### Computer Science
 
-| Course | Term |
-|--------|------|
-| [CS108 Introduction to Mathematical Logic (H)](<SUSTech/CS108 Introduction to Mathematical Logic (H)>) | Spring 2024 |
-| [CS109 Introduction to Computer Programming](<SUSTech/CS109 Introduction to Computer Programming>) | Fall 2024 |
-| [CS201 Discrete Mathematics](<SUSTech/CS201 Discrete Mathematics>) | Spring 2025 |
-| [CS217 Data Structures and Algorithm Analysis (H)](<SUSTech/CS217 Data Structures and Algorithm Analysis (H)>) | Fall 2025 |
+| Course | Term | Download |
+|--------|------|----------|
+| [CS108 Introduction to Mathematical Logic (H)](<SUSTech/CS108 Introduction to Mathematical Logic (H)>) | Spring 2024 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-CS108-Introduction-to-Mathematical-Logic-H.zip) |
+| [CS109 Introduction to Computer Programming](<SUSTech/CS109 Introduction to Computer Programming>) | Fall 2024 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-CS109-Introduction-to-Computer-Programming.zip) |
+| [CS201 Discrete Mathematics](<SUSTech/CS201 Discrete Mathematics>) | Spring 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-CS201-Discrete-Mathematics.zip) |
+| [CS217 Data Structures and Algorithm Analysis (H)](<SUSTech/CS217 Data Structures and Algorithm Analysis (H)>) | Fall 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-CS217-Data-Structures-and-Algorithm-Analysis-H.zip) |
 
 ### Statistics
 
-| Course | Term |
-|--------|------|
-| [STA203 Foundation of Probability Theory](<SUSTech/STA203 Foundation of Probability Theory>) | Fall 2024 |
-| [MA204 Mathematical Statistics](<SUSTech/MA204 Mathematical Statistics>) | Spring 2025 |
+| Course | Term | Download |
+|--------|------|----------|
+| [STA203 Foundation of Probability Theory](<SUSTech/STA203 Foundation of Probability Theory>) | Fall 2024 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-STA203-Foundation-of-Probability-Theory.zip) |
+| [MA204 Mathematical Statistics](<SUSTech/MA204 Mathematical Statistics>) | Spring 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/SUSTech-MA204-Mathematical-Statistics.zip) |
 
 ## UC Berkeley
 
-| Course | Term |
-|--------|------|
-| [COMPSCI 61A The Structure and Interpretation of Computer Programs](<UC Berkeley/COMPSCI 61A The Structure and Interpretation of Computer Programs>) | Spring 2026 |
-| [COMPSCI 61BL Data Structures and Programming Methodology](<UC Berkeley/COMPSCI 61BL Data Structures and Programming Methodology>) | Summer 2026 |
-| [COMPSCI 188 Introduction to Artificial Intelligence](<UC Berkeley/COMPSCI 188 Introduction to Artificial Intelligence>) | Summer 2026 |
+| Course | Term | Download |
+|--------|------|----------|
+| [COMPSCI 61A The Structure and Interpretation of Computer Programs](<UC Berkeley/COMPSCI 61A The Structure and Interpretation of Computer Programs>) | Spring 2026 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/UC-Berkeley-COMPSCI-61A-The-Structure-and-Interpretation-of-Computer-Programs.zip) |
+| [COMPSCI 61BL Data Structures and Programming Methodology](<UC Berkeley/COMPSCI 61BL Data Structures and Programming Methodology>) | Summer 2026 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/UC-Berkeley-COMPSCI-61BL-Data-Structures-and-Programming-Methodology.zip) |
+| [COMPSCI 188 Introduction to Artificial Intelligence](<UC Berkeley/COMPSCI 188 Introduction to Artificial Intelligence>) | Summer 2026 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/UC-Berkeley-COMPSCI-188-Introduction-to-Artificial-Intelligence.zip) |
 
 ## University of Oxford
 
-| Course | Term |
-|--------|------|
-| [Deep Unsupervised Learning](<Oxford/Deep Unsupervised Learning>) | Summer 2025 |
+| Course | Term | Download |
+|--------|------|----------|
+| [Deep Unsupervised Learning](<Oxford/Deep Unsupervised Learning>) | Summer 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/Oxford-Deep-Unsupervised-Learning.zip) |
 
 ## Other
 
-| Course | Term |
-|--------|------|
-| [YMSC Introduction to Data Assimilation](<YMSC/Introduction to Data Assimilation>) (Tsinghua YMSC) | Fall 2025 |
+| Course | Term | Download |
+|--------|------|----------|
+| [YMSC Introduction to Data Assimilation](<YMSC/Introduction to Data Assimilation>) (Tsinghua YMSC) | Fall 2025 | [zip](https://github.com/kaiiiichen/Kai-Course-Notes/releases/download/downloads/YMSC-Introduction-to-Data-Assimilation.zip) |
 
 ---
 
