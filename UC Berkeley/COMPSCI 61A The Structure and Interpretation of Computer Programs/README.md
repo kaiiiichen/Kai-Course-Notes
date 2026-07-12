@@ -6,6 +6,8 @@ This is the best computer science course in the world, forever!
 
 An introduction to programming and computer science centered on abstraction: functions as values, recursion, higher-order functions, mutable state, object-oriented programming, and — the crown jewels — interpreters and macros, taught across Python, Scheme, and SQL in the spirit of *SICP*.
 
+📖 **Textbook:** [*Composing Programs*](https://www.composingprograms.com/)
+
 📝 **Notes:** [COMPSCI 61A on the Notion branch](https://kai-course-notes.notion.site/39ba3294e487812487accc12c4652e74)
 
 ## Course Files

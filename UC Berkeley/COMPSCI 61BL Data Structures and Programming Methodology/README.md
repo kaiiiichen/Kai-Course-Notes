@@ -4,6 +4,8 @@
 
 The lab-centric offering of CS 61B: the same data structures and software-engineering core (Java, lists, trees, hashing, heaps, graphs, sorting, large projects), delivered through intensive collaborative lab sessions.
 
+📖 **Textbook:** [*The CS 61B Textbook*](https://cs61b-2.gitbook.io/cs61b-textbook)
+
 📝 **Notes:** [COMPSCI 61BL on the Notion branch](https://kai-course-notes.notion.site/39ba3294e48781feb9afc1a24da04148)
 
 ## Course Files
