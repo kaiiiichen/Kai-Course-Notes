@@ -20,7 +20,7 @@ Repository layout: `<University>/<Course>/…` — each course folder has its ow
 | [MA217 Mathematical Experiments](<SUSTech/MA217 Mathematical Experiments>) | Fall 2024 |
 | [MA219 Abstract Algebra (H)](<SUSTech/MA219 Abstract Algebra (H)>) | Fall 2024 |
 | [MA230 Ordinary Differential Equations A (H)](<SUSTech/MA230 Ordinary Differential Equations A (H)>) | Spring 2025 |
-| [MA231 Mathematical Analysis III (H)](<SUSTech/MA231 Mathematical Analysis III (H)>) | — |
+| [MA231 Mathematical Analysis III (H)](<SUSTech/MA231 Mathematical Analysis III (H)>) | Fall 2024 |
 | [MA232 Complex Analysis (H)](<SUSTech/MA232 Complex Analysis (H)>) | Spring 2025 |
 | [MA234 Introduction to Big Data Analysis](<SUSTech/MA234 Introduction to Big Data Analysis>) | Spring 2025 |
 | [MA305 Numerical Analysis](<SUSTech/MA305 Numerical Analysis>) | Fall 2025 |
@@ -52,6 +52,12 @@ Repository layout: `<University>/<Course>/…` — each course folder has its ow
 | [COMPSCI 61A The Structure and Interpretation of Computer Programs](<UC Berkeley/COMPSCI 61A The Structure and Interpretation of Computer Programs>) | Spring 2026 | [Notion](https://kai-course-notes.notion.site/39ba3294e487812487accc12c4652e74) |
 | [COMPSCI 61BL Data Structures and Programming Methodology](<UC Berkeley/COMPSCI 61BL Data Structures and Programming Methodology>) | Summer 2026 | [Notion](https://kai-course-notes.notion.site/39ba3294e48781feb9afc1a24da04148) |
 | [COMPSCI 188 Introduction to Artificial Intelligence](<UC Berkeley/COMPSCI 188 Introduction to Artificial Intelligence>) | Summer 2026 | [Notion](https://kai-course-notes.notion.site/39ba3294e4878136b840deb58af630a6) |
+
+## University of Oxford
+
+| Course | Term |
+|--------|------|
+| [Deep Unsupervised Learning](<Oxford/Deep Unsupervised Learning>) ([showcase](https://kaichen.dev/projects/oxford-dul-2025)) | Summer 2025 |
 
 ## Other
 

@@ -1,3 +1,3 @@
-# MA231 Mathematical Analysis III (H)
+# MA231 Mathematical Analysis III (H) (Fall 2024)
 
-Handwritten notes by Kai Chen (92-lecture-hour course; 55.8 MiB PDF in `Notes/`).
+Handwritten notes by Kai Chen (55.8 MiB PDF in `Notes/`).
