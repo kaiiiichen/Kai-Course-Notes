@@ -47,11 +47,11 @@ Repository layout: `<University>/<Course>/…` — each course folder has its ow
 
 ## UC Berkeley
 
-| Course | Term | Notes |
-|--------|------|-------|
-| [COMPSCI 61A The Structure and Interpretation of Computer Programs](<UC Berkeley/COMPSCI 61A The Structure and Interpretation of Computer Programs>) | Spring 2026 | [Notion](https://kai-course-notes.notion.site/39ba3294e487812487accc12c4652e74) |
-| [COMPSCI 61BL Data Structures and Programming Methodology](<UC Berkeley/COMPSCI 61BL Data Structures and Programming Methodology>) | Summer 2026 | [Notion](https://kai-course-notes.notion.site/39ba3294e48781feb9afc1a24da04148) |
-| [COMPSCI 188 Introduction to Artificial Intelligence](<UC Berkeley/COMPSCI 188 Introduction to Artificial Intelligence>) | Summer 2026 | [Notion](https://kai-course-notes.notion.site/39ba3294e4878136b840deb58af630a6) |
+| Course | Term |
+|--------|------|
+| [COMPSCI 61A The Structure and Interpretation of Computer Programs](<UC Berkeley/COMPSCI 61A The Structure and Interpretation of Computer Programs>) | Spring 2026 |
+| [COMPSCI 61BL Data Structures and Programming Methodology](<UC Berkeley/COMPSCI 61BL Data Structures and Programming Methodology>) | Summer 2026 |
+| [COMPSCI 188 Introduction to Artificial Intelligence](<UC Berkeley/COMPSCI 188 Introduction to Artificial Intelligence>) | Summer 2026 |
 
 ## University of Oxford
 
