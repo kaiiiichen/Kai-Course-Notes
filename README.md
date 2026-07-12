@@ -1,6 +1,6 @@
 # Kai Course Notes
 
-Launched in 2025 (as *SUSTech-Kai-Notes*), [Kai Course Notes](https://github.com/kaiiiichen/Kai-Course-Notes) is a personal initiative motivated by [Cambridge Notes](https://dec41.user.srcf.net/notes/). It collects the course notes and materials from my studies at [SUSTech](https://www.sustech.edu.cn), [UC Berkeley](https://www.berkeley.edu), the [University of Oxford](https://www.ox.ac.uk), and elsewhere.
+Launched in 2025 (as *SUSTech-Kai-Notes*), [Kai Course Notes](https://github.com/kaiiiichen/Kai-Course-Notes) is a personal initiative motivated by [Cambridge Notes](https://dec41.user.srcf.net/notes/). It collects the course notes and materials from my studies at [SUSTech](https://www.sustech.edu.cn/en/), [UC Berkeley](https://www.berkeley.edu), the [University of Oxford](https://www.ox.ac.uk), and elsewhere.
 
 > 📝 **Web-native notes** (short conceptual write-ups, best read in the browser) live on the Notion branch: **[kai-course-notes.notion.site](https://kai-course-notes.notion.site/main)**
 >
