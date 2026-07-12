@@ -13,4 +13,9 @@ An introduction to programming and computer science centered on abstraction: fun
 
 ## Course Files
 
-*To be added.*
+- `collec/` — my own collection of small practice programs (recursion, partitions, Scheme snippets, …)
+- `misc/` — my own experiment code and environment-diagram exercises
+
+### What's deliberately NOT here
+
+Per the CS 61A course policy, **solutions to homework, labs, and projects are never published** (the assignments are reused across semesters). Staff-authored materials (lecture slides, discussion & tutoring worksheets, study guides, exams and review sessions) are not redistributed here either — get them from the official [cs61a.org](https://cs61a.org) site and its past-exam archive.
