@@ -1,64 +1,81 @@
-# Code of Conduct
+# Code of Conduct & Content Policy
+
+*The web version of this document lives at [kai-course-notes.kaichen.dev/conduct](https://kai-course-notes.kaichen.dev/conduct.html).*
 
 ## Purpose
 
-This repository is a personal academic resource collection maintained for **educational and reference purposes only**. It is inspired by open note-sharing initiatives such as [Cambridge Notes](https://dec41.user.srcf.net/notes/) and is intended to help students build a deeper understanding of course material — not to facilitate academic dishonesty.
+Kai Course Notes is a personal academic archive maintained for **educational and reference purposes only**. It is inspired by open note-sharing initiatives such as [Cambridge Notes](https://dec41.user.srcf.net/notes/), and exists to help students build a deeper understanding of course material — never to facilitate academic dishonesty.
+
+The public repository is a **curated, policy-compliant subset** of a fuller private archive, generated mechanically by a sync script with an explicit exclusion list. Compliance is enforced by machinery, not memory: if something must stay private, a rule guarantees it never reaches the public repository.
 
 ---
 
-## Academic Integrity
+## What you *will* find here
 
-All users of this repository must comply with the academic integrity policies of their respective institutions. In particular:
+- **My own notes** — handwritten and LaTeX-typeset, always with sources where they exist.
+- **My own homework write-ups, lab reports, and projects** — shared as references and learning aids, where course policy allows.
+- **Lecturer-provided slides and handouts** — only where the institution's policy permits it (see below), under a strict takedown promise.
+- **Reference book lists** — every course README lists the books used, so you can obtain them through proper channels.
 
-- **Do not directly copy or submit** any homework, assignment, lab report, or project contained in this repository as your own work. These materials are shared as **references and learning aids only**.
-- Files labeled as homework solutions, reference answers, or standard solutions (e.g., `Homework Reference Answers`, `std`) are provided solely to help you understand problem-solving approaches **after** you have made a genuine attempt on your own.
-- Past exam papers and mock exams are shared for **revision purposes** only. Do not distribute them in ways that violate your institution's examination policies.
-- The folder named `Cheating Paper` refers to a **self-made reference sheet permitted by the instructor** during the examination (commonly known as a "cheat sheet" in casual academic usage) — it is not associated with any form of dishonest conduct.
+## What you *won't* find here — ever
 
-Violations of academic integrity policies are the sole responsibility of the individual user.
-
----
-
-## Copyright and Permissions
-
-### Textbooks and Third-Party Materials
-
-Textbooks, academic papers, and other third-party materials included in this repository are shared under the assumption of fair use for personal educational purposes. They remain the intellectual property of their respective authors and publishers. **Commercial redistribution is strictly prohibited.**
-
-If you are the copyright holder of any material in this repository and wish to have it removed, please [open an issue](https://github.com/kaiiiichen/SUSTech-Kai-Notes/issues) or contact the maintainer directly.
-
-### Lecturer-Produced Materials
-
-Lecture slides, handouts, and other materials produced by instructors are shared with the understanding that they are used solely for personal study. These materials remain the intellectual property of the respective lecturers. **Once a lecturer requests removal of their materials, all downloads — including those made prior to the request — are no longer authorized.**
-
-### Personal Notes and Original Content
-
-Unless otherwise specified, all original content in this repository (personal notes, summaries, etc.) is licensed under the [CC BY-NC-SA 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/). You are free to share and adapt the material for non-commercial purposes, provided you give appropriate credit and distribute under the same license.
+- **Published textbooks.** They are copyrighted commercial works; the archive lists them and links official free versions where those exist, but never redistributes the files.
+- **Official homework or exam solutions, and OJ reference programs.** Removed for academic integrity, across all schools, including from the repository's git history.
+- **Institution-owned materials where policy forbids redistribution** — see below.
+- **Anything containing other people's personal information** (graded papers, rosters, and the like).
 
 ---
 
-## Repository Structure Policy
+## How each institution's policy is applied
 
-To balance openness with responsibility, this repository operates alongside a **private archive**:
+### SUSTech (Southern University of Science and Technology)
 
-- Materials that may raise academic integrity concerns for currently active courses (e.g., homework solutions for ongoing offerings) may be moved to the private archive.
-- Materials explicitly requested to be removed by lecturers or the university will be relocated to the private archive or deleted entirely.
-- This public repository represents a curated, policy-compliant version of the full collection.
+SUSTech publishes no explicit policy on students redistributing course materials, which is typical of universities in mainland China — the area is, in practice, a gray zone governed by general copyright law, under which lecture slides and handouts remain the intellectual property of their authors.
+
+Accordingly, lecturer-provided materials from SUSTech are shared here **in good faith, for personal study only**, under this standing promise: *any lecturer may request removal of their materials at any time, removal is honored promptly, and once material is removed, all downloads — including those made before the request — are no longer authorized.* My own work from SUSTech courses (notes, homework write-ups, lab reports, projects) is shared freely.
+
+### UC Berkeley
+
+Berkeley course policies prohibit publicly posting solutions to homework, labs, and projects — assignments are reused across semesters, and public solutions directly harm future students. This archive therefore publishes **none of my assignment work for Berkeley courses**: no homework, no labs, no projects.
+
+Staff-authored materials (lecture slides, discussion and tutoring worksheets, study guides, exams, review sessions) are not redistributed either; they are available to enrolled students on the official course sites, and past exams live in the courses' own public archives. What you will find: my own practice code, my own experiments, and my web-native study notes on the [Notion branch](https://kai-course-notes.notion.site/main).
+
+### University of Oxford
+
+My summer programme's enrolment agreement contains an explicit intellectual-property clause: all materials provided by the college — programme materials, reading materials, recordings of lectures, seminars, and tutorials — remain the property of the college or the relevant third party, and may not be used for any purpose unrelated to the programme without written permission.
+
+This archive therefore redistributes **no college-provided materials whatsoever** from Oxford. What you will find: the results my own models produced in the six course projects, and a course README describing the experience.
+
+### Other institutions (Tsinghua YMSC and beyond)
+
+Courses taken elsewhere follow the same default as SUSTech: my own work is shared freely; provider materials are shared in good faith for personal study under the takedown promise, unless that institution's policy demands stricter handling — in which case stricter handling wins.
 
 ---
 
-## Reporting Concerns
+## Academic integrity — for visitors
 
-If you believe any content in this repository:
+- **Do not copy or submit anything here as your own work.** Homework write-ups, lab reports, and projects are references and learning aids, nothing more. Your institution's academic integrity policy applies to you, and violations are solely your responsibility.
+- Use notes for building understanding, and revision materials for revision. If a document could serve as a solution to an assignment you are currently taking, close the tab and make your own attempt first.
+- A folder named *Cheating Paper* (in one SUSTech statistics course) is a **self-made reference sheet explicitly permitted by the instructor during the exam** — "cheat sheet" in the casual sense. It is not associated with any dishonest conduct.
 
-- Violates academic integrity policies,
-- Infringes on copyright,
-- Was shared without the consent of the original author,
+---
 
-please [open an issue](https://github.com/kaiiiichen/SUSTech-Kai-Notes/issues) and it will be addressed promptly.
+## Copyright & license
+
+Unless otherwise specified, all original content in this archive — my notes, summaries, write-ups, and code — is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/): share and adapt freely for non-commercial purposes, with attribution, under the same license.
+
+Lecturer-produced materials remain the intellectual property of their respective lecturers and are **not** covered by this license. Commercial redistribution of anything in this archive is strictly prohibited.
+
+---
+
+## Takedown & reporting
+
+If you are a lecturer or rights holder and would like your material removed, please open a [takedown request](https://github.com/kaiiiichen/Kai-Course-Notes/issues/new/choose) — there is a dedicated issue template — or reach me through the contact channels on [kaichen.dev](https://kaichen.dev). Requests are honored promptly, and per the promise above, prior downloads of removed material become unauthorized.
+
+If you spot **sensitive content** — accidentally published solutions, copyrighted files, or personal information — please report it *privately* via [GitHub private reporting](https://github.com/kaiiiichen/Kai-Course-Notes/security/advisories/new) rather than a public issue, so it can be removed before drawing attention.
 
 ---
 
 ## Disclaimer
 
-This repository is a personal project and is not affiliated with or endorsed by SUSTech or any other institution. The maintainer makes no guarantees regarding the accuracy, completeness, or fitness for any purpose of the materials contained herein.
+This is a personal project, not affiliated with or endorsed by SUSTech, UC Berkeley, the University of Oxford, or any other institution. No guarantees are made regarding the accuracy, completeness, or fitness for any purpose of the materials herein.
