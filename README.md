@@ -4,6 +4,8 @@ Launched in 2025 (as *SUSTech-Kai-Notes*), [Kai Course Notes](https://github.com
 
 > 🏠 **Landing page:** **[kai-course-notes.kaichen.dev](https://kai-course-notes.kaichen.dev)** — the course catalog at a glance
 >
+> 📦 **Downloads:** grab any course as a single zip from the **[downloads release](https://github.com/kaiiiichen/Kai-Course-Notes/releases/tag/downloads)**
+>
 > 📝 **Web-native notes** (short conceptual write-ups, best read in the browser) live on the Notion branch: **[kai-course-notes.notion.site](https://kai-course-notes.notion.site/main)**
 >
 > 🌐 Main personal website: **[kaichen.dev](https://kaichen.dev)**
