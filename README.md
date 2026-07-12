@@ -69,9 +69,12 @@ Repository layout: `<University>/<Course>/…` — each course folder has its ow
 
 ## What you will (and won't) find here
 
-- ✅ My own notes (handwritten & LaTeX, with sources), homework write-ups, lab reports, projects, and lecturer-permitted materials.
-- ❌ Published textbooks — each course README lists the reference books instead; please obtain them through proper channels.
-- ❌ Homework/exam solutions and OJ reference programs — removed for academic integrity.
+Everything **I authored** — handwritten & LaTeX notes (with sources), homework write-ups, lab reports, and project code — is shared throughout under the license below. Materials **provided by instructors and institutions** are handled according to each school's own rules:
+
+- **SUSTech** — the university publishes no explicit policy on redistributing course materials, and general copyright remains with the lecturers. Lecturer-provided slides and handouts are shared here in good faith under a strict takedown promise: any lecturer may request removal at any time, and per the license note below, all downloads of removed material — including those made before the request — become unauthorized.
+- **UC Berkeley** — course policy prohibits publicly posting solutions to homework, labs, and projects (assignments are reused across semesters), and staff-authored materials are not redistributed. Only my own practice code and notes appear here; official materials live on the course websites.
+- **University of Oxford** — under my programme's enrolment agreement, all college-provided materials remain the college's intellectual property and are not redistributed. Only my own project results appear here.
+- **All schools** — no published textbooks (each course README lists the reference books instead; please obtain them through proper channels), and no homework/exam solutions or OJ reference programs, ever.
 
 ## License
 
