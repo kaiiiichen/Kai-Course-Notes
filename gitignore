@@ -1,9 +1,0 @@
-
-# macOS junk
-.DS_Store
-**/.DS_Store
-
-# R junk
-.Rhistory
-.RData
-.Rproj.user/

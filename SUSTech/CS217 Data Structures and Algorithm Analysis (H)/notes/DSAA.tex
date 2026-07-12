@@ -1,0 +1,2798 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{scalerel,stackengine}
+\usepackage{esint}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{setspace}
+\doublespacing
+\usepackage{titlesec}
+\usepackage[autostyle=true]{csquotes}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, automata, positioning, trees}
+\usepackage{fancyhdr}
+\usepackage{dsfont}
+\usepackage{imakeidx}
+\usepackage{microtype}
+\usepackage[svgnames]{xcolor}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{NavyBlue}\bfseries,
+    commentstyle=\color{Teal}\itshape,
+    stringstyle=\color{DarkRed},
+    frame=single,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray}
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=NavyBlue,
+    citecolor=DarkRed,
+    urlcolor=Teal,
+}
+
+\usepackage[type={CC}, modifier={by-nc-sa}, version={4.0}]{doclicense}
+
+\usepackage{enumitem}
+\setlist{nosep}
+
+\titleformat{\section}
+{\normalfont\bfseries\LARGE}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\bfseries\Large}
+{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\itshape\bfseries\large}
+{\thesubsubsection}{1em}{}
+
+\newtheoremstyle{blueplain}
+  {3pt}{3pt}
+  {\itshape}
+  {}
+  {\color{NavyBlue}\bfseries}
+  {.}
+  {0.5em}
+  {}
+
+\newtheoremstyle{bluedef}
+  {3pt}{3pt}
+  {\normalfont}
+  {}
+  {\color{Teal}\bfseries}
+  {.}
+  {0.5em}
+  {}
+
+\newtheoremstyle{blueremark}
+  {3pt}{3pt}
+  {\normalfont}
+  {}
+  {\color{DarkRed}\itshape}
+  {.}
+  {0.5em}
+  {}
+
+\theoremstyle{blueplain}
+\newtheorem{theorem}{THEOREM}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{property}[theorem]{Property}
+
+\theoremstyle{bluedef}
+\newtheorem{definition}{DEFINITION}[section]
+\newtheorem{problem}{Problem}[section]
+
+\theoremstyle{blueremark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{note}{Note}[section]
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ups}{\upsilon}
+
+\newcommand{\BigO}{\mathcal{O}}
+\newcommand{\BigTheta}{\Theta}
+\newcommand{\BigOmega}{\Omega}
+\newcommand{\Error}{\textbf{Error}}
+
+\makeindex[columns=2, title=Index, intoc]
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsc{\small Data Structures and Algorithm Analysis}} 
+\fancyhead[R]{\small \nouppercase{\leftmark}}
+\fancyfoot[R]{\hyperref[mytoc]{\Large $\hookleftarrow$}}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\href{https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en}{\doclicenseIcon}}
+\setlength{\headheight}{14pt}
+\setlength{\headsep}{20pt}
+\setlength{\footskip}{25pt}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+
+    {\Huge \bfseries Data Structures \\ and \\ Algorithm Analysis \par}
+
+    \vspace{4cm}
+
+    {\Large Kai Chen \par}
+    \vspace{0.5cm}
+    {\large \today \par}
+
+    \vfill
+
+    \rule{0.8\textwidth}{0.4pt} \\
+    \vspace{0.5cm}
+    {\small Part of the \href{https://github.com/kaiiiichen/SUSTech-Kai-Notes/wiki}{SUSTech-Kai-Notes} Initiative}
+\end{titlepage}
+
+\newpage
+\thispagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{center}
+    \copyright\ \the\year\ Kai Chen.
+    All rights reserved.
+
+    \vspace{0.5cm}
+
+    \doclicenseThis
+
+    \vspace{1cm}
+
+    This document was typeset using \href{https://www.latex-project.org}{\LaTeX}.
+\end{center}
+\clearpage
+
+\pagenumbering{roman}
+
+\section*{Preface}
+These notes are compatible with the \href{https://github.com/kaiiiichen/SUSTech-Kai-Notes/tree/main/CS217%20Data%20Structures%20and%20Algorithm%20Analysis%20(H)}{CS217 Data Structures and Algorithm Analysis (H) (Fall 2025)} at \href{https://www.sustech.edu.cn/}{SUSTech}, and part of the course-notes-and-resources initiative: \href{https://github.com/kaiiiichen/SUSTech-Kai-Notes/wiki}{SUSTech-Kai-Notes}.
+
+\medskip
+
+\noindent Specific focus is placed on the mathematical analysis of algorithms, data structure implementation details, and complexity theory.
+
+\clearpage
+
+\phantomsection
+\label{mytoc}
+
+\onehalfspacing
+\tableofcontents
+\clearpage
+
+\doublespacing
+\pagenumbering{arabic}
+
+
+\section{Getting Started}
+
+\subsection{Foundations of Algorithms}
+
+\subsubsection{Definitions}
+
+\begin{definition}[Algorithm]\index{Algorithm}
+    An \textbf{algorithm} is a well-defined computational procedure that takes some value, or set of values, as \textbf{input} and produces some value, or set of values, as \textbf{output}. It acts as a tool for solving a well-specified computational problem.
+\end{definition}
+
+\begin{problem}[The Sorting Problem]\index{Sorting Problem}
+\textbf{Input}: A sequence of $n$ numbers $\langle a_{1},a_{2},...,a_{n}\rangle$.
+
+\noindent \textbf{Output}: A permutation (reordering) $\langle{a_{1}}^{\prime},{a_{2}}^{\prime},...,{a_{n}}^{\prime}\rangle$ of the input sequence such that ${a_{1}}^{\prime}\le{a_{2}}^{\prime}\le\cdot\cdot\cdot\le{a_{n}}$.
+\end{problem}
+
+\begin{definition}[Instance]\index{Instance}
+    An \textbf{instance} of a problem consists of the input (satisfying whatever constraints are imposed in the problem statement) needed to compute a solution.
+    For example, the sequence $(31, 41, 59, 26, 41, 58)$ is an instance of the sorting problem.
+\end{definition}
+
+\begin{remark}
+    We describe algorithms using \textbf{pseudocode}. This serves two purposes:
+    \begin{enumerate}
+        \item To show that algorithms exist independently of any particular programming language.
+        \item To focus on ideas and logic rather than syntax issues or error-handling.
+    \end{enumerate}
+\end{remark}
+
+\subsubsection{Correctness}
+
+\begin{definition}[Correctness]\index{Correctness}
+    An algorithm is \textbf{correct} if, for every input instance, it halts with the correct output. A correct algorithm solves the problem.
+\end{definition}
+
+\noindent Ideally, algorithms should be accompanied by a proof of correctness, rather than just testing on a few instances.
+
+\subsection{The Computational Model}
+
+To analyze the running time of algorithms effectively, we need a model that abstracts away specific hardware details (like clock rate, memory hierarchy, or multi-core architecture).
+
+\begin{definition}[RAM Model]\index{RAM Model}
+    The \textbf{Random-Access Machine (RAM)} model is a generic model of computation where instructions are executed one after another (no concurrent operations).
+\end{definition}
+
+\begin{property}[Elementary Operations]\index{Elementary Operations}
+    The RAM model assumes that each elementary operation takes the same amount of time (a constant independent of the problem size). These operations include:
+    \begin{itemize}
+        \item \textbf{Arithmetic}: Add, subtract, multiply, divide, remainder, floor, ceiling.
+        \item \textbf{Data Movement}: Variable assignments (storing, retrieving), copy.
+        \item \textbf{Logical}: Comparisons, shifts, logical operations.
+        \item \textbf{Control}: Conditional and unconditional branches (loops), subroutine calls and returns.
+    \end{itemize}
+\end{property}
+
+\subsection{Insertion Sort}
+
+\subsubsection{The Concept}
+
+\textbf{Insertion Sort} works the way many people sort a hand of playing cards.
+\begin{itemize}
+    \item We start with an empty left hand and the cards face down on the table.
+    \item We remove one card at a time from the table and insert it into the correct position in the left hand.
+    \item To find the correct position for a card, we compare it with each of the cards already in the hand, from right to left.
+    \item At all times, the cards held in the left hand are sorted.
+\end{itemize}
+
+\subsubsection{The Algorithm}
+
+\begin{algorithm}
+    \caption{Insertion Sort}\label{alg:insertionSort}
+    \begin{algorithmic}[1]
+        \Procedure{InsertionSort}{$A$}
+        \For{$j = 2$ \textbf{to} $A.\text{length}$} \Comment{Iterate from the second element}
+        \State $key = A[j]$
+        \State \Comment{Insert $A[j]$ into the sorted sequence $A[1 \dots j-1]$}
+        \State $i = j - 1$
+        \While{$i > 0$ \textbf{and} $A[i] > key$}
+        \State $A[i+1] = A[i]$ \Comment{Shift element to the right}
+        \State $i = i - 1$
+        \EndWhile
+        \State $A[i+1] = key$ \Comment{Insert key into correct position}
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Correctness via Loop Invariants}
+
+To prove that an algorithm (especially one with loops) is correct, we use the technique of \textbf{Loop Invariants}.
+
+\begin{definition}[Loop Invariant]\index{Loop Invariant}
+    A loop invariant is a statement that is always true and reflects the progress of the algorithm towards producing a correct output.
+\end{definition}
+
+To use a loop invariant to prove correctness, we must show three things:
+\begin{enumerate}
+    \item \textbf{Initialization}: The invariant is true before the first iteration of the loop.
+    \item \textbf{Maintenance}: If the invariant is true before an iteration of the loop, it remains true before the next iteration.
+    \item \textbf{Termination}: When the loop terminates, the invariant provides a useful property that helps show that the algorithm is correct.
+\end{enumerate}
+
+\subsubsection{Proof of Insertion Sort}
+
+\begin{theorem}
+    Algorithm \ref{alg:insertionSort} correctly sorts the array $A$.
+\end{theorem}
+
+\begin{proof}
+    We use the following loop invariant:
+    \begin{quote}
+        \textit{"At the start of each iteration of the \textbf{for} loop (lines 1-8), the subarray $A[1 \dots j-1]$ consists of the elements originally in $A[1 \dots j-1]$, but in sorted order."}
+    \end{quote}
+
+    \noindent \textbf{Initialization}:
+    We start with $j=2$. The subarray $A[1 \dots j-1]$ is $A[1 \dots 1]$, which consists of the single element $A[1]$. A single element is trivially sorted. Thus, the invariant holds.
+
+    \noindent \textbf{Maintenance}:
+    The body of the \textbf{for} loop works by moving $A[j-1], A[j-2], \dots$ one position to the right until the proper position for $A[j]$ (stored in $key$) is found. The $key$ is then placed into this position.
+    At this point, the subarray $A[1 \dots j]$ consists of the elements originally in $A[1 \dots j]$, but in sorted order. Incrementing $j$ for the next iteration preserves the invariant.
+
+    \noindent \textbf{Termination}:
+    The loop terminates when $j = n + 1$. Substituting $n+1$ for $j$ in the invariant, we have that the subarray $A[1 \dots n]$ consists of the elements originally in $A[1 \dots n]$, but in sorted order. Since $A[1 \dots n]$ is the entire array, the algorithm is correct.
+\end{proof}
+
+\subsection{Runtime Analysis}
+
+We analyze the running time $T(n)$ by summing the cost of each statement multiplied by the number of times it is executed.
+\begin{itemize}
+    \item Let $c_k$ be the cost of executing line $k$.
+    \item Let $n$ be the size of the array $A$.
+    \item Let $t_j$ be the number of times the \textbf{while} loop test is executed for a given value of $j$.
+\end{itemize}
+
+\subsubsection{Detailed Cost Breakdown}
+
+\begin{itemize}
+    \item Line 1 (for loop header): Executed $n$ times (checking $j$ from $2$ to $n+1$). Cost: $c_1 n$.
+    \item Line 2 ($key = A[j]$): Executed $n-1$ times. Cost: $c_2 (n-1)$.
+    \item Line 4 ($i = j-1$): Executed $n-1$ times. Cost: $c_4 (n-1)$.
+    \item Line 5 (while test): Executed $\sum_{j=2}^n t_j$ times. Cost: $c_5 \sum_{j=2}^n t_j$.
+    \item Line 6 (loop body, shift): Executed $\sum_{j=2}^n (t_j - 1)$ times. Cost: $c_6 \sum_{j=2}^n (t_j - 1)$.
+    \item Line 7 (loop body, decrement): Executed $\sum_{j=2}^n (t_j - 1)$ times. Cost: $c_7 \sum_{j=2}^n (t_j - 1)$.
+    \item Line 8 (assignment): Executed $n-1$ times. Cost: $c_8 (n-1)$.
+\end{itemize}
+
+The total running time $T(n)$ is:
+\[
+    T(n) = c_1 n + c_2 (n-1) + c_4 (n-1) + c_5 \sum_{j=2}^n t_j + c_6 \sum_{j=2}^n (t_j - 1) + c_7 \sum_{j=2}^n (t_j - 1) + c_8 (n-1)
+\]
+
+\subsubsection{Best Case Analysis}
+The \textbf{best case} occurs when the array is already sorted.
+In this scenario, $A[i] \le key$ immediately for every $j$. Thus, the \textbf{while} loop test is executed only once ($t_j = 1$), and the loop body is never executed.
+
+Substituting $t_j = 1$:
+\[ \sum_{j=2}^n t_j = \sum_{j=2}^n 1 = n-1 \]
+\[ \sum_{j=2}^n (t_j - 1) = 0 \]
+
+The runtime becomes:
+\[
+    T(n) = c_1 n + c_2 (n-1) + c_4 (n-1) + c_5 (n-1) + c_8 (n-1)
+\]
+\[
+    T(n) = (c_1 + c_2 + c_4 + c_5 + c_8)n - (c_2 + c_4 + c_5 + c_8)
+\]
+This is a \textbf{linear function} of $n$: $T(n) = an + b = \Theta(n)$.
+
+\subsubsection{Worst Case Analysis}
+The \textbf{worst case} occurs when the array is reverse sorted.
+In this scenario, we must compare the key with every element in the sorted subarray $A[1 \dots j-1]$. Thus, $t_j = j$.
+
+We use the following summation formulas:
+\[ \sum_{j=2}^n j = \frac{n(n+1)}{2} - 1 \]
+\[ \sum_{j=2}^n (j-1) = \frac{n(n-1)}{2} \]
+
+Substituting these into the total runtime equation:
+\[
+    T(n) = c_1 n + c_2(n-1) + c_4(n-1) + c_5\left(\frac{n(n+1)}{2} - 1\right) + (c_6 + c_7)\left(\frac{n(n-1)}{2}\right) + c_8(n-1)
+\]
+Grouping terms by powers of $n$:
+\[
+    T(n) = \left(\frac{c_5}{2} + \frac{c_6}{2} + \frac{c_7}{2}\right)n^2 + \left(c_1 + c_2 + c_4 + \frac{c_5}{2} - \frac{c_6}{2} - \frac{c_7}{2} + c_8\right)n - (c_2 + c_4 + c_5 + c_8)
+\]
+This is a \textbf{quadratic function} of $n$: $T(n) = an^2 + bn + c = \Theta(n^2)$.
+
+\clearpage
+
+
+\section{Runtime and Asymptotic Notation}
+
+\subsection{Recap: Runtime of Insertion Sort}
+
+In the previous lecture, we derived the running time function $T(n)$ for Insertion Sort on an input of size $n$. The exact formula depended on specific costs $c_i$ for each machine instruction:
+\[
+    T(n) = c_1 n + c_2(n-1) + c_4(n-1) + c_5 \sum_{j=2}^n t_j + \dots
+\]
+This level of detail is often too messy and hardware-dependent. We observed two extreme cases:
+\begin{itemize}
+    \item \textbf{Best Case} (Sorted Array): $T(n) = an + b$ (Linear).
+    \item \textbf{Worst Case} (Reverse Sorted Array): $T(n) = an^2 + bn + c$ (Quadratic).
+\end{itemize}
+
+\subsubsection{Why Focus on the Worst Case?}
+\begin{enumerate}
+    \item \textbf{Guarantee}: The worst-case runtime gives us an absolute upper bound. The algorithm will never take longer than this.
+    \item \textbf{Frequency}: For some algorithms, the worst case occurs fairly often (e.g., searching for a non-existent item in a database).
+    \item \textbf{Average Case}: Often, the "average" case is roughly as bad as the worst case. For Insertion Sort, the average case is also quadratic.
+\end{enumerate}
+
+\subsection{Asymptotic Analysis}
+
+\subsubsection{The Philosophy of Asymptotics}
+To compare algorithms effectively, we need a metric that is independent of:
+\begin{itemize}
+    \item The specific machine (CPU speed, memory architecture).
+    \item The programming language or compiler efficiency.
+    \item Small input sizes (where most algorithms are fast enough).
+\end{itemize}
+
+\textbf{Key Idea}: We focus on the \textbf{rate of growth} of the running time as the input size $n$ approaches infinity ($n \to \infty$).
+\begin{itemize}
+    \item We ignore \textbf{lower-order terms}: For large $n$, the highest power dominates (e.g., in $n^2 + 100n$, the $n^2$ term is overwhelmingly larger).
+    \item We ignore \textbf{leading constants}: Constants depend on hardware. We want to know if the algorithm scales linearly, quadratically, etc.
+\end{itemize}
+
+\subsection{Asymptotic Notations}
+
+We use five standard notations to describe the asymptotic behavior of functions. Let $f(n)$ be the algorithm's runtime and $g(n)$ be a reference function.
+
+\subsubsection{Big-Theta Notation ($\Theta$): Tight Bound}
+
+\begin{definition}[Big-Theta $\Theta$]\index{Big-Theta}
+    For a given function $g(n)$, $\Theta(g(n))$ is the set of functions:
+    \[
+        \Theta(g(n)) = \{ f(n) : \exists c_1, c_2 > 0 \text{ and } n_0 \ge 0 \text{ such that } 0 \le c_1 g(n) \le f(n) \le c_2 g(n) \text{ for all } n \ge n_0 \}
+    \]
+\end{definition}
+\noindent \textbf{Intuition}: For sufficiently large $n$, $f(n)$ is "sandwiched" between two constant multiples of $g(n)$.
+\begin{itemize}
+    \item We say $f(n)$ grows \textbf{at the same rate} as $g(n)$.
+    \item Example: $2n^2 + 3n + 1 = \Theta(n^2)$.
+    \item Note: We often write $f(n) = \Theta(g(n))$ (equality) to mean $f(n) \in \Theta(g(n))$ (set membership).
+\end{itemize}
+
+
+
+\subsubsection{Big-O Notation ($O$): Upper Bound}
+
+\begin{definition}[Big-O $O$]\index{Big-O}
+    For a given function $g(n)$, $O(g(n))$ is the set of functions:
+    \[
+        O(g(n)) = \{ f(n) : \exists c > 0 \text{ and } n_0 \ge 0 \text{ such that } 0 \le f(n) \le c g(n) \text{ for all } n \ge n_0 \}
+    \]
+\end{definition}
+\noindent \textbf{Intuition}: $f(n)$ grows \textbf{no faster than} $g(n)$. It gives an asymptotic \textbf{ceiling}.
+\begin{itemize}
+    \item Note: $f(n) = \Theta(g(n)) \implies f(n) = O(g(n))$.
+    \item Ideally, we want the tightest upper bound, but loose bounds are technically correct (e.g., $2n = O(n^2)$ is true, but weak).
+\end{itemize}
+
+
+
+\subsubsection{Big-Omega Notation ($\Omega$): Lower Bound}
+
+\begin{definition}[Big-Omega $\Omega$]\index{Big-Omega}
+    For a given function $g(n)$, $\Omega(g(n))$ is the set of functions:
+    \[
+        \Omega(g(n)) = \{ f(n) : \exists c > 0 \text{ and } n_0 \ge 0 \text{ such that } 0 \le c g(n) \le f(n) \text{ for all } n \ge n_0 \}
+    \]
+\end{definition}
+\noindent \textbf{Intuition}: $f(n)$ grows \textbf{at least as fast as} $g(n)$. It gives an asymptotic \textbf{floor}.
+
+
+
+\begin{theorem}[Relationship Theorem]
+    For any two functions $f(n)$ and $g(n)$:
+    \[ f(n) = \Theta(g(n)) \iff f(n) = O(g(n)) \text{ AND } f(n) = \Omega(g(n)) \]
+\end{theorem}
+
+\subsubsection{Strict Bounds ($o$ and $\omega$)}
+
+While $O$ and $\Omega$ correspond to $\le$ and $\ge$, the notations $o$ and $\omega$ correspond to $<$ and $>$.
+
+\begin{definition}[Little-o $o$]\index{Little-o}
+    $f(n) = o(g(n))$ if for \textbf{any} constant $c > 0$, there exists $n_0 > 0$ such that $0 \le f(n) < c g(n)$ for all $n \ge n_0$.
+    Alternatively defined by limits:
+    \[ \lim_{n \to \infty} \frac{f(n)}{g(n)} = 0 \]
+    \textbf{Meaning}: $f(n)$ becomes insignificant relative to $g(n)$ as $n$ grows.
+\end{definition}
+
+\begin{definition}[Little-omega $\omega$]\index{Little-omega}
+    $f(n) = \omega(g(n))$ if for \textbf{any} constant $c > 0$, there exists $n_0 > 0$ such that $0 \le c g(n) < f(n)$ for all $n \ge n_0$.
+    Alternatively:
+    \[ \lim_{n \to \infty} \frac{f(n)}{g(n)} = \infty \]
+    \textbf{Meaning}: $f(n)$ grows strictly faster than $g(n)$.
+\end{definition}
+
+\subsection{Analogy with Real Numbers}
+
+We can map the asymptotic relationships between functions to comparison operators for real numbers:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|l|}
+        \hline
+        \textbf{Notation}     & \textbf{Analogy} & \textbf{Intuition}              \\ \hline
+        $f(n) = O(g(n))$      & $f \le g$        & Upper bound (tight or loose)    \\ \hline
+        $f(n) = \Omega(g(n))$ & $f \ge g$        & Lower bound (tight or loose)    \\ \hline
+        $f(n) = \Theta(g(n))$ & $f = g$          & Tight bound (equal growth rate) \\ \hline
+        $f(n) = o(g(n))$      & $f < g$          & Strictly smaller growth         \\ \hline
+        $f(n) = \omega(g(n))$ & $f > g$          & Strictly larger growth          \\ \hline
+    \end{tabular}
+    \caption{Comparison of Asymptotic Notations}
+\end{table}
+
+\subsection{Properties and Growth Hierarchy}
+
+\subsubsection{Properties}
+\begin{itemize}
+    \item \textbf{Transitivity}: If $f(n) = \Theta(g(n))$ and $g(n) = \Theta(h(n))$, then $f(n) = \Theta(h(n))$. (Holds for all 5 notations).
+    \item \textbf{Reflexivity}: $f(n) = \Theta(f(n))$. (Holds for $O, \Omega$).
+    \item \textbf{Symmetry}: $f(n) = \Theta(g(n)) \iff g(n) = \Theta(f(n))$.
+    \item \textbf{Transpose Symmetry}: $f(n) = O(g(n)) \iff g(n) = \Omega(f(n))$.
+\end{itemize}
+
+\subsubsection{Common Growth Functions}
+Ordered from slowest to fastest growth:
+\begin{enumerate}
+    \item $O(1)$: Constant time.
+    \item $O(\lg n)$: Logarithmic time.
+    \item $O(\sqrt{n})$: Square root.
+    \item $O(n)$: Linear time.
+    \item $O(n \lg n)$: Linearithmic (often seen in efficient sorting).
+    \item $O(n^2)$: Quadratic.
+    \item $O(n^3)$: Cubic.
+    \item $O(2^n)$: Exponential.
+    \item $O(n!)$: Factorial.
+\end{enumerate}
+
+\begin{remark}[Dominance Rules]
+    \begin{itemize}
+        \item \textbf{Polylogarithms vs Polynomials}: For any constants $a, b > 0$, $(\lg n)^a = o(n^b)$. (Any positive polynomial power beats any polylog).
+        \item \textbf{Polynomials vs Exponentials}: For any constants $a > 0, b > 1$, $n^a = o(b^n)$. (Any exponential with base $>1$ beats any polynomial).
+    \end{itemize}
+\end{remark}
+
+\subsection{Application to Insertion Sort}
+
+Let $T(n)$ be the running time of Insertion Sort on an array of size $n$.
+
+\begin{itemize}
+    \item \textbf{Worst Case}: Occurs when the array is reverse sorted.
+          \[ T(n) = an^2 + bn + c \implies T(n) = \Theta(n^2) \]
+    \item \textbf{Best Case}: Occurs when the array is already sorted.
+          \[ T(n) = an + b \implies T(n) = \Theta(n) \]
+\end{itemize}
+
+\begin{note}[Common Misconception]
+    It is \textbf{incorrect} to say "The running time of Insertion Sort is $\Theta(n^2)$".
+    Why? Because for the best-case input, the runtime is linear, not quadratic.
+    \begin{itemize}
+        \item \textbf{Correct Statement 1}: The \textit{worst-case} running time is $\Theta(n^2)$.
+        \item \textbf{Correct Statement 2}: For \textit{any} input, the running time is $O(n^2)$ (upper bound) and $\Omega(n)$ (lower bound).
+    \end{itemize}
+\end{note}
+
+\clearpage
+
+
+\section{Divide-and-Conquer}
+
+\subsection{The Paradigm Shift}
+
+In previous lectures, we explored **Insertion Sort**, which follows an **Incremental Approach**: we process elements one by one and insert them into a growing sorted subarray.
+To break the $\Theta(n^2)$ barrier, we need a fundamentally different strategy: **Divide-and-Conquer**.
+
+\subsubsection{Divide-and-Conquer Strategy}
+This paradigm involves three recursive steps:
+\begin{enumerate}
+    \item \textbf{Divide}: Break the problem into several smaller subproblems that are similar to the original problem but smaller in size.
+    \item \textbf{Conquer}: Solve the subproblems recursively. If the subproblem sizes are small enough (the base case), solve them directly.
+    \item \textbf{Combine}: Merge the solutions to the subproblems to create a solution to the original problem.
+\end{enumerate}
+
+\subsubsection{Motivating Example: Binary Search}
+Consider finding a number $x$ in a \textbf{sorted} array of size $n$.
+\begin{itemize}
+    \item \textbf{Linear Search}: Scanning from start to end takes $\Theta(n)$ in the worst case.
+    \item \textbf{Binary Search}: Check the middle element. If $x$ is smaller, discard the right half; otherwise, discard the left half.
+          \[ T(n) = T(n/2) + \Theta(1) \implies T(n) = \Theta(\lg n) \]
+          \textbf{Insight}: By dividing the problem size by a constant factor (2) at each step, we exponentially reduce the work, achieving logarithmic complexity.
+\end{itemize}
+
+\subsection{Merge Sort}
+
+Merge Sort is the archetypal divide-and-conquer sorting algorithm.
+
+\subsubsection{The Algorithm}
+\begin{enumerate}
+    \item \textbf{Divide}: Split the $n$-element sequence into two subsequences of size $n/2$.
+    \item \textbf{Conquer}: Recursively sort the two subsequences using Merge Sort.
+    \item \textbf{Combine}: Merge the two sorted subsequences to produce the final sorted answer.
+\end{enumerate}
+\textbf{Base Case}: A sequence of length 1 is trivially sorted.
+
+\subsubsection{The Merge Procedure}
+The core logic lies in the \textbf{Combine} step. The procedure \texttt{Merge(A, p, q, r)} assumes that the subarrays $A[p \dots q]$ and $A[q+1 \dots r]$ are already sorted. It merges them into a single sorted subarray $A[p \dots r]$.
+
+\textbf{Mechanism (Two Pointers)}:
+We view the two subarrays as piles of cards face up. We compare the top cards of each pile, pick the smaller one, place it in the output pile, and repeat.
+To avoid checking for empty piles constantly, we can use a **sentinel value** ($\infty$) at the end of each subarray.
+
+\begin{algorithm}
+    \caption{Merge Procedure}\label{alg:merge}
+    \begin{algorithmic}[1]
+        \Procedure{Merge}{$A, p, q, r$}
+        \State $n_1 = q - p + 1$
+        \State $n_2 = r - q$
+        \State Let $L[1 \dots n_1+1]$ and $R[1 \dots n_2+1]$ be new arrays
+        \For{$i = 1$ \textbf{to} $n_1$}
+        \State $L[i] = A[p + i - 1]$
+        \EndFor
+        \For{$j = 1$ \textbf{to} $n_2$}
+        \State $R[j] = A[q + j]$
+        \EndFor
+        \State $L[n_1 + 1] = \infty$; $R[n_2 + 1] = \infty$ \Comment{Sentinels}
+        \State $i = 1$; $j = 1$
+        \For{$k = p$ \textbf{to} $r$}
+        \If{$L[i] \le R[j]$}
+        \State $A[k] = L[i]$
+        \State $i = i + 1$
+        \Else
+        \State $A[k] = R[j]$
+        \State $j = j + 1$
+        \EndIf
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\noindent \textbf{Runtime of Merge}:
+The procedure performs a constant amount of work for each element in the subarrays. Specifically, the \textbf{for} loop runs $n = r - p + 1$ times.
+\[ T_{\text{merge}}(n) = \Theta(n) \]
+
+
+\subsubsection{Correctness of Merge}
+We prove correctness using a **Loop Invariant**:
+\begin{quote}
+    \textit{At the start of each iteration of the \textbf{for} loop, the subarray $A[p \dots k-1]$ contains the $k-p$ smallest elements of $L$ and $R$, in sorted order. Furthermore, $L[i]$ and $R[j]$ are the smallest elements of their arrays that have not been copied back to $A$.}
+\end{quote}
+\begin{itemize}
+    \item \textbf{Initialization}: For $k=p$, the subarray $A[p \dots p-1]$ is empty, which trivially satisfies the invariant.
+    \item \textbf{Maintenance}: Suppose $L[i] \le R[j]$. Then $L[i]$ is the smallest uncopied element. We copy it to $A[k]$. Now $A[p \dots k]$ contains the $k-p+1$ smallest elements. Incrementing $k$ and $i$ maintains the invariant.
+    \item \textbf{Termination}: When the loop ends, $k=r+1$. The subarray $A[p \dots r]$ contains all elements (except sentinels) in sorted order.
+\end{itemize}
+
+\subsection{Analysis of Merge Sort}
+
+\subsubsection{Recurrence Relation}
+Let $T(n)$ be the time to sort $n$ numbers.
+\begin{itemize}
+    \item \textbf{Divide}: Computing the middle index takes constant time $\Theta(1)$.
+    \item \textbf{Conquer}: We recursively solve two subproblems, each of size $n/2$, contributing $2T(n/2)$.
+    \item \textbf{Combine}: The \texttt{Merge} procedure takes time linear in the number of elements, $\Theta(n)$.
+\end{itemize}
+Thus, the recurrence is:
+\[
+    T(n) = \begin{cases}
+        \Theta(1)           & \text{if } n=1   \\
+        2T(n/2) + \Theta(n) & \text{if } n > 1
+    \end{cases}
+\]
+
+
+\subsubsection{Recursion Tree Visualization}
+To solve $T(n) = 2T(n/2) + cn$, visualize a tree:
+\begin{itemize}
+    \item \textbf{Top Level}: Cost $cn$.
+    \item \textbf{Level 1}: Two subproblems of size $n/2$. Cost $2 \times c(n/2) = cn$.
+    \item \textbf{Level 2}: Four subproblems of size $n/4$. Cost $4 \times c(n/4) = cn$.
+    \item \dots
+    \item \textbf{Depth}: The tree splits until $n=1$. The height is $\lg n$.
+    \item \textbf{Total Cost}: There are $\lg n + 1$ levels, each costing $cn$.
+          \[ \text{Total} \approx cn \times \lg n = \Theta(n \lg n) \]
+\end{itemize}
+
+\subsubsection{Comparison with Insertion Sort}
+\begin{itemize}
+    \item \textbf{Time}: Merge Sort is $\Theta(n \lg n)$ in the worst, best, and average cases. This is asymptotically faster than Insertion Sort's worst case $\Theta(n^2)$.
+    \item \textbf{Space}: Merge Sort is \textbf{not} in-place. It requires $\Theta(n)$ auxiliary space for the `L` and `R` arrays in the `Merge` step. Insertion Sort is in-place ($O(1)$ space). This is the main drawback of Merge Sort.
+\end{itemize}
+
+\subsection{The Master Theorem}
+
+The Master Theorem provides a "cookbook" method to solve recurrences of the form:
+\[ T(n) = aT(n/b) + f(n) \]
+where $a \ge 1$ (number of subproblems), $b > 1$ (shrinkage factor), and $f(n)$ (cost of divide/combine).
+
+\subsubsection{The Watershed Function}
+We compare the driving function $f(n)$ with the \textbf{watershed function} $n^{\log_b a}$.
+\begin{itemize}
+    \item $n^{\log_b a}$ represents the rate of growth of the leaves (the cost of the base cases).
+    \item $f(n)$ represents the cost of the work done at the root (divide and combine).
+\end{itemize}
+It's a "tug-of-war" between the root work and the leaf work.
+
+\subsubsection{The Three Cases}
+
+\begin{theorem}[Master Theorem]\index{Master Theorem}
+    \begin{enumerate}
+        \item \textbf{Case 1 (Leaves Dominate)}: If $f(n) = O(n^{\log_b a - \epsilon})$ for some $\epsilon > 0$, then the recursion cost dominates:
+              \[ T(n) = \Theta(n^{\log_b a}) \]
+        \item \textbf{Case 2 (Balanced)}: If $f(n) = \Theta(n^{\log_b a} \lg^k n)$ (typically $k=0$), then the cost is distributed evenly across levels:
+              \[ T(n) = \Theta(n^{\log_b a} \lg^{k+1} n) \]
+        \item \textbf{Case 3 (Root Dominates)}: If $f(n) = \Omega(n^{\log_b a + \epsilon})$ for some $\epsilon > 0$, and if the regularity condition $af(n/b) \le cf(n)$ holds, then the root work dominates:
+              \[ T(n) = \Theta(f(n)) \]
+    \end{enumerate}
+\end{theorem}
+
+\subsubsection{Examples}
+
+\textbf{Example 1: Merge Sort}
+\[ T(n) = 2T(n/2) + n \]
+\begin{itemize}
+    \item $a=2, b=2, f(n)=n$.
+    \item Watershed: $n^{\log_2 2} = n^1 = n$.
+    \item Compare: $f(n) = \Theta(\text{Watershed})$. This is \textbf{Case 2} (with $k=0$).
+    \item Result: $T(n) = \Theta(n \lg n)$.
+\end{itemize}
+
+\textbf{Example 2}
+\[ T(n) = 9T(n/3) + n \]
+\begin{itemize}
+    \item $a=9, b=3, f(n)=n$.
+    \item Watershed: $n^{\log_3 9} = n^2$.
+    \item Compare: $f(n) = n = O(n^{2-\epsilon})$. Watershed dominates. This is \textbf{Case 1}.
+    \item Result: $T(n) = \Theta(n^2)$.
+\end{itemize}
+
+\textbf{Example 3}
+\[ T(n) = 3T(n/4) + n \lg n \]
+\begin{itemize}
+    \item $a=3, b=4, f(n)=n \lg n$.
+    \item Watershed: $n^{\log_4 3} \approx n^{0.793}$.
+    \item Compare: $f(n) = \Omega(n^{0.793+\epsilon})$. Root dominates. This is \textbf{Case 3}.
+    \item Regularity: $3(n/4) \lg(n/4) \le c n \lg n$ holds for $c \approx 3/4$.
+    \item Result: $T(n) = \Theta(n \lg n)$.
+\end{itemize}
+
+\clearpage
+
+
+\section{Heapsort}
+
+\subsection{Motivation: Smarter Selection}
+
+To understand Heapsort, let's revisit \textbf{Selection Sort}.
+\begin{itemize}
+    \item \textbf{Selection Sort Strategy}: Repeatedly find the maximum element in the remaining unsorted array and move it to the correct position.
+    \item \textbf{The Inefficiency}: Finding the maximum takes $\Theta(n)$ time because we scan the array linearly. We do this $n$ times, leading to $\Theta(n^2)$.
+    \item \textbf{The Waste}: In every iteration, Selection Sort "forgets" all the comparisons it made. It starts from scratch.
+\end{itemize}
+
+\textbf{Heapsort's Insight}: Can we use a data structure to "memorize" the comparison results?
+\begin{itemize}
+    \item Instead of scanning linearly, we organize elements so that finding the maximum is trivial ($O(1)$).
+    \item Removing the maximum and "repairing" the structure should be fast ($O(\lg n)$).
+    \item This turns the "Rebuild" process (Selection Sort) into a "Repair" process (Heapsort).
+\end{itemize}
+
+\subsection{The Heap Data Structure}
+
+\subsubsection{Definition}
+
+A \textbf{Heap} (specifically, a binary heap) is an array object that we view as a \textbf{nearly complete binary tree}.
+\begin{itemize}
+    \item \textbf{Structure}: The tree is completely filled on all levels except possibly the lowest, which is filled from the left up to a point.
+    \item \textbf{Implicit Representation}: We don't use pointers. The tree structure is implicit in the array indices.
+\end{itemize}
+
+For a node at index $i$:
+\begin{itemize}
+    \item $\text{Parent}(i) = \lfloor i/2 \rfloor$
+    \item $\text{Left}(i) = 2i$
+    \item $\text{Right}(i) = 2i + 1$
+\end{itemize}
+
+\subsubsection{The Heap Property}
+
+There are two kinds of heaps:
+\begin{enumerate}
+    \item \textbf{Max-Heap}: For every node $i$ other than the root:
+          \[ A[\text{Parent}(i)] \ge A[i] \]
+          The largest element is stored at the root. (Used for Heapsort).
+    \item \textbf{Min-Heap}: For every node $i$ other than the root:
+          \[ A[\text{Parent}(i)] \le A[i] \]
+          The smallest element is stored at the root. (Used for Priority Queues).
+\end{enumerate}
+
+\subsection{Core Operations}
+
+\subsubsection{Maintaining the Property: Max-Heapify}
+
+\textbf{Problem}: Suppose the binary trees rooted at $\text{Left}(i)$ and $\text{Right}(i)$ are max-heaps, but $A[i]$ might be smaller than its children, violating the max-heap property.
+\textbf{Solution}: Let the value at $A[i]$ "float down" until the property is restored.
+
+\begin{algorithm}
+    \caption{Max-Heapify}\label{alg:maxHeapify}
+    \begin{algorithmic}[1]
+        \Procedure{Max-Heapify}{$A, i$}
+        \State $l = \text{Left}(i)$
+        \State $r = \text{Right}(i)$
+        \State $largest = i$
+        \If{$l \le A.\text{heap-size}$ \textbf{and} $A[l] > A[largest]$}
+        \State $largest = l$
+        \EndIf
+        \If{$r \le A.\text{heap-size}$ \textbf{and} $A[r] > A[largest]$}
+        \State $largest = r$
+        \EndIf
+        \If{$largest \ne i$}
+        \State Exchange $A[i]$ with $A[largest]$
+        \State \Call{Max-Heapify}{$A, largest$} \Comment{Recursive call on the affected subtree}
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\noindent \textbf{Runtime}: The running time $T(n)$ depends on the height of the node $h$. In the worst case, we traverse from the root to a leaf.
+\[ T(n) = O(h) = O(\lg n) \]
+
+\subsubsection{Building the Heap: Build-Max-Heap}
+
+We can convert an arbitrary array $A[1 \dots n]$ into a max-heap by calling \texttt{Max-Heapify} in a bottom-up manner.
+\textbf{Observation}: The elements in the subarray $A[\lfloor n/2 \rfloor + 1 \dots n]$ are all leaves. Leaves are trivially max-heaps of size 1. We start from their parents and work up to the root.
+
+\begin{algorithm}
+    \caption{Build-Max-Heap}\label{alg:buildMaxHeap}
+    \begin{algorithmic}[1]
+        \Procedure{Build-Max-Heap}{$A$}
+        \State $A.\text{heap-size} = A.\text{length}$
+        \For{$i = \lfloor A.\text{length}/2 \rfloor$ \textbf{downto} $1$}
+        \State \Call{Max-Heapify}{$A, i$}
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\noindent \textbf{Runtime Analysis (Crucial)}:
+A naive bound is $O(n \lg n)$ because we call \texttt{Max-Heapify} $O(n)$ times. However, this is not tight.
+\begin{itemize}
+    \item Most nodes have small heights.
+    \item \texttt{Max-Heapify} takes time proportional to the height $h$ of the node.
+    \item A heap of size $n$ has at most $\lceil n/2^{h+1} \rceil$ nodes of height $h$.
+\end{itemize}
+Total work:
+\[
+    \sum_{h=0}^{\lfloor \lg n \rfloor} \left\lceil \frac{n}{2^{h+1}} \right\rceil O(h) = O\left( n \sum_{h=0}^{\lfloor \lg n \rfloor} \frac{h}{2^h} \right)
+\]
+Using the summation formula $\sum_{h=0}^{\infty} \frac{h}{2^h} = 2$, we get:
+\[ T(n) = O(n \cdot 2) = O(n) \]
+\textbf{Conclusion}: We can build a heap in \textbf{linear time}.
+
+\subsection{The Heapsort Algorithm}
+
+Now we combine the pieces.
+\begin{enumerate}
+    \item Build a max-heap from the input array. ($O(n)$)
+    \item The maximum element is at $A[1]$. Swap it with $A[n]$ (placing it in its final sorted position).
+    \item Decrement the heap size (discarding the sorted element).
+    \item The new root likely violates the heap property. Call \texttt{Max-Heapify} to fix it. ($O(\lg n)$)
+    \item Repeat until the heap size is 1.
+\end{enumerate}
+
+\begin{algorithm}
+    \caption{Heapsort}\label{alg:heapsort}
+    \begin{algorithmic}[1]
+        \Procedure{Heapsort}{$A$}
+        \State \Call{Build-Max-Heap}{$A$}
+        \For{$i = A.\text{length}$ \textbf{downto} $2$}
+        \State Exchange $A[1]$ with $A[i]$
+        \State $A.\text{heap-size} = A.\text{heap-size} - 1$
+        \State \Call{Max-Heapify}{$A, 1$}
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Analysis}
+\begin{itemize}
+    \item \textbf{Build-Heap}: $O(n)$.
+    \item \textbf{Loop}: Executes $n-1$ times.
+    \item \textbf{Heapify}: Takes $O(\lg n)$ each time.
+    \item \textbf{Total Runtime}: $O(n) + (n-1) O(\lg n) = O(n \lg n)$.
+\end{itemize}
+
+\subsubsection{Rebuild vs. Repair}
+\begin{itemize}
+    \item \textbf{Selection Sort} (Rebuild): After extracting the max, it sees the remaining $n-1$ elements as a chaotic bag. It spends $O(n)$ to find the next max.
+    \item \textbf{Heapsort} (Repair): After extracting the max, it knows the remaining structure is \textit{almost} a valid heap. Only one path from root to leaf is violated. It spends $O(\lg n)$ to repair this specific violation.
+\end{itemize}
+
+\subsection{Priority Queues}
+
+Heaps are the underlying data structure for efficient Priority Queues. A Max-Priority Queue supports:
+\begin{itemize}
+    \item \texttt{Insert(S, x)}: Insert element $x$ into set $S$. ($O(\lg n)$)
+    \item \texttt{Maximum(S)}: Return the element with the largest key. ($O(1)$)
+    \item \texttt{Extract-Max(S)}: Remove and return the element with the largest key. ($O(\lg n)$)
+    \item \texttt{Increase-Key(S, x, k)}: Increase the value of element $x$'s key to $k$. ($O(\lg n)$ - element floats up).
+\end{itemize}
+
+\subsection{Summary}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Algorithm} & \textbf{Time (Worst)} & \textbf{Time (Best)} & \textbf{Space} & \textbf{Stable?} \\ \hline
+        Insertion Sort     & $O(n^2)$              & $O(n)$               & $O(1)$         & Yes              \\ \hline
+        Merge Sort         & $O(n \lg n)$          & $O(n \lg n)$         & $O(n)$         & Yes              \\ \hline
+        Heapsort           & $O(n \lg n)$          & $O(n \lg n)$         & $O(1)$         & No               \\ \hline
+    \end{tabular}
+    \caption{Heapsort combines the efficiency of Merge Sort with the space efficiency of Insertion Sort.}
+\end{table}
+
+\clearpage
+
+
+\section{Quicksort}
+
+\subsection{The Divide-and-Conquer Paradigm Revisited}
+
+Quicksort is a sorting algorithm that fits within the divide-and-conquer paradigm, but it represents a philosophical mirror image to Merge Sort.
+
+\subsubsection{Structural Comparison}
+\begin{itemize}
+    \item \textbf{Merge Sort}:
+          \begin{itemize}
+              \item \textbf{Divide}: Trivial. Simply slice the indices in half ($O(1)$).
+              \item \textbf{Conquer}: Recursively sort both halves.
+              \item \textbf{Combine}: \textbf{Hard}. The heavy lifting is done here, merging two sorted lists ($O(n)$).
+          \end{itemize}
+    \item \textbf{Quicksort}:
+          \begin{itemize}
+              \item \textbf{Divide}: \textbf{Hard}. The heavy lifting is done here via \texttt{Partition}. We rearrange elements relative to a pivot ($O(n)$).
+              \item \textbf{Conquer}: Recursively sort the subarrays defined by the partition.
+              \item \textbf{Combine}: Trivial. No work is needed; the array is sorted in place ($O(1)$).
+          \end{itemize}
+\end{itemize}
+
+\subsection{Partitioning: The Core Mechanism}
+
+The heart of Quicksort is the \texttt{Partition} procedure. It selects a \textbf{pivot} element and rearranges the array so that:
+\begin{itemize}
+    \item Elements smaller than or equal to the pivot are on the left.
+    \item Elements larger than the pivot are on the right.
+    \item The pivot is placed in its correct sorted position.
+\end{itemize}
+
+\subsubsection{The Lomuto Partition Scheme}
+We maintain two pointers to define dynamic regions in the array:
+\begin{itemize}
+    \item \textbf{$i$}: The boundary of the "Small Region" (elements $\le x$).
+    \item \textbf{$j$}: The scanning pointer (current element being inspected).
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Partition (A, p, r)}\label{alg:partition}
+    \begin{algorithmic}[1]
+        \Procedure{Partition}{$A, p, r$}
+        \State $x = A[r]$ \Comment{Select the last element as pivot}
+        \State $i = p - 1$ \Comment{Small region is initially empty}
+        \For{$j = p$ \textbf{to} $r-1$} \Comment{Scan the array}
+        \If{$A[j] \le x$}
+        \State $i = i + 1$ \Comment{Expand the small region}
+        \State Exchange $A[i]$ with $A[j]$ \Comment{Swap element into the small region}
+        \EndIf
+        \EndFor
+        \State Exchange $A[i+1]$ with $A[r]$ \Comment{Place pivot between regions}
+        \State \Return $i + 1$ \Comment{Return pivot index}
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Trace Example}
+Let's trace the execution on the array $A = [2, 8, 7, 1, 3, 5, 6, 4]$.
+\begin{itemize}
+    \item \textbf{Setup}: Pivot $x=4$. $i$ starts at index 0 (before array).
+    \item \textbf{j=1 (2)}: $2 \le 4$. $i \to 1$. Swap $A[1] \leftrightarrow A[1]$. Array: $[2, 8, 7, \dots]$.
+    \item \textbf{j=2 (8)}: $8 > 4$. No swap.
+    \item \textbf{j=3 (7)}: $7 > 4$. No swap.
+    \item \textbf{j=4 (1)}: $1 \le 4$. $i \to 2$. Swap $A[2] (8) \leftrightarrow A[4] (1)$. Array: $[2, 1, 7, 8, 3, \dots]$.
+    \item \textbf{j=5 (3)}: $3 \le 4$. $i \to 3$. Swap $A[3] (7) \leftrightarrow A[5] (3)$. Array: $[2, 1, 3, 8, 7, \dots]$.
+    \item \textbf{End}: Swap pivot $A[8] (4)$ with $A[i+1] (A[4]=8)$.
+    \item \textbf{Result}: $[2, 1, 3, \mathbf{4}, 7, 5, 6, 8]$.
+\end{itemize}
+Observe: Left of 4 are $\{2, 1, 3\}$ (all $\le 4$). Right of 4 are $\{7, 5, 6, 8\}$ (all $> 4$).
+
+\subsubsection{Loop Invariant Visualization}
+At the start of each iteration $j$:
+\begin{enumerate}
+    \item $A[p \dots i] \le x$ (Known Small)
+    \item $A[i+1 \dots j-1] > x$ (Known Large)
+    \item $A[j \dots r-1]$ (Unknown)
+    \item $A[r] = x$ (Pivot)
+\end{enumerate}
+
+\subsection{Rigorous Runtime Analysis}
+
+\subsubsection{Worst-Case: The Unbalanced Split}
+The worst case occurs when the partition routine produces one subproblem with $n-1$ elements and one with 0 elements.
+\begin{itemize}
+    \item \textbf{Scenario}: Input is already sorted ($1, 2, \dots, n$) or reverse sorted. Pivot (last element) is always an extreme value.
+    \item \textbf{Recurrence}: $T(n) = T(n-1) + T(0) + \Theta(n) = T(n-1) + cn$.
+    \item \textbf{Summation}: $T(n) = \sum_{k=1}^n ck = c \frac{n(n+1)}{2} = \Theta(n^2)$.
+    \item \textbf{Visual}: The recursion tree is a "linked list" of height $n$.
+\end{itemize}
+
+\subsubsection{Best-Case: The Perfect Split}
+\begin{itemize}
+    \item \textbf{Scenario}: Pivot is always the median.
+    \item \textbf{Recurrence}: $T(n) = 2T(n/2) + cn$.
+    \item \textbf{Solution}: $\Theta(n \lg n)$ (Master Theorem Case 2).
+\end{itemize}
+
+\subsubsection{Average-Case: The Intuition of Balance}
+Even a 9-to-1 split yields $O(n \lg n)$.
+\[ T(n) = T(n/10) + T(9n/10) + cn \]
+The tree height is $\log_{10/9} n \approx \lg n$. Since the work at each level is $\le cn$, the total is $O(n \lg n)$.
+
+\subsubsection{Average-Case: Mathematical Proof}
+Assume all permutations are equally likely. The pivot rank is uniformly distributed in $[0, n-1]$.
+\[
+    T(n) = \frac{1}{n} \sum_{k=0}^{n-1} (T(k) + T(n-k-1)) + \Theta(n)
+\]
+By symmetry:
+\[
+    T(n) = \frac{2}{n} \sum_{k=0}^{n-1} T(k) + \Theta(n)
+\]
+We suspect $T(n) \le an \lg n$. Substituting this into the sum:
+\[
+    \sum_{k=0}^{n-1} k \lg k \le \int_2^n x \ln x \, dx \approx \frac{n^2 \ln n}{2} - \frac{n^2}{4}
+\]
+Substituting back into the expression for $T(n)$ confirms the $O(n \lg n)$ bound.
+
+\subsection{Improvements and Variants}
+
+\subsubsection{Randomized Quicksort}
+\textbf{Problem}: A fixed pivot (e.g., $A[r]$) is vulnerable to specific input patterns (like sorted arrays).
+\textbf{Solution}: Pick a pivot index randomly from $[p, r]$. Swap $A[\text{random}]$ with $A[r]$ before partitioning.
+\begin{itemize}
+    \item \textbf{Effect}: The worst case is no longer determined by the input order, but by the random number generator (extremely unlikely).
+    \item \textbf{Expected Time}: $\Theta(n \lg n)$ for \textit{any} input.
+\end{itemize}
+
+\subsubsection{Median-of-3 Partitioning}
+Approximation of the true median. Select the pivot as the median of:
+\[ \{ A[p], A[(p+r)/2], A[r] \} \]
+This reduces the probability of bad splits and guards against sorted inputs without full randomization overhead.
+
+\subsubsection{Handling Duplicates}
+Standard Quicksort can degrade to $O(n^2)$ if all elements are equal.
+\textbf{Improvement}: 3-Way Partitioning (Dutch National Flag problem).
+Split array into: $\{ < x \}, \{ = x \}, \{ > x \}$.
+Recursion only continues on the $< x$ and $> x$ parts.
+
+\subsubsection{Dual-Pivot Quicksort}
+(Used in Java's \texttt{Arrays.sort} for primitives).
+Uses \textbf{two pivots} ($p_1, p_2$) to split the array into three segments:
+\[ \{ < p_1 \}, \{ p_1 \le \dots \le p_2 \}, \{ > p_2 \} \]
+This reduces the height of the recursion tree and performs fewer memory accesses on average.
+
+\clearpage
+
+
+\section{Randomisation \& Lower Bounds}
+
+\subsection{Randomisation in Algorithm Design}
+
+\subsubsection{The Motivation}
+In previous lectures, we saw that QuickSort is efficient on average but suffers from a $\Theta(n^2)$ worst-case scenario. This worst case is triggered by specific input patterns (e.g., sorted or reverse-sorted arrays) when using a deterministic pivot (like the first or last element).
+
+\textbf{The Problem}: A deterministic algorithm is vulnerable. A malicious adversary can construct an input that always triggers the worst case.
+
+\textbf{The Solution}: Introduce randomness. Instead of assuming the input is random (Average Case Analysis), we make the algorithm itself random (Randomized Algorithm).
+\begin{itemize}
+    \item \textbf{Goal}: Ensure that the algorithm runs efficiently for \textit{all} inputs.
+    \item \textbf{Philosophy}: By picking pivots randomly, we shift the dependency. The runtime no longer depends on the input order but on the sequence of random choices. No specific input can force the worst-case behavior.
+\end{itemize}
+
+\subsubsection{Randomised QuickSort}
+The only change from standard QuickSort is the pivot selection. We choose a pivot uniformly at random from the subarray $A[p \dots r]$.
+
+\begin{algorithm}
+    \caption{Randomised Partition}\label{alg:randPartition}
+    \begin{algorithmic}[1]
+        \Procedure{Randomised-Partition}{$A, p, r$}
+        \State $i = \Call{Random}{p, r}$ \Comment{Pick $i \in [p, r]$ uniformly}
+        \State Exchange $A[r]$ with $A[i]$ \Comment{Move random pivot to the end}
+        \State \Return \Call{Partition}{$A, p, r$} \Comment{Call standard partition}
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Randomised QuickSort}\label{alg:randQuickSort}
+    \begin{algorithmic}[1]
+        \Procedure{Randomised-QuickSort}{$A, p, r$}
+        \If{$p < r$}
+        \State $q = \Call{Randomised-Partition}{A, p, r}$
+        \State \Call{Randomised-QuickSort}{$A, p, q-1$}
+        \State \Call{Randomised-QuickSort}{$A, q+1, r$}
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Analysis of Expected Runtime}
+
+For a randomized algorithm, we analyze the \textbf{Expected Running Time} $E[T(n)]$. We count the number of comparisons, as this dominates the runtime.
+
+\subsubsection{Setup: Indicator Random Variables}
+Let $X$ be the total number of comparisons.
+Let the sorted elements of the array be $z_1 < z_2 < \dots < z_n$.
+We define an indicator random variable $X_{ij}$ for any pair $i < j$:
+\[
+    X_{ij} = \mathbb{I}\{ z_i \text{ is compared to } z_j \} = \begin{cases}
+        1 & \text{if } z_i \text{ and } z_j \text{ are compared} \\
+        0 & \text{otherwise}
+    \end{cases}
+\]
+The total number of comparisons is the sum of all pairs:
+\[ X = \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} X_{ij} \]
+
+\subsubsection{Linearity of Expectation}
+A powerful property of expectation is that the expectation of a sum is the sum of expectations, \textit{even if the variables are dependent}.
+\[ E[X] = E\left[ \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} X_{ij} \right] = \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} E[X_{ij}] \]
+Since $E[X_{ij}] = \Pr(z_i \text{ is compared to } z_j)$, we just need to find this probability.
+
+\subsubsection{The Probability of Comparison}
+\textbf{Critical Insight}: When are two elements $z_i$ and $z_j$ compared?
+\begin{itemize}
+    \item Elements are compared \textbf{only} when one of them is chosen as a pivot.
+    \item Once a pivot $x$ is chosen, all other elements are compared to $x$ and then separated into different sets ($<x$ and $>x$).
+    \item Consider the set of elements $Z_{ij} = \{z_i, z_{i+1}, \dots, z_j\}$.
+    \item If any element $x \in Z_{ij}$ such that $z_i < x < z_j$ is chosen as a pivot \textit{before} $z_i$ or $z_j$, then $z_i$ and $z_j$ will be separated into different subproblems and \textbf{never compared}.
+    \item Thus, $z_i$ and $z_j$ are compared if and only if the \textit{first} element selected as a pivot from the set $Z_{ij}$ is either $z_i$ or $z_j$.
+\end{itemize}
+
+The set $Z_{ij}$ has $j - i + 1$ elements. Since pivots are chosen uniformly at random, every element in $Z_{ij}$ has an equal chance ($1 / (j-i+1)$) of being the first one picked.
+There are 2 favorable outcomes ($z_i$ or $z_j$).
+\[ \Pr(z_i \text{ is compared to } z_j) = \frac{2}{j - i + 1} \]
+
+\subsubsection{Summation and Result}
+Substituting this back into the expectation sum:
+\[ E[X] = \sum_{i=1}^{n-1} \sum_{j=i+1}^{n} \frac{2}{j - i + 1} \]
+Let $k = j - i$ (the distance between elements). As $j$ goes from $i+1$ to $n$, $k$ goes from $1$ to $n-i$.
+\[ E[X] = \sum_{i=1}^{n-1} \sum_{k=1}^{n-i} \frac{2}{k+1} < \sum_{i=1}^{n-1} \sum_{k=1}^{n} \frac{2}{k} \]
+The inner sum is the Harmonic series $H_n \approx \ln n$.
+\[ E[X] < \sum_{i=1}^{n-1} 2 \ln n = 2(n-1) \ln n = O(n \log n) \]
+\textbf{Conclusion}: The expected runtime of Randomized QuickSort is $O(n \log n)$.
+
+\subsection{Lower Bounds for Comparison Sorts}
+
+We have seen several algorithms (MergeSort, HeapSort) with $O(n \log n)$ worst-case time. Can we do better? Can we sort in $O(n)$?
+
+\subsubsection{The Comparison Model}
+We restrict our analysis to \textbf{Comparison Sorts}: algorithms that only gain information about the input sequence by comparing pairs of elements ($a_i < a_j$, etc.). We cannot inspect the values themselves or use them as array indices.
+
+\subsubsection{Decision Trees}
+Any comparison sort can be modeled abstractly as a \textbf{Decision Tree}.
+\begin{itemize}
+    \item \textbf{Root}: The first comparison made by the algorithm.
+    \item \textbf{Internal Nodes}: Comparisons $a_i : a_j$.
+    \item \textbf{Edges}: The result of the comparison (Left: $\le$, Right: $>$).
+    \item \textbf{Leaves}: A permutation of the input elements (the final sorted order).
+\end{itemize}
+An execution of the algorithm corresponds to a path from the root to a leaf. The length of the path is the number of comparisons. The \textbf{height} of the tree is the worst-case number of comparisons.
+
+
+
+\subsubsection{The Lower Bound Theorem}
+\begin{theorem}
+    Any comparison sort algorithm requires $\Omega(n \log n)$ comparisons in the worst case.
+\end{theorem}
+\begin{proof}
+    Let the decision tree have height $h$ and $L$ leaves.
+    \begin{enumerate}
+        \item \textbf{Necessary Leaves}: There are $n!$ possible permutations of $n$ distinct elements. For the algorithm to be correct, it must be able to produce \textit{any} of these $n!$ permutations as output. Thus, the tree must have at least $n!$ reachable leaves:
+              \[ L \ge n! \]
+        \item \textbf{Binary Tree Property}: A binary tree of height $h$ has at most $2^h$ leaves.
+              \[ L \le 2^h \]
+        \item \textbf{Combining}:
+              \[ 2^h \ge n! \]
+              Taking logarithms base 2:
+              \[ h \ge \lg(n!) \]
+        \item \textbf{Stirling's Approximation}: For large $n$, $n! \approx \sqrt{2\pi n} (\frac{n}{e})^n$.
+              \[ \lg(n!) \approx \lg\left(\left(\frac{n}{e}\right)^n\right) = n \lg n - n \lg e = \Theta(n \log n) \]
+        \item \textbf{Conclusion}: $h = \Omega(n \log n)$.
+    \end{enumerate}
+\end{proof}
+
+\subsection{Summary of Sorting Algorithms}
+
+We can now classify sorting algorithms based on this lower bound.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Algorithm} & \textbf{Best Time} & \textbf{Avg Time} & \textbf{Worst Time} & \textbf{Space} \\ \hline
+        Insertion Sort     & $O(n)$             & $O(n^2)$          & $O(n^2)$            & $O(1)$         \\ \hline
+        Merge Sort         & $O(n \lg n)$       & $O(n \lg n)$      & $O(n \lg n)$        & $O(n)$         \\ \hline
+        Heap Sort          & $O(n \lg n)$       & $O(n \lg n)$      & $O(n \lg n)$        & $O(1)$         \\ \hline
+        Quick Sort         & $O(n \lg n)$       & $O(n \lg n)$      & $O(n^2)$            & $O(\lg n)$     \\ \hline
+        Rand. Quick Sort   & $O(n \lg n)$       & $O(n \lg n)$      & $O(n^2)$            & $O(\lg n)$     \\ \hline
+    \end{tabular}
+    \caption{Comparison of Sorting Algorithms. Note: Heap Sort and Merge Sort are asymptotically optimal comparison sorts.}
+\end{table}
+
+\textbf{Note on Linear Time}: The $\Omega(n \log n)$ bound applies only to \textit{comparison} sorts. If we know more about the input (e.g., integers in a small range), we can break this barrier using algorithms like Counting Sort or Radix Sort (next section).
+
+\clearpage
+
+
+\section{Sorting in Linear Time}
+
+\subsection{Breaking the Speed Limit}
+
+\subsubsection{The Comparison Bottleneck}
+In previous lectures, we established a fundamental limit: \textbf{Any comparison-based sorting algorithm requires $\Omega(n \log n)$ time in the worst case.} This is a mathematical certainty derived from the height of the decision tree.
+
+\subsubsection{The Way Out}
+How can we sort faster than $O(n \log n)$? We must change the rules of the game.
+\begin{itemize}
+    \item \textbf{Stop Comparing}: Do not ask "Is $A[i] < A[j]$?".
+    \item \textbf{Start Inspecting}: Use the actual numerical value of the keys to determine their position directly.
+    \item \textbf{Constraint}: These algorithms assume the input comes from a restricted domain (e.g., small integers).
+\end{itemize}
+
+\subsection{Counting Sort}
+
+Counting Sort is the foundational algorithm for linear-time sorting. It relies on the assumption that input elements are integers in the range $\{0, \dots, k\}$.
+
+\subsubsection{The Algorithm logic}
+The core idea is determining, for each input element $x$, exactly how many elements are less than or equal to $x$. If there are 17 elements smaller than $x$, then $x$ belongs at position 18.
+
+\begin{algorithm}
+    \caption{Counting Sort}\label{alg:countingSort}
+    \begin{algorithmic}[1]
+        \Procedure{Counting-Sort}{$A, B, k$}
+        \State Let $C[0 \dots k]$ be a new array initialized to 0
+        \State \Comment{Step 1: Frequency Count (Histogram)}
+        \For{$j = 1$ \textbf{to} $A.\text{length}$}
+        \State $C[A[j]] = C[A[j]] + 1$
+        \EndFor
+        \State \Comment{Step 2: Cumulative Sums (Prefix Sums)}
+        \For{$i = 1$ \textbf{to} $k$}
+        \State $C[i] = C[i] + C[i-1]$
+        \EndFor
+        \State \Comment{$C[i]$ now contains the number of elements $\le i$}
+        \State \Comment{Step 3: Placement (Reverse Traversal)}
+        \For{$j = A.\text{length}$ \textbf{downto} 1}
+        \State $B[C[A[j]]] = A[j]$ \Comment{Place element at its correct sorted position}
+        \State $C[A[j]] = C[A[j]] - 1$ \Comment{Decrement count for the next instance}
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Why Traverse Backwards? (Stability)}
+Notice the loop in Step 3 goes \textbf{downto} 1. This is crucial for \textbf{Stability}.
+\begin{itemize}
+    \item Suppose the input $A$ contains two copies of value 3: $3_a$ at index 2 and $3_b$ at index 5.
+    \item The algorithm encounters $3_b$ first. It places $3_b$ at position $C[3]$ and decrements $C[3]$.
+    \item Later, it encounters $3_a$. It places $3_a$ at position $C[3]$ (which is now one less).
+    \item Result: $3_b$ appears after $3_a$ in the output, preserving their original relative order.
+\end{itemize}
+
+\subsubsection{Complexity Analysis}
+\begin{itemize}
+    \item \textbf{Time}: $\Theta(k)$ (init) + $\Theta(n)$ (count) + $\Theta(k)$ (sum) + $\Theta(n)$ (place) = $\Theta(n + k)$.
+    \item \textbf{Space}: $\Theta(n + k)$ for arrays $B$ and $C$.
+    \item \textbf{Implication}: If $k = O(n)$ (the range is linear in the number of elements), Counting Sort runs in \textbf{linear time} $\Theta(n)$.
+\end{itemize}
+
+\subsection{Radix Sort}
+
+Counting Sort is fast but impractical for large ranges (e.g., sorting 32-bit integers would require $k=2^{32}$ memory). Radix Sort solves this by sorting digit-by-digit.
+
+\subsubsection{The Algorithm (LSD Approach)}
+We sort by the Least Significant Digit (LSD) first, then the next digit, and so on, up to the Most Significant Digit (MSD).
+\textbf{Crucial Requirement}: The sort used for each digit must be \textbf{stable}.
+
+\begin{algorithm}
+    \caption{Radix Sort}\label{alg:radixSort}
+    \begin{algorithmic}[1]
+        \Procedure{Radix-Sort}{$A, d$}
+        \For{$i = 1$ \textbf{to} $d$}
+        \State Use a \textbf{stable sort} to sort array $A$ on digit $i$
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Why LSD works (Intuition)}
+Why start from the right?
+\begin{itemize}
+    \item After sorting on digit 1, the array is sorted by the last digit.
+    \item When we sort on digit 2, stability ensures that if two numbers have the same 2nd digit, their order determined by the 1st digit is preserved.
+    \item \textbf{Inductive Hypothesis}: After sorting on digit $i$, the array is sorted according to the value of the number formed by the last $i$ digits.
+\end{itemize}
+
+\subsubsection{Trace Example}
+Sorting: $[329, 457, 657, 839, 436, 720, 355]$
+\begin{enumerate}
+    \item \textbf{Sort on ones digit}:
+          $72\mathbf{0}, 35\mathbf{5}, 43\mathbf{6}, 45\mathbf{7}, 65\mathbf{7}, 32\mathbf{9}, 83\mathbf{9}$
+          (Note: 457 comes before 657 because it appeared first; 329 before 839).
+    \item \textbf{Sort on tens digit}:
+          $7\mathbf{2}0, 3\mathbf{2}9, 4\mathbf{3}6, 8\mathbf{3}9, 3\mathbf{5}5, 4\mathbf{5}7, 6\mathbf{5}7$
+    \item \textbf{Sort on hundreds digit}:
+          $\mathbf{3}29, \mathbf{3}55, \mathbf{4}36, \mathbf{4}57, \mathbf{6}57, \mathbf{7}20, \mathbf{8}39$
+          Sorted!
+\end{enumerate}
+
+\subsection{Advanced Analysis: Breaking the $O(n^3)$ Range}
+
+Consider the problem: Sort $n$ integers in the range $0$ to $n^3 - 1$.
+
+\subsubsection{Attempt 1: Comparison Sort}
+Standard Merge/Quick Sort takes $\Theta(n \log n)$. Good, but not linear.
+
+\subsubsection{Attempt 2: Counting Sort}
+The range is $k = n^3$.
+Runtime: $\Theta(n + k) = \Theta(n + n^3) = \Theta(n^3)$. This is terrible.
+
+\subsubsection{Attempt 3: Radix Sort (Base 10)}
+Range $M = n^3$. Number of digits $d = \log_{10} M = 3 \log_{10} n$.
+Runtime: $\Theta(d \cdot n) = \Theta(n \log n)$. Still not linear.
+
+\subsubsection{Attempt 4: Radix Sort (Base $n$)}
+Treat the numbers as being written in \textbf{base $n$}.
+\begin{itemize}
+    \item The "digits" now range from $0$ to $n-1$. So $k = n$.
+    \item How many digits $d$?
+          \[ d = \log_n (n^3 - 1) \approx \log_n (n^3) = 3 \]
+          So we only have 3 "digits".
+    \item \textbf{Runtime}:
+          \[ T(n) = \Theta(d(n + k)) = \Theta(3(n + n)) = \Theta(6n) = \Theta(n) \]
+\end{itemize}
+\textbf{Conclusion}: By changing the base to $n$, we can sort integers up to $n^k$ (for any constant $k$) in linear time.
+
+\subsection{Summary Table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|l|}
+        \hline
+        \textbf{Algorithm} & \textbf{Time}      & \textbf{Space} & \textbf{Constraints}                   \\ \hline
+        Counting Sort      & $\Theta(n+k)$      & $\Theta(n+k)$  & Efficient when $k = O(n)$.             \\ \hline
+        Radix Sort         & $\Theta(d(n+k))$   & $\Theta(n+k)$  & Efficient when numbers have fixed $d$. \\ \hline
+        Comparison Sorts   & $\Omega(n \log n)$ & Varies         & General purpose.                       \\ \hline
+    \end{tabular}
+    \caption{Comparison of Linear-Time vs General Sorts}
+\end{table}
+
+\clearpage
+
+
+\section{Elementary Data Structures}
+
+\subsection{Foundations: The Limitations of Arrays}
+
+\subsubsection{Data Structures vs. Raw Memory}
+A \textbf{Data Structure} is not merely a container; it is a strategic way of organizing a \textbf{finite dynamic set} of elements to optimize specific operations.
+Elements usually consist of:
+\begin{itemize}
+    \item \textbf{Key}: The identifier (used for sorting/searching).
+    \item \textbf{Satellite Data}: The payload.
+    \item \textbf{Attributes}: Meta-data maintained by the structure (e.g., \texttt{next}, \texttt{top}, \texttt{head}).
+\end{itemize}
+
+\subsubsection{The Array Bottleneck}
+Why do we need anything other than arrays? Arrays map indices to memory addresses directly ($O(1)$ access), but they are \textbf{rigid}.
+\begin{itemize}
+    \item \textbf{Unsorted Array}:
+          \begin{itemize}
+              \item \textbf{Insertion}: $O(1)$ (append to end).
+              \item \textbf{Search}: $\Theta(n)$ (linear scan).
+          \end{itemize}
+    \item \textbf{Sorted Array}:
+          \begin{itemize}
+              \item \textbf{Search}: $O(\log n)$ (Binary Search).
+              \item \textbf{Insertion/Deletion}: $\Theta(n)$. \textbf{Why?} Because elements are stored contiguously in memory. Inserting $x$ at index $i$ requires shifting elements $i \dots n$ one position to the right.
+          \end{itemize}
+\end{itemize}
+\textbf{Conclusion}: Arrays cannot simultaneously offer fast search \textbf{and} fast dynamic updates.
+
+\subsection{Stacks (LIFO)}
+
+\subsubsection{Philosophy}
+A \textbf{Stack} enforces a \textbf{Last-In, First-Out (LIFO)} policy. By restricting access \textbf{strictly} to the "top" element, we eliminate the need for shifting. Thus, operations become $O(1)$.
+
+\subsubsection{Array Implementation}
+We can simulate a stack using an array $S$ and a pointer $S.top$.
+\begin{itemize}
+    \item \textbf{Empty}: $S.top = 0$.
+    \item \textbf{Push}: Increment $top$, then write. (Check for Overflow).
+    \item \textbf{Pop}: Read, then decrement $top$. (Check for Underflow).
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Stack Operations}\label{alg:stack}
+    \begin{algorithmic}[1]
+        \Procedure{Push}{$S, x$}
+        \If{$S.top == S.size$}
+        \State \textbf{Error} "Overflow"
+        \Else
+        \State $S.top = S.top + 1$
+        \State $S[S.top] = x$
+        \EndIf
+        \EndProcedure
+        \Statex
+        \Procedure{Pop}{$S$}
+        \If{\Call{Stack-Empty}{$S$}}
+        \State \textbf{Error} "Underflow"
+        \Else
+        \State $S.top = S.top - 1$
+        \State \textbf{Return} $S[S.top + 1]$
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Algorithmic Applications}
+Stacks are the natural data structure for processing \textbf{nested} or \textbf{recursive} structures.
+
+\textbf{1. Bracket Balance Checking}:
+Problem: Is `{[()][()]}` valid?
+\begin{itemize}
+    \item \textbf{Algorithm}: Iterate through the string.
+    \item If \textbf{Opening} (`(`, `[`, `{`): \textbf{Push} onto stack.
+    \item If \textbf{Closing} (`)`, `]`, `}`): \textbf{Pop}. Check if the popped element matches the current closing bracket.
+    \item \textbf{Result}: Valid iff stack is empty at the end and no mismatches occurred.
+\end{itemize}
+
+\textbf{2. Postfix Expression Evaluation}:
+Infix: $(9+3) * (4*2)$ $\rightarrow$ Postfix: $9 \ 3 \ + \ 4 \ 2 \ * \ *$
+\begin{itemize}
+    \item \textbf{Algorithm}:
+          \begin{itemize}
+              \item Operand ($9, 3$): \textbf{Push}.
+              \item Operator ($+$): \textbf{Pop} $b$ ($3$), \textbf{Pop} $a$ ($9$). Compute $a+b$. \textbf{Push} result ($12$).
+          \end{itemize}
+    \item \textbf{Advantage}: Eliminates need for parentheses and operator precedence rules.
+\end{itemize}
+
+\subsection{Queues (FIFO)}
+
+\subsubsection{Philosophy}
+A \textbf{Queue} enforces a \textbf{First-In, First-Out (FIFO)} policy. It models fairness (lines, buffers).
+\begin{itemize}
+    \item \textbf{Enqueue}: Add to \textbf{Tail}.
+    \item \textbf{Dequeue}: Remove from \textbf{Head}.
+\end{itemize}
+
+\subsubsection{Circular Buffer Implementation}
+To implement a queue in a fixed array without shifting elements after every dequeue, we use \textbf{modular arithmetic} to wrap indices around.
+\begin{itemize}
+    \item $Q.head$: Index of the element to dequeue.
+    \item $Q.tail$: Index of the \textbf{next empty slot}.
+    \item \textbf{Full Condition}: $(Q.tail + 1) == Q.head$ (conceptually).
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Queue Operations}\label{alg:queue}
+    \begin{algorithmic}[1]
+        \Procedure{Enqueue}{$Q, x$}
+        \State $Q[Q.tail] = x$
+        \If{$Q.tail == Q.size$} $Q.tail = 1$ \Comment{Wrap around}
+        \Else \ $Q.tail = Q.tail + 1$
+        \EndIf
+        \EndProcedure
+        \Statex
+        \Procedure{Dequeue}{$Q$}
+        \State $x = Q[Q.head]$
+        \If{$Q.head == Q.size$} $Q.head = 1$ \Comment{Wrap around}
+        \Else \ $Q.head = Q.head + 1$
+        \EndIf
+        \State \textbf{Return} $x$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\textbf{Runtime}: $O(1)$ for both.
+
+\subsection{Priority Queues}
+
+Stacks and Queues are determined by \textit{time}. \textbf{Priority Queues} are determined by \textit{importance} (Key).
+\begin{itemize}
+    \item \textbf{Operations}: \texttt{Insert}, \texttt{Extract-Max}.
+    \item \textbf{Implementation}:
+          \begin{itemize}
+              \item Sorted Array: Extract-Max is $O(1)$, but Insert is $O(n)$.
+              \item \textbf{Heap}: Both operations are $O(\log n)$. (Covered in detail in Heapsort lecture).
+          \end{itemize}
+\end{itemize}
+
+\subsection{Linked Lists}
+
+\subsubsection{Breaking the Contiguity Constraint}
+Linked Lists decouple logical order from physical memory order.
+\begin{itemize}
+    \item \textbf{Pros}: Dynamic size; $O(1)$ insertion/deletion (if location is known).
+    \item \textbf{Cons}: No random access; $\Theta(n)$ search; Extra memory for pointers.
+\end{itemize}
+
+\subsubsection{Operations Analysis}
+
+\textbf{1. Searching}:
+Must scan sequentially from \texttt{head}.
+\[ T(n) = \Theta(n) \]
+
+\textbf{2. Insertion (at front)}:
+\begin{itemize}
+    \item New node points to old head.
+    \item Old head's \texttt{prev} points to new node.
+    \item Update \texttt{head} pointer.
+\end{itemize}
+\[ T(n) = O(1) \]
+
+\textbf{3. Deletion}:
+This operation highlights the difference between "Knowing the Key" and "Knowing the Node".
+\begin{itemize}
+    \item \textbf{Case A: Given Key $k$}:
+          We must first \texttt{Search} for $k$ ($\Theta(n)$), then delete. Total: $\Theta(n)$.
+    \item \textbf{Case B: Given Pointer $x$}:
+          We simply rewire the pointers of $x.prev$ and $x.next$ to bypass $x$.
+          \[ x.prev.next = x.next \]
+          \[ x.next.prev = x.prev \]
+          Total: $O(1)$.
+\end{itemize}
+
+\subsection{Summary of Complexities}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|l|}
+        \hline
+        \textbf{Data Structure} & \textbf{Insert} & \textbf{Delete} & \textbf{Search} & \textbf{Constraint} \\ \hline
+        Array (Unsorted)        & $O(1)$          & $O(1)^*$        & $\Theta(n)$     & Static Size         \\ \hline
+        Array (Sorted)          & $\Theta(n)$     & $\Theta(n)$     & $O(\log n)$     & Static Size         \\ \hline
+        Stack                   & $O(1)$          & $O(1)$          & -               & LIFO Only           \\ \hline
+        Queue                   & $O(1)$          & $O(1)$          & -               & FIFO Only           \\ \hline
+        Linked List             & $O(1)$          & $O(1)^{**}$     & $\Theta(n)$     & Sequential Access   \\ \hline
+    \end{tabular}
+    \caption{*Delete by swapping with last element. **Delete given pointer to node.}
+\end{table}
+
+\clearpage
+
+
+\section{Binary Search Trees}
+
+\subsection{Introduction to Trees}
+
+\subsubsection{Definitions and Terminology}
+
+\begin{definition}[Binary Tree]\index{Binary Tree}
+    A \textbf{binary tree} is a structure defined recursively. It is a finite set of nodes that is either:
+    \begin{itemize}
+        \item Empty (contains no nodes).
+        \item Consists of a \textbf{root} node and two disjoint binary trees called the \textbf{left subtree} and the \textbf{right subtree}.
+    \end{itemize}
+\end{definition}
+
+Key terminology:
+\begin{itemize}
+    \item \textbf{Leaf}: A node with no children (left and right subtrees are empty).
+    \item \textbf{Height of a node}: The length (number of edges) of the longest simple path from the node to a leaf.
+    \item \textbf{Height of a tree}: The height of the root.
+    \item \textbf{Depth of a node}: The length of the path from the root to the node.
+    \item \textbf{Full Binary Tree}: A binary tree in which every node is either a leaf or has exactly two children.
+\end{itemize}
+
+\subsubsection{Inductive Proofs on Trees}
+Because trees are defined recursively, they are well-suited for proofs by induction.
+
+\begin{theorem}
+    A binary tree of height $h$ has at most $2^h$ leaves.
+\end{theorem}
+\begin{proof}
+    We proceed by induction on the height $h$.
+    \begin{itemize}
+        \item \textbf{Base Case ($h=0$)}: The tree consists of a single root node. It has $1$ leaf. Since $2^0 = 1$, the base case holds.
+        \item \textbf{Inductive Hypothesis}: Assume that for any binary tree of height $h-1$, the number of leaves is at most $2^{h-1}$.
+        \item \textbf{Inductive Step}: Consider a tree $T$ of height $h$. Its root has two subtrees (left and right), each with height at most $h-1$.
+              Let $L(T)$ be the number of leaves. $L(T) = L(T_{left}) + L(T_{right})$.
+              By the hypothesis, $L(T_{left}) \le 2^{h-1}$ and $L(T_{right}) \le 2^{h-1}$.
+              Thus, $L(T) \le 2^{h-1} + 2^{h-1} = 2 \cdot 2^{h-1} = 2^h$.
+    \end{itemize}
+\end{proof}
+
+\subsection{Binary Search Trees (BST)}
+
+\begin{definition}[Binary Search Tree Property]\index{BST Property}
+    Let $x$ be a node in a binary search tree.
+    \begin{itemize}
+        \item If $y$ is a node in the \textbf{left} subtree of $x$, then $y.key \le x.key$.
+        \item If $y$ is a node in the \textbf{right} subtree of $x$, then $y.key \ge x.key$.
+    \end{itemize}
+\end{definition}
+
+This property allows us to print all keys in sorted order using a simple recursive algorithm.
+
+\subsubsection{Tree Walks}
+
+\begin{algorithm}
+    \caption{Inorder Tree Walk}\label{alg:inorder}
+    \begin{algorithmic}[1]
+        \Procedure{Inorder-Walk}{$x$}
+        \If{$x \ne \text{NIL}$}
+        \State \Call{Inorder-Walk}{$x.left$}
+        \State Print $x.key$
+        \State \Call{Inorder-Walk}{$x.right$}
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}
+    If $x$ is the root of an $n$-node subtree, the call \texttt{Inorder-Walk(x)} takes $\Theta(n)$ time.
+\end{theorem}
+\begin{proof}
+    We can prove this using the \textbf{Accounting Method}. Assign a constant cost $c$ to each node. The procedure visits each node exactly once (when printing), and traverses each edge exactly twice (once going down, once returning up). Since the number of edges is $n-1$, the total work is proportional to the number of nodes. Thus, $T(n) = \Theta(n)$.
+\end{proof}
+
+\subsection{Query Operations}
+
+Operations on a BST generally depend on the height $h$ of the tree, taking $O(h)$ time.
+
+\subsubsection{Search}
+To find a node with key $k$, we trace a path from the root.
+\begin{algorithm}
+    \caption{Tree Search}\label{alg:treeSearch}
+    \begin{algorithmic}[1]
+        \Procedure{Tree-Search}{$x, k$}
+        \If{$x == \text{NIL}$ \textbf{or} $k == x.key$}
+        \State \Return $x$
+        \EndIf
+        \If{$k < x.key$}
+        \State \Return \Call{Tree-Search}{$x.left, k$}
+        \Else
+        \State \Return \Call{Tree-Search}{$x.right, k$}
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Minimum and Maximum}
+Due to the BST property:
+\begin{itemize}
+    \item The \textbf{minimum} element is found by following \texttt{left} pointers until a node with no left child is reached.
+    \item The \textbf{maximum} element is found by following \texttt{right} pointers until a node with no right child is reached.
+\end{itemize}
+\textbf{Runtime}: $O(h)$.
+
+\subsubsection{Successor}
+The \textbf{successor} of a node $x$ is the node with the smallest key greater than $x.key$.
+\begin{itemize}
+    \item \textbf{Case 1}: If the right subtree of $x$ is non-empty, the successor is the \textbf{minimum} node in the right subtree.
+    \item \textbf{Case 2}: If the right subtree is empty, the successor is the lowest ancestor of $x$ whose left child is also an ancestor of $x$ (i.e., we go up until we turn right).
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Tree Successor}\label{alg:successor}
+    \begin{algorithmic}[1]
+        \Procedure{Tree-Successor}{$x$}
+        \If{$x.right \ne \text{NIL}$}
+        \State \Return \Call{Tree-Minimum}{$x.right$}
+        \EndIf
+        \State $y = x.p$
+        \While{$y \ne \text{NIL}$ \textbf{and} $x == y.right$} \Comment{Go up while we are a right child}
+        \State $x = y$
+        \State $y = y.p$
+        \EndWhile
+        \State \Return $y$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Modifying Operations}
+
+\subsubsection{Insertion}
+To insert a new value $z$, we trace a path from the root downwards, similar to \texttt{Tree-Search}. We maintain a "trailing pointer" $y$ to keep track of the parent. When we hit \texttt{NIL}, we attach $z$ to $y$.
+
+\begin{algorithm}
+    \caption{Tree Insert}\label{alg:treeInsert}
+    \begin{algorithmic}[1]
+        \Procedure{Tree-Insert}{$T, z$}
+        \State $y = \text{NIL}$
+        \State $x = T.root$
+        \While{$x \ne \text{NIL}$}
+        \State $y = x$
+        \If{$z.key < x.key$} $x = x.left$
+        \Else \ $x = x.right$
+        \EndIf
+        \EndWhile
+        \State $z.p = y$
+        \If{$y == \text{NIL}$} $T.root = z$ \Comment{Tree was empty}
+        \ElsIf{$z.key < y.key$} $y.left = z$
+        \Else \ $y.right = z$
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\textbf{Runtime}: $O(h)$.
+
+\subsubsection{Deletion}
+Deleting a node $z$ is the most complex operation. We handle three cases:
+\begin{enumerate}
+    \item \textbf{No children}: $z$ is a leaf. Simply remove it.
+    \item \textbf{One child}: Splice $z$ out. Replace $z$ with its child.
+    \item \textbf{Two children}: Find $z$'s successor $y$. $y$ must lie in $z$'s right subtree and has no left child. We replace $z$'s content with $y$'s content and splice $y$ out.
+\end{enumerate}
+
+We use a subroutine \texttt{Transplant} to replace one subtree rooted at $u$ with another rooted at $v$.
+
+\begin{algorithm}
+    \caption{Transplant}\label{alg:transplant}
+    \begin{algorithmic}[1]
+        \Procedure{Transplant}{$T, u, v$}
+        \If{$u.p == \text{NIL}$}
+        \State $T.root = v$
+        \ElsIf{$u == u.p.left$}
+        \State $u.p.left = v$
+        \Else
+        \State $u.p.right = v$
+        \EndIf
+        \If{$v \ne \text{NIL}$}
+        \State $v.p = u.p$
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Tree Delete}\label{alg:treeDelete}
+    \begin{algorithmic}[1]
+        \Procedure{Tree-Delete}{$T, z$}
+        \If{$z.left == \text{NIL}$} \Comment{Case 1 or Case 2 (no left child)}
+        \State \Call{Transplant}{$T, z, z.right$}
+        \ElsIf{$z.right == \text{NIL}$} \Comment{Case 2 (no right child)}
+        \State \Call{Transplant}{$T, z, z.left$}
+        \Else \Comment{Case 3: Two children}
+        \State $y = \Call{Tree-Minimum}{z.right}$ \Comment{Find successor}
+        \If{$y.p \ne z$} \Comment{If successor is not immediate child}
+        \State \Call{Transplant}{$T, y, y.right$} \Comment{Replace y with its right child}
+        \State $y.right = z.right$
+        \State $y.right.p = y$
+        \EndIf
+        \State \Call{Transplant}{$T, z, y$} \Comment{Replace z with y}
+        \State $y.left = z.left$
+        \State $y.left.p = y$
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\textbf{Runtime}: $O(h)$ because finding the successor and handling pointers takes time proportional to height.
+
+\subsection{Performance Analysis}
+
+The runtime of BST operations is determined by the height $h$.
+\begin{itemize}
+    \item \textbf{Worst Case}: If we insert elements in sorted (or reverse sorted) order, the tree becomes a linear chain.
+          \[ h = n \implies \text{Runtime} = \Theta(n) \]
+    \item \textbf{Best/Average Case}: In a randomly built BST, the expected height is logarithmic.
+          \[ h = O(\lg n) \implies \text{Runtime} = O(\lg n) \]
+\end{itemize}
+
+This instability motivates the need for \textbf{Balanced Binary Search Trees} (like AVL trees or Red-Black trees), which guarantee $h = O(\lg n)$.
+
+\clearpage
+
+
+\section{AVL Trees}
+
+\subsection{Motivation}
+
+Standard Binary Search Trees (BSTs) support operations (Search, Insert, Delete, Min, Max) in $O(h)$ time. However, in the worst case (e.g., inserting sorted data), the height $h$ can degrade to $O(n)$, making operations linear.
+To guarantee $O(\lg n)$ performance, we need to enforce a balance condition. \textbf{AVL Trees} (Adelson-Velsky and Landis, 1962) are the first self-balancing BSTs invented.
+
+\subsection{Definition and Properties}
+
+\subsubsection{AVL Property}
+
+\begin{definition}[AVL Tree]\index{AVL Tree}
+    An \textbf{AVL tree} is a binary search tree that satisfies the \textbf{AVL Property}:
+    For every node $v$ in the tree, the heights of its left and right subtrees differ by at most 1.
+\end{definition}
+
+\begin{definition}[Balance Factor]\index{Balance Factor}
+    The \textbf{balance factor} of a node $v$, denoted $bal(v)$, is defined as the height of the left subtree minus the height of the right subtree:
+    \[ bal(v) = height(v.left) - height(v.right) \]
+    In an AVL tree, for every node $v$, $bal(v) \in \{-1, 0, 1\}$.
+\end{definition}
+
+\subsubsection{Height Analysis}
+
+\begin{theorem}
+    The height $h$ of an AVL tree with $n$ nodes is $O(\lg n)$. More specifically, $h < 1.44 \lg (n+2)$.
+\end{theorem}
+\begin{proof}
+    Let $N(h)$ be the minimum number of nodes in an AVL tree of height $h$.
+    \begin{itemize}
+        \item $N(0) = 1$ (Root only, height 0).
+        \item $N(1) = 2$ (Root + 1 child).
+        \item For general $h$, the root must have two subtrees. To minimize nodes while maintaining height $h$, one subtree must have height $h-1$ and the other $h-2$.
+              \[ N(h) = 1 + N(h-1) + N(h-2) \]
+    \end{itemize}
+    This recurrence is strictly greater than the Fibonacci sequence ($F_h \approx \phi^h / \sqrt{5}$ where $\phi \approx 1.618$).
+    Solving the recurrence implies $n > \phi^h$, thus $h < \log_\phi n \approx 1.44 \lg n$.
+\end{proof}
+
+\subsection{Rotations}
+
+Rotations are the fundamental operations to rebalance a tree without violating the BST property (inorder traversal remains unchanged). They take $O(1)$ time.
+
+\subsubsection{Right Rotation}
+Used when the left subtree is too heavy.
+\begin{algorithm}
+    \caption{Right Rotation}\label{alg:rightRotate}
+    \begin{algorithmic}[1]
+        \Procedure{Right-Rotate}{$T, y$}
+        \State $x = y.left$
+        \State $y.left = x.right$ \Comment{Turn x's right subtree into y's left subtree}
+        \If{$x.right \ne \text{NIL}$} $x.right.p = y$
+        \EndIf
+        \State $x.p = y.p$ \Comment{Link x to y's parent}
+        \If{$y.p == \text{NIL}$} $T.root = x$
+        \ElsIf{$y == y.p.right$} $y.p.right = x$
+        \Else \ $y.p.left = x$
+        \EndIf
+        \State $x.right = y$ \Comment{Put y on x's right}
+        \State $y.p = x$
+        \State Update heights of $x$ and $y$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Left Rotation}
+Used when the right subtree is too heavy. Symmetric to Right Rotation.
+
+
+
+\subsection{Insertion}
+
+\textbf{Goal}: Insert a node $z$ and restore the AVL property if violated.
+\textbf{Steps}:
+\begin{enumerate}
+    \item Perform a standard BST insertion.
+    \item Update the height of ancestors of $z$.
+    \item Check for imbalance: If a node $v$ has $|bal(v)| > 1$, perform rotations.
+\end{enumerate}
+
+Let $v$ be the lowest unbalanced node (the first one encountered moving up from $z$). Let $x$ be the child of $v$ in the direction of the imbalance. There are 4 cases:
+
+\subsubsection{Case 1: Left-Left (LL)}
+\begin{itemize}
+    \item \textbf{Condition}: $v$ is heavy on the left ($bal(v) = +2$) AND $x$ is heavy on the left ($bal(x) = +1$ or $0$).
+    \item \textbf{Fix}: \textbf{Right-Rotate($v$)}.
+\end{itemize}
+
+\subsubsection{Case 2: Right-Right (RR)}
+\begin{itemize}
+    \item \textbf{Condition}: $v$ is heavy on the right ($bal(v) = -2$) AND $x$ is heavy on the right ($bal(x) = -1$ or $0$).
+    \item \textbf{Fix}: \textbf{Left-Rotate($v$)}.
+\end{itemize}
+
+\subsubsection{Case 3: Left-Right (LR)}
+\begin{itemize}
+    \item \textbf{Condition}: $v$ is heavy on the left ($bal(v) = +2$) BUT $x$ is heavy on the right ($bal(x) = -1$).
+    \item \textbf{Fix}: Double Rotation.
+          \begin{enumerate}
+              \item \textbf{Left-Rotate($x$)} (Converts structure to LL case).
+              \item \textbf{Right-Rotate($v$)}.
+          \end{enumerate}
+\end{itemize}
+
+\subsubsection{Case 4: Right-Left (RL)}
+\begin{itemize}
+    \item \textbf{Condition}: $v$ is heavy on the right ($bal(v) = -2$) BUT $x$ is heavy on the left ($bal(x) = +1$).
+    \item \textbf{Fix}: Double Rotation.
+          \begin{enumerate}
+              \item \textbf{Right-Rotate($x$)} (Converts structure to RR case).
+              \item \textbf{Left-Rotate($v$)}.
+          \end{enumerate}
+\end{itemize}
+
+\noindent \textbf{Runtime}: Insertion takes $O(\lg n)$ for the search. Rebalancing requires retracing the path ($O(\lg n)$) and at most \textbf{one} or \textbf{two} rotations (since fixing the lowest imbalance restores the global height). Total: $O(\lg n)$.
+
+\subsection{Deletion}
+
+\textbf{Goal}: Delete node $z$ and restore AVL property.
+\textbf{Steps}:
+\begin{enumerate}
+    \item Perform standard BST deletion.
+    \item Retrace the path from the parent of the deleted node (or spliced node) up to the root.
+    \item At each node, update height and check balance.
+    \item If unbalanced, apply rotations (same 4 cases as insertion).
+\end{enumerate}
+
+\subsubsection{Propagation of Imbalance}
+Unlike insertion, where one rotation fixes the tree, a rotation during deletion might reduce the height of the subtree, causing the \textit{parent} to become unbalanced.
+Thus, rebalancing may propagate all the way up to the root, requiring $O(\lg n)$ rotations.
+
+\noindent \textbf{Runtime}: $O(\lg n)$.
+
+\subsection{Summary}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Operation} & \textbf{BST (Worst Case)} & \textbf{AVL (Worst Case)} \\ \hline
+        Search             & $O(n)$                    & $O(\lg n)$                \\ \hline
+        Insert             & $O(n)$                    & $O(\lg n)$                \\ \hline
+        Delete             & $O(n)$                    & $O(\lg n)$                \\ \hline
+    \end{tabular}
+    \caption{Comparison of BST and AVL complexities}
+\end{table}
+
+\clearpage
+
+
+\section{Dynamic Programming}
+
+\subsection{The Paradigm Shift}
+
+\subsubsection{Motivation: Divide-and-Conquer vs. Dynamic Programming}
+Divide-and-Conquer algorithms (like MergeSort or QuickSort) rely on splitting a problem into \textit{disjoint} subproblems.
+\begin{itemize}
+    \item \textbf{Disjoint}: The subproblems do not share any common history. Solving the left half of an array tells you nothing about the right half.
+    \item \textbf{Efficiency}: Because they are disjoint, we just solve each once and combine them.
+\end{itemize}
+
+However, many optimization problems break down into \textbf{Overlapping Subproblems}.
+\begin{itemize}
+    \item If we use standard recursion, we end up solving the same small subproblems millions of times.
+    \item \textbf{Dynamic Programming (DP)} is the technique of "Store, Don't Recompute". We trade space (memory to store results) for time (CPU cycles).
+\end{itemize}
+
+\subsection{Motivating Example: Fibonacci Numbers}
+
+The Fibonacci sequence is defined as:
+\[ F_0 = 0, F_1 = 1, \quad F_n = F_{n-1} + F_{n-2} \text{ for } n \ge 2 \]
+
+\subsubsection{The Naive Recursive Approach}
+\begin{algorithm}
+    \caption{Naive-Fib(n)}
+    \begin{algorithmic}[1]
+        \Procedure{Fib}{$n$}
+        \If{$n \le 1$} \Return $n$
+        \Else \ \Return \Call{Fib}{$n-1$} + \Call{Fib}{$n-2$}
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\textbf{Analysis}:
+The recursion tree grows exponentially. To compute $F(5)$, we compute $F(3)$ twice. To compute $F(6)$, we compute $F(4)$ twice and $F(3)$ three times.
+\[ T(n) \approx \phi^n \approx 1.618^n \quad (\text{Exponential Explosion}) \]
+
+\subsubsection{The DP Approach (Memoization)}
+We use a table to cache results. This is called **Memoization** (Top-Down strategy).
+\begin{itemize}
+    \item Before computing, check the table.
+    \item After computing, save to the table.
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Memoized-Fib(n)}
+    \begin{algorithmic}[1]
+        \State Let $memo[0 \dots n]$ be array initialized to $\infty$
+        \Procedure{Fib-Memo}{$n$}
+        \If{$memo[n] \ne \infty$} \Return $memo[n]$ \Comment{Cache Hit}
+        \EndIf
+        \If{$n \le 1$} $f = n$
+        \Else \ $f = \Call{Fib-Memo}{n-1} + \Call{Fib-Memo}{n-2}$
+        \EndIf
+        \State $memo[n] = f$ \Comment{Cache Miss: Store result}
+        \Return $f$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\textbf{Analysis}: Since each $F(i)$ for $0 \le i \le n$ is computed exactly once, the time complexity drops to:
+\[ T(n) = \Theta(n) \quad (\text{Linear Time}) \]
+
+\subsection{Case Study: Rod Cutting Problem}
+
+\subsubsection{Problem Definition}
+We are given a steel rod of length $n$ and a price table $p_i$ for rod pieces of length $i$. We want to cut the rod into pieces to maximize total revenue $r_n$.
+
+\textbf{Mathematical Formulation}:
+We can cut a piece of length $i$ ($1 \le i \le n$) off the left end, and then optimally solve the problem for the remaining length $n-i$.
+\[ r_n = \max_{1 \le i \le n} (p_i + r_{n-i}) \]
+(Base case: $r_0 = 0$).
+
+\subsubsection{Approach 1: Top-Down with Memoization}
+We stick to the recursive logic but add a "memory" (array $r$).
+\begin{itemize}
+    \item \textbf{Check}: Before computing, is $r[n] \ge 0$? If yes, return it.
+    \item \textbf{Save}: After computing max $q$, save $r[n] = q$.
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Memoized-Cut-Rod(p, n)}\label{alg:memoCutRod}
+    \begin{algorithmic}[1]
+        \Procedure{Memoized-Cut-Rod}{$p, n$}
+        \State Let $r[0 \dots n]$ be new array initialized to $-\infty$
+        \State \Return \Call{Memoized-Cut-Rod-Aux}{$p, n, r$}
+        \EndProcedure
+        \Statex \Comment{Visual separator between procedures}
+        \Procedure{Memoized-Cut-Rod-Aux}{$p, n, r$}
+        \If{$r[n] \ge 0$}
+        \State \Return $r[n]$ \Comment{Return cached value}
+        \EndIf
+        \If{$n == 0$}
+        \State $q = 0$
+        \Else
+        \State $q = -\infty$
+        \For{$i = 1$ \textbf{to} $n$} \Comment{Try every possible first cut}
+        \State $q = \max(q, p[i] + \Call{Memoized-Cut-Rod-Aux}{p, n-i, r})$
+        \EndFor
+        \EndIf
+        \State $r[n] = q$ \Comment{Store optimal value for length n}
+        \State \Return $q$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Approach 2: Bottom-Up (Tabulation)}
+Recursion has overhead (stack depth). We can eliminate recursion by filling the table in order of dependency: from smallest ($0$) to largest ($n$).
+
+\begin{algorithm}
+    \caption{Bottom-Up-Cut-Rod(p, n)}\label{alg:bottomUpCutRod}
+    \begin{algorithmic}[1]
+        \Procedure{Bottom-Up-Cut-Rod}{$p, n$}
+        \State Let $r[0 \dots n]$ be new array
+        \State $r[0] = 0$
+        \For{$j = 1$ \textbf{to} $n$} \Comment{Solve for rod length j}
+        \State $q = -\infty$
+        \For{$i = 1$ \textbf{to} $j$} \Comment{Try cut length i}
+        \State \Comment{Use previously computed solution for remainder j-i}
+        \State $q = \max(q, p[i] + r[j-i])$
+        \EndFor
+        \State $r[j] = q$
+        \EndFor
+        \Return $r[n]$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\textbf{Runtime}: The nested loop structure gives a clear arithmetic sum:
+\[ T(n) = \sum_{j=1}^n j = \frac{n(n+1)}{2} = \Theta(n^2) \]
+
+\subsection{Reconstructing the Solution}
+
+Merely knowing the max revenue ($r_n$) is often insufficient; we need the list of cut lengths. To do this, we store the choice that yielded the optimal value.
+We extend the algorithm to maintain an array $s[j]$, which stores the \textbf{optimal first cut length} for a rod of length $j$.
+
+\begin{algorithm}
+    \caption{Extended-Bottom-Up-Cut-Rod(p, n)}\label{alg:extendedCutRod}
+    \begin{algorithmic}[1]
+        \Procedure{Extended-Bottom-Up-Cut-Rod}{$p, n$}
+        \State Let $r[0 \dots n]$ and $s[0 \dots n]$ be new arrays
+        \State $r[0] = 0$
+        \For{$j = 1$ \textbf{to} $n$}
+        \State $q = -\infty$
+        \For{$i = 1$ \textbf{to} $j$}
+        \If{$q < p[i] + r[j-i]$}
+        \State $q = p[i] + r[j-i]$
+        \State $s[j] = i$ \Comment{Record the best cut i}
+        \EndIf
+        \EndFor
+        \State $r[j] = q$
+        \EndFor
+        \Return $r$ and $s$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Printing the Cuts}
+We do not need recursion to print the solution. We simply trace the $s$ array.
+
+\begin{algorithm}
+    \caption{Print-Cut-Rod-Solution(p, n)}
+    \begin{algorithmic}[1]
+        \Procedure{Print-Cut-Rod-Solution}{$p, n$}
+        \State $(r, s) = \Call{Extended-Bottom-Up-Cut-Rod}{p, n}$
+        \While{$n > 0$}
+        \State Print $s[n]$ \Comment{Print first cut}
+        \State $n = n - s[n]$ \Comment{Move to remaining length}
+        \EndWhile
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Theoretical Foundations}
+
+When should we use DP? Two key properties must hold:
+
+\subsubsection{Optimal Substructure}
+A problem exhibits optimal substructure if \textbf{an optimal solution to the problem contains within it optimal solutions to subproblems}.
+\begin{itemize}
+    \item \textbf{Example}: Shortest Path. If $A \to B \to C$ is the shortest path from $A$ to $C$, then $A \to B$ must be the shortest path from $A$ to $B$.
+    \item \textbf{Non-Example}: Longest Simple Path. Longest path $q \to r \to t$ does NOT imply $q \to r$ is the longest simple path.
+\end{itemize}
+This property justifies the recurrence relation: $r_n = \max(p_i + r_{n-i})$.
+
+\subsubsection{Overlapping Subproblems}
+The recursive algorithm visits the \textbf{same} problem instances repeatedly.
+\begin{itemize}
+    \item This distinguishes DP from Divide-and-Conquer.
+    \item \textbf{Merge Sort}: Computes merge on disjoint arrays.
+    \item \textbf{Rod Cutting}: To solve for length 4, we need length 3, 2, 1, 0. To solve for length 3, we need 2, 1, 0. Subproblem "length 2" is reused multiple times.
+\end{itemize}
+
+\subsection{Summary Comparison}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Feature}     & \textbf{Divide and Conquer}       & \textbf{Dynamic Programming}                   \\ \hline
+        \textbf{Subproblems} & Independent (Disjoint)            & Overlapping                                    \\ \hline
+        \textbf{Approach}    & Recursive                         & Recursive (Memoized) or Iterative (Tabulation) \\ \hline
+        \textbf{Efficiency}  & Splits problem size (e.g., $n/2$) & Reuses solutions (Polynomial time)             \\ \hline
+        \textbf{Examples}    & Merge Sort, Quick Sort            & Rod Cutting, Fibonacci, LCS                    \\ \hline
+    \end{tabular}
+    \caption{Paradigm Comparison}
+\end{table}
+
+\clearpage
+
+
+\section{Greedy Algorithms}
+
+\subsection{The Philosophy of Greed}
+
+\subsubsection{Core Concept}
+A \textbf{Greedy Algorithm} builds a solution piece by piece, always choosing the next piece that offers the most immediate benefit.
+\begin{itemize}
+    \item \textbf{Motto}: "Take what you can get now!"
+    \item \textbf{Strategy}: At each step, make a \textbf{locally optimal} choice in the hope that these choices will lead to a \textbf{globally optimal} solution.
+    \item \textbf{Benefit}: Usually very efficient (often $O(n \log n)$ or $O(n)$).
+    \item \textbf{Risk}: It doesn't always work. It never looks back to correct previous mistakes.
+\end{itemize}
+
+\subsubsection{Comparison with Dynamic Programming}
+\begin{itemize}
+    \item \textbf{Dynamic Programming}: "I need to know the solution to all subproblems before I make a decision." (Bottom-Up or Recursion). It considers \textit{all} possibilities.
+    \item \textbf{Greedy}: "I will make a decision right now based on current information, and then I will solve the remaining subproblem." (Top-Down). It commits to a choice \textit{before} solving the subproblem.
+\end{itemize}
+
+\subsection{Case Study: Activity Selection Problem}
+
+\subsubsection{The Problem}
+We have a set of activities $S = \{a_1, a_2, \dots, a_n\}$. Each activity $a_i$ has a start time $s_i$ and a finish time $f_i$.
+\begin{itemize}
+    \item \textbf{Constraint}: Two activities are compatible if their time intervals $[s_i, f_i)$ and $[s_j, f_j)$ do not overlap.
+    \item \textbf{Goal}: Select the \textbf{maximum number} of mutually compatible activities.
+\end{itemize}
+
+\subsubsection{The Greedy Strategy}
+How do we choose the "best" activity to pick first?
+\begin{enumerate}
+    \item \textit{Shortest duration?} No, a short task might happen right in the middle, blocking two other tasks.
+    \item \textit{Earliest start time?} No, a task starting at 1 AM might last until midnight, blocking everything else.
+    \item \textbf{Earliest Finish Time}: Yes!
+\end{enumerate}
+
+\textbf{Intuition}: By picking the activity that finishes \textbf{soonest}, we leave the \textbf{maximum amount of remaining time} for other activities.
+
+\begin{algorithm}
+    \caption{Greedy-Activity-Selector(s, f)}\label{alg:activity}
+    \begin{algorithmic}[1]
+        \Procedure{Greedy-Activity-Selector}{$s, f$}
+        \State Sort activities by finish time: $f_1 \le f_2 \le \dots \le f_n$
+        \State $A = \{a_1\}$ \Comment{Always select the first activity}
+        \State $k = 1$ \Comment{Index of the last selected activity}
+        \For{$m = 2$ \textbf{to} $n$}
+        \If{$s_m \ge f_k$} \Comment{If activity m starts after k finishes}
+        \State $A = A \cup \{a_m\}$
+        \State $k = m$
+        \EndIf
+        \EndFor
+        \Return $A$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Runtime Analysis}
+\begin{itemize}
+    \item Sorting: $O(n \log n)$.
+    \item Linear Scan: $\Theta(n)$.
+    \item \textbf{Total}: $\Theta(n \log n)$.
+\end{itemize}
+
+\subsection{Theoretical Foundations}
+
+To prove a Greedy Algorithm works, the problem must exhibit two key properties:
+
+\subsubsection{Greedy Choice Property}
+We can assemble a globally optimal solution by making a locally optimal (greedy) choice.
+\begin{itemize}
+    \item \textbf{Implication}: We don't need to consider all options (like DP). We just prove that the greedy choice is \textit{always} part of \textit{some} optimal solution.
+\end{itemize}
+
+\subsubsection{Optimal Substructure}
+An optimal solution to the problem contains within it optimal solutions to subproblems.
+\begin{itemize}
+    \item If we pick activity $a_1$, the problem reduces to finding optimal activities in the remaining time after $a_1$ finishes.
+\end{itemize}
+
+\subsection{The Tale of Two Knapsacks}
+
+This is the classic example showing when Greedy works and when it fails.
+
+\subsubsection{Problem Definitions}
+A thief robbing a store finds $n$ items. The $i$-th item has value $v_i$ and weight $w_i$. The knapsack capacity is $W$.
+\begin{itemize}
+    \item \textbf{0-1 Knapsack}: You must take the item whole or leave it ($x_i \in \{0, 1\}$). (e.g., Gold ingots).
+    \item \textbf{Fractional Knapsack}: You can take any fraction of an item ($0 \le x_i \le 1$). (e.g., Gold dust).
+\end{itemize}
+
+\subsubsection{The Greedy Strategy: Value Density}
+The intuitive greedy choice is to pick items with the highest \textbf{value per unit weight} ($v_i / w_i$).
+
+\subsubsection{Analysis: Why Greedy Fails for 0-1 Knapsack}
+Consider Capacity $W=50$.
+\begin{itemize}
+    \item Item A: Weight 10, Value \$60 (\$6/lb)
+    \item Item B: Weight 20, Value \$100 (\$5/lb)
+    \item Item C: Weight 30, Value \$120 (\$4/lb)
+\end{itemize}
+\textbf{Greedy Choice}:
+1. Pick Item A (Highest density). Remaining Capacity: 40.
+2. Next best is Item B. Remaining Capacity: 20.
+3. Item C (Weight 30) doesn't fit.
+\textbf{Total Value}: \$160.
+
+\textbf{Optimal Solution}:
+Skip Item A. Pick Item B and Item C.
+Total Weight: $20+30=50$. \textbf{Total Value}: $\$100 + \$120 = \$220$.
+
+\textbf{Conclusion}: Greedy failed because picking A "polluted" the capacity, preventing us from taking the heavier but valuable combination of B+C. 0-1 Knapsack requires **Dynamic Programming**.
+
+
+
+\subsubsection{Analysis: Why Greedy Works for Fractional Knapsack}
+Using the same items:
+1. Pick Item A (10 lbs). Value \$60. Rem Cap: 40.
+2. Pick Item B (20 lbs). Value \$100. Rem Cap: 20.
+3. Pick $2/3$ of Item C (20 lbs). Value $(2/3) \times 120 = \$80$.
+\textbf{Total Value}: \$240.
+
+\textbf{Conclusion}: Because we can fill the "gaps" with fractions, the "Value Density" strategy guarantees optimality.
+
+\subsection{5. Summary Comparison}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Feature}      & \textbf{Dynamic Programming}                 & \textbf{Greedy Algorithms}               \\ \hline
+        \textbf{Choice Logic} & Dependent on subproblems (Look ahead)        & Independent, Local (Look now)            \\ \hline
+        \textbf{Structure}    & Bottom-Up or Top-Down                        & Top-Down                                 \\ \hline
+        \textbf{Efficiency}   & Slower (often $O(n^2)$ or pseudo-polynomial) & Very Fast (often $O(n \log n)$)          \\ \hline
+        \textbf{Correctness}  & Guarantees Optimal                           & Hard to prove (requires Greedy Property) \\ \hline
+        \textbf{Example}      & 0-1 Knapsack, LCS, Rod Cutting               & Fractional Knapsack, Activity Selection  \\ \hline
+    \end{tabular}
+    \caption{DP vs. Greedy}
+\end{table}
+
+\clearpage
+
+
+\section{Elementary Graph Algorithms}
+
+\subsection{Graph Representations}
+
+A graph $G = (V, E)$ can be represented in two standard ways: adjacency lists and adjacency matrices.
+
+\subsubsection{Adjacency Lists}
+An array $Adj$ of $|V|$ lists, one for each vertex. The list $Adj[u]$ contains all vertices $v$ such that $(u, v) \in E$.
+\begin{itemize}
+    \item \textbf{Space Complexity}: $\Theta(V + E)$.
+    \item \textbf{Pros}: Compact for sparse graphs.
+    \item \textbf{Cons}: Checking if an edge $(u, v)$ exists takes $O(deg(u))$ time.
+\end{itemize}
+
+\subsubsection{Adjacency Matrix}
+A $|V| \times |V|$ matrix $A$ where $A_{ij} = 1$ if $(i, j) \in E$, and 0 otherwise.
+\begin{itemize}
+    \item \textbf{Space Complexity}: $\Theta(V^2)$.
+    \item \textbf{Pros}: Checking edge existence takes $O(1)$.
+    \item \textbf{Cons}: Wasteful for sparse graphs.
+\end{itemize}
+
+
+\subsection{Breadth-First Search (BFS)}
+
+BFS explores a graph by visiting all neighbors of a node before moving to the next level of neighbors. It computes the shortest path distance (in terms of number of edges) from a source vertex $s$ to all reachable vertices.
+
+\subsubsection{Algorithm}
+BFS uses a \textbf{queue} to manage the frontier of exploration. Vertices are colored to track their status:
+\begin{itemize}
+    \item \textbf{White}: Undiscovered.
+    \item \textbf{Gray}: Discovered but not fully processed (in the queue).
+    \item \textbf{Black}: Fully processed (dequeued).
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Breadth-First Search}\label{alg:bfs}
+    \begin{algorithmic}[1]
+        \Procedure{BFS}{$G, s$}
+        \For{each vertex $u \in G.V - \{s\}$}
+        \State $u.color = \text{WHITE}$
+        \State $u.d = \infty$
+        \State $u.\pi = \text{NIL}$
+        \EndFor
+        \State $s.color = \text{GRAY}$
+        \State $s.d = 0$
+        \State $s.\pi = \text{NIL}$
+        \State $Q = \emptyset$
+        \State \Call{Enqueue}{$Q, s$}
+        \While{$Q \ne \emptyset$}
+        \State $u = \Call{Dequeue}{Q}$
+        \For{each $v \in G.Adj[u]$}
+        \If{$v.color == \text{WHITE}$}
+        \State $v.color = \text{GRAY}$
+        \State $v.d = u.d + 1$
+        \State $v.\pi = u$
+        \State \Call{Enqueue}{$Q, v$}
+        \EndIf
+        \EndFor
+        \State $u.color = \text{BLACK}$
+        \EndWhile
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Analysis}
+\begin{itemize}
+    \item \textbf{Time Complexity}:
+          \begin{itemize}
+              \item Each vertex is enqueued and dequeued at most once: $O(V)$.
+              \item The adjacency list of each vertex is scanned exactly once: $\sum_{u \in V} |Adj[u]| = \Theta(E)$.
+          \end{itemize}
+          Total runtime: $O(V + E)$.
+    \item \textbf{Shortest Paths}: Upon termination, $v.d = \delta(s, v)$ (shortest path distance) for all reachable $v$.
+    \item \textbf{BFS Tree}: The predecessor pointers $\pi$ define a breadth-first tree rooted at $s$.
+\end{itemize}
+
+\subsection{Depth-First Search (DFS)}
+
+DFS explores edges out of the most recently discovered vertex $v$ that still has unexplored edges leaving it. Once all edges from $v$ have been explored, the search "backtracks" to explore edges leaving the vertex from which $v$ was discovered.
+
+\subsubsection{Algorithm}
+DFS uses recursion (implicit stack). It records two timestamps for each vertex:
+\begin{itemize}
+    \item $v.d$: Discovery time (vertex becomes Gray).
+    \item $v.f$: Finish time (vertex becomes Black).
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Depth-First Search}\label{alg:dfs}
+    \begin{algorithmic}[1]
+        \Procedure{DFS}{$G$}
+        \For{each vertex $u \in G.V$}
+        \State $u.color = \text{WHITE}$
+        \State $u.\pi = \text{NIL}$
+        \EndFor
+        \State $time = 0$
+        \For{each vertex $u \in G.V$}
+        \If{$u.color == \text{WHITE}$}
+        \State \Call{DFS-Visit}{$G, u$}
+        \EndIf
+        \EndFor
+        \EndProcedure
+        \Statex
+        \Procedure{DFS-Visit}{$G, u$}
+        \State $time = time + 1$
+        \State $u.d = time$
+        \State $u.color = \text{GRAY}$
+        \For{each $v \in G.Adj[u]$}
+        \If{$v.color == \text{WHITE}$}
+        \State $v.\pi = u$
+        \State \Call{DFS-Visit}{$G, v$}
+        \EndIf
+        \EndFor
+        \State $u.color = \text{BLACK}$
+        \State $time = time + 1$
+        \State $u.f = time$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Analysis}
+\begin{itemize}
+    \item \textbf{Time Complexity}:
+          \begin{itemize}
+              \item Initialization loops: $\Theta(V)$.
+              \item \texttt{DFS-Visit} is called exactly once for each vertex.
+              \item The loop over $Adj[u]$ executes $|Adj[u]|$ times. Total cost for edge exploration is $\Theta(E)$.
+          \end{itemize}
+          Total runtime: $\Theta(V + E)$.
+    \item \textbf{Parenthesis Theorem}: For any two vertices $u$ and $v$, exactly one of the following holds:
+          \begin{itemize}
+              \item Intervals $[u.d, u.f]$ and $[v.d, v.f]$ are disjoint.
+              \item Interval $[u.d, u.f]$ is contained within $[v.d, v.f]$ ($v$ is an ancestor of $u$).
+              \item Interval $[v.d, v.f]$ is contained within $[u.d, u.f]$ ($u$ is an ancestor of $v$).
+          \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Edge Classification}
+DFS can classify edges $(u, v)$ based on the color of $v$ when the edge is explored:
+\begin{enumerate}
+    \item \textbf{Tree Edge}: $v$ is WHITE. (Edge in the DFS forest).
+    \item \textbf{Back Edge}: $v$ is GRAY. (Edge to an ancestor). Indicates a cycle.
+    \item \textbf{Forward Edge}: $v$ is BLACK and $u.d < v.d$. (Edge to a descendant).
+    \item \textbf{Cross Edge}: $v$ is BLACK and $v.d < u.d$. (All other edges).
+\end{enumerate}
+
+\subsection{Applications of DFS}
+
+\subsubsection{Topological Sort}
+A topological sort of a DAG (Directed Acyclic Graph) is a linear ordering of vertices such that for every edge $(u, v)$, $u$ appears before $v$.
+\begin{itemize}
+    \item \textbf{Algorithm}: Run DFS. As each vertex is finished (blackened), insert it onto the front of a linked list.
+    \item \textbf{Runtime}: $\Theta(V + E)$.
+\end{itemize}
+
+\subsubsection{Strongly Connected Components (SCC)}
+A strongly connected component of a directed graph is a maximal set of vertices $C \subseteq V$ such that for every pair $u, v \in C$, $u$ is reachable from $v$ and $v$ is reachable from $u$.
+\begin{itemize}
+    \item \textbf{Algorithm (Kosaraju's)}:
+          \begin{enumerate}
+              \item Call DFS on $G$ to compute finish times $u.f$.
+              \item Compute $G^T$ (transpose of $G$).
+              \item Call DFS on $G^T$, but in the main loop consider vertices in order of decreasing $u.f$.
+              \item Output the vertices of each tree in the DFS forest of step 3 as a separate SCC.
+          \end{enumerate}
+    \item \textbf{Runtime}: $\Theta(V + E)$.
+\end{itemize}
+
+\clearpage
+
+
+\section{Depth First Search \& Applications}
+
+\subsection{Review of DFS}
+
+Depth-First Search (DFS) explores edges out of the most recently discovered vertex $v$ that still has unexplored edges leaving it. It uses colors (White, Gray, Black) and timestamps ($v.d$ for discovery, $v.f$ for finish) to track progress.
+
+\begin{algorithm}
+    \caption{Depth-First Search}\label{alg:dfsRevisit}
+    \begin{algorithmic}[1]
+        \Procedure{DFS}{$G$}
+        \For{each vertex $u \in G.V$}
+        \State $u.color = \text{WHITE}$
+        \State $u.\pi = \text{NIL}$
+        \EndFor
+        \State $time = 0$
+        \For{each vertex $u \in G.V$}
+        \If{$u.color == \text{WHITE}$}
+        \State \Call{DFS-Visit}{$G, u$}
+        \EndIf
+        \EndFor
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{DFS-Visit}\label{alg:dfsVisit}
+    \begin{algorithmic}[1]
+        \Procedure{DFS-Visit}{$G, u$}
+        \State $time = time + 1$
+        \State $u.d = time$
+        \State $u.color = \text{GRAY}$
+        \For{each $v \in G.Adj[u]$}
+        \If{$v.color == \text{WHITE}$}
+        \State $v.\pi = u$
+        \State \Call{DFS-Visit}{$G, v$}
+        \EndIf
+        \EndFor
+        \State $u.color = \text{BLACK}$
+        \State $time = time + 1$
+        \State $u.f = time$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\textbf{Runtime}: $\Theta(V + E)$.
+
+\subsection{Properties of DFS}
+
+\subsubsection{Parenthesis Structure}
+For any two vertices $u$ and $v$, exactly one of the following holds:
+\begin{enumerate}
+    \item The intervals $[u.d, u.f]$ and $[v.d, v.f]$ are entirely disjoint (neither is a descendant of the other).
+    \item The interval $[u.d, u.f]$ is contained entirely within $[v.d, v.f]$ ($u$ is a descendant of $v$).
+    \item The interval $[v.d, v.f]$ is contained entirely within $[u.d, u.f]$ ($v$ is a descendant of $u$).
+\end{enumerate}
+
+\subsubsection{White-Path Theorem}
+\begin{theorem}
+    In a depth-first forest of a graph $G=(V,E)$, vertex $v$ is a descendant of vertex $u$ if and only if at the time $u.d$ that the search discovers $u$, there is a path from $u$ to $v$ consisting entirely of white vertices.
+\end{theorem}
+
+\subsubsection{Edge Classification}
+DFS classifies edges $(u, v)$ based on the color of $v$ when the edge is explored:
+\begin{itemize}
+    \item \textbf{Tree Edge}: $v$ is WHITE.
+    \item \textbf{Back Edge}: $v$ is GRAY. (Implies a cycle).
+    \item \textbf{Forward Edge}: $v$ is BLACK and $u.d < v.d$.
+    \item \textbf{Cross Edge}: $v$ is BLACK and $u.d > v.d$.
+\end{itemize}
+\textbf{Note}: In an undirected graph, every edge is either a tree edge or a back edge.
+
+\subsection{Applications}
+
+\subsubsection{Cycle Detection}
+\begin{theorem}
+    A graph $G$ contains a cycle if and only if a DFS yields at least one back edge.
+\end{theorem}
+\begin{proof}
+    $(\Leftarrow)$ If $(u,v)$ is a back edge, then $v$ is an ancestor of $u$ in the DFS tree. Thus, there is a tree path from $v$ to $u$, and the edge $(u,v)$ completes the cycle.
+    $(\Rightarrow)$ If $G$ has a cycle $C$, let $v$ be the first vertex in $C$ discovered by DFS. Let $(u,v)$ be the preceding edge in $C$. At time $v.d$, the vertices of $C$ form a white path from $v$ to $u$. By the White-Path Theorem, $u$ becomes a descendant of $v$. Thus, $(u,v)$ is a back edge.
+\end{proof}
+
+\subsubsection{Topological Sort}
+A topological sort of a DAG (Directed Acyclic Graph) is a linear ordering of vertices such that for every edge $(u, v)$, $u$ appears before $v$.
+
+\begin{algorithm}
+    \caption{Topological Sort}\label{alg:topologicalSort}
+    \begin{algorithmic}[1]
+        \Procedure{Topological-Sort}{$G$}
+        \State Call \Call{DFS}{$G$} to compute finishing times $v.f$ for each vertex $v$
+        \State As each vertex is finished, insert it onto the front of a linked list
+        \State \Return the linked list of vertices
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\textbf{Correctness}: If there is an edge $(u,v)$, then $v.f < u.f$.
+\begin{itemize}
+    \item When $(u,v)$ is explored, $v$ cannot be GRAY (otherwise it's a back edge, implying a cycle).
+    \item If $v$ is WHITE, it becomes a descendant of $u$, so $v.f < u.f$.
+    \item If $v$ is BLACK, it is already finished, so $v.f < u.d < u.f$.
+\end{itemize}
+\textbf{Runtime}: $\Theta(V + E)$.
+
+\subsubsection{Strongly Connected Components (SCC)}
+An SCC is a maximal set of vertices $C \subseteq V$ such that for every pair $u, v \in C$, $u \leadsto v$ and $v \leadsto u$.
+
+\begin{algorithm}
+    \caption{SCC Algorithm (Kosaraju)}\label{alg:scc}
+    \begin{algorithmic}[1]
+        \Procedure{Strongly-Connected-Components}{$G$}
+        \State Call \Call{DFS}{$G$} to compute finishing times $u.f$
+        \State Compute $G^T$ (transpose of $G$)
+        \State Call \Call{DFS}{$G^T$}, but in the main loop consider vertices in order of decreasing $u.f$ (from step 1)
+        \State Output the vertices of each tree in the DFS forest of step 3 as a separate SCC
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\textbf{Runtime}: $\Theta(V + E)$.
+\begin{itemize}
+    \item DFS on $G$: $\Theta(V + E)$.
+    \item Compute $G^T$: $\Theta(V + E)$.
+    \item DFS on $G^T$: $\Theta(V + E)$.
+\end{itemize}
+
+\begin{remark}
+    This algorithm works because components in the component graph (which is a DAG) are effectively topologically sorted by finish times. Processing nodes in decreasing order of finish times in $G^T$ isolates the SCCs one by one (sink components in the component graph of $G$ become source components in $G^T$).
+\end{remark}
+
+\clearpage
+
+
+\section{Minimum Spanning Trees and Shortest Paths}
+
+\subsection{Minimum Spanning Trees (MST)}
+
+\subsubsection{Problem Definition}
+
+Given a connected, undirected graph $G=(V, E)$ where each edge $(u, v) \in E$ has a weight $w(u, v) \ge 0$. We want to find a subset of edges $T \subseteq E$ that connects all vertices and minimizes the total weight:
+\[ w(T) = \sum_{(u, v) \in T} w(u, v) \]
+Since $T$ connects all vertices and has minimum weight, it must be acyclic. Thus, $T$ is a tree, called a \textbf{Spanning Tree}.
+
+\subsubsection{Generic Greedy Approach}
+
+We grow a set of edges $A$, maintaining the loop invariant that $A$ is a subset of some minimum spanning tree. At each step, we add a "safe edge" $(u, v)$ to $A$ such that $A \cup \{(u, v)\}$ is still a subset of an MST.
+
+\begin{definition}[Cut]\index{Cut}
+    A \textbf{cut} $(S, V-S)$ of an undirected graph $G=(V, E)$ is a partition of $V$.
+\end{definition}
+
+\begin{definition}[Cross]\index{Cross}
+    An edge $(u, v) \in E$ \textbf{crosses} the cut $(S, V-S)$ if one of its endpoints is in $S$ and the other is in $V-S$.
+\end{definition}
+
+\begin{definition}[Light Edge]\index{Light Edge}
+    An edge is a \textbf{light edge} crossing a cut if its weight is the minimum of any edge crossing the cut.
+\end{definition}
+
+\begin{theorem}[Cut Property / Safe Edge Theorem]\index{Cut Property}
+    Let $A$ be a subset of some MST $(S, V-S)$ be any cut that respects $A$ (i.e., no edge in $A$ crosses the cut). Let $(u, v)$ be a light edge crossing $(S, V-S)$. Then, edge $(u, v)$ is safe for $A$.
+\end{theorem}
+
+\subsection{Kruskal's Algorithm}
+
+\textbf{Idea}: Kruskal's algorithm builds the MST by finding safe edges from the lightest to the heaviest. It treats the algorithm as managing a forest of trees. Initially, each vertex is its own tree.
+\begin{enumerate}
+    \item Sort all edges in non-decreasing order of their weights.
+    \item Iterate through the sorted edges. For each edge $(u, v)$, if $u$ and $v$ are in different trees (sets), add $(u, v)$ to the forest and combine the two trees.
+    \item Repeat until all vertices are in the same tree.
+\end{enumerate}
+
+\subsubsection{Disjoint Set Data Structure}
+To implement Kruskal's efficiently, we use a \textbf{Disjoint Set Union (DSU)} data structure supporting:
+\begin{itemize}
+    \item \texttt{Make-Set(v)}: Creates a new set containing only $v$.
+    \item \texttt{Find-Set(v)}: Returns a representative element of the set containing $v$.
+    \item \texttt{Union(u, v)}: Merges the sets containing $u$ and $v$.
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Kruskal's Algorithm}\label{alg:kruskal}
+    \begin{algorithmic}[1]
+        \Procedure{MST-Kruskal}{$G, w$}
+        \State $A = \emptyset$
+        \For{each vertex $v \in G.V$}
+        \State \Call{Make-Set}{$v$}
+        \EndFor
+        \State Sort the edges of $G.E$ into nondecreasing order by weight $w$
+        \For{each edge $(u, v)$ taken from the sorted list}
+        \If{\Call{Find-Set}{$u$} $\ne$ \Call{Find-Set}{$v$}}
+        \State $A = A \cup \{(u, v)\}$
+        \State \Call{Union}{$u, v$}
+        \EndIf
+        \EndFor
+        \State \Return $A$
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Analysis}
+\begin{itemize}
+    \item Initializing sets: $O(V)$.
+    \item Sorting edges: $O(E \lg E)$.
+    \item Disjoint-set operations: $O(E \alpha(V))$, where $\alpha$ is the inverse Ackermann function (extremely slow-growing, effectively constant).
+\end{itemize}
+Total runtime: $O(E \lg E)$. Since $E < V^2$, $\lg E = O(\lg V)$, so the time is dominated by sorting: $O(E \lg V)$.
+
+\subsection{Prim's Algorithm}
+
+\textbf{Idea}: Prim's algorithm works like Dijkstra's algorithm. It grows a single tree $T$ from an arbitrary root $r$. At each step, it adds the lightest edge connecting a vertex in $T$ to a vertex outside $T$.
+
+\begin{itemize}
+    \item The vertices not yet in the tree reside in a \textbf{Min-Priority Queue} $Q$.
+    \item The key of a vertex $v$, $v.key$, is the minimum weight of any edge connecting $v$ to a vertex in the tree.
+    \item $v.\pi$ is the parent of $v$ in the tree.
+\end{itemize}
+
+\begin{algorithm}
+    \caption{Prim's Algorithm}\label{alg:prim}
+    \begin{algorithmic}[1]
+        \Procedure{MST-Prim}{$G, w, r$}
+        \For{each $u \in G.V$}
+        \State $u.key = \infty$
+        \State $u.\pi = \text{NIL}$
+        \EndFor
+        \State $r.key = 0$
+        \State $Q = G.V$ \Comment{Build Min-Priority Queue}
+        \While{$Q \ne \emptyset$}
+        \State $u = \Call{Extract-Min}{Q}$
+        \For{each $v \in G.Adj[u]$}
+        \If{$v \in Q$ \textbf{and} $w(u, v) < v.key$}
+        \State $v.\pi = u$
+        \State $v.key = w(u, v)$
+        \State \Call{Decrease-Key}{$Q, v, w(u, v)$}
+        \EndIf
+        \EndFor
+        \EndWhile
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Analysis}
+The runtime depends on the implementation of the priority queue:
+\begin{itemize}
+    \item \textbf{Binary Heap}:
+          \begin{itemize}
+              \item \texttt{Build-Heap}: $O(V)$.
+              \item \texttt{Extract-Min}: $O(\lg V)$, called $V$ times. Total $O(V \lg V)$.
+              \item \texttt{Decrease-Key}: $O(\lg V)$, called at most $E$ times. Total $O(E \lg V)$.
+          \end{itemize}
+          Total: $O(E \lg V)$.
+    \item \textbf{Fibonacci Heap}:
+          \begin{itemize}
+              \item \texttt{Extract-Min}: $O(\lg V)$ amortized.
+              \item \texttt{Decrease-Key}: $O(1)$ amortized.
+          \end{itemize}
+          Total: $O(E + V \lg V)$.
+\end{itemize}
+
+\subsection{Single-Source Shortest Paths}
+
+\textbf{Problem}: Given a weighted, directed graph $G=(V, E)$ with weight function $w: E \to \mathbb{R}$, find the shortest path from a source $s$ to all other vertices $v$.
+The weight of a path $p = \langle v_0, v_1, \dots, v_k \rangle$ is $w(p) = \sum_{i=1}^k w(v_{i-1}, v_i)$.
+The shortest-path weight $\delta(u, v)$ is $\min \{ w(p) : u \leadsto v \}$.
+
+\subsubsection{Relaxation}
+The algorithms rely on the technique of \textbf{relaxation}. For each vertex $v$, we maintain an attribute $v.d$, which is an upper bound on the weight of a shortest path from source $s$ to $v$.
+
+\begin{algorithm}
+    \caption{Initialization and Relaxation}\label{alg:relax}
+    \begin{algorithmic}[1]
+        \Procedure{Initialize-Single-Source}{$G, s$}
+        \For{each vertex $v \in G.V$}
+        \State $v.d = \infty$
+        \State $v.\pi = \text{NIL}$
+        \EndFor
+        \State $s.d = 0$
+        \EndProcedure
+        \Statex
+        \Procedure{Relax}{$u, v, w$}
+        \If{$v.d > u.d + w(u, v)$}
+        \State $v.d = u.d + w(u, v)$
+        \State $v.\pi = u$
+        \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsection{Dijkstra's Algorithm}
+
+\textbf{Assumption}: Edge weights are non-negative ($w(u, v) \ge 0$).
+
+\textbf{Idea}: Dijkstra's algorithm maintains a set $S$ of vertices whose final shortest-path weights have been determined. It repeatedly selects the vertex $u \in V - S$ with the minimum shortest-path estimate, adds $u$ to $S$, and relaxes all edges leaving $u$.
+
+\begin{algorithm}
+    \caption{Dijkstra's Algorithm}\label{alg:dijkstra}
+    \begin{algorithmic}[1]
+        \Procedure{Dijkstra}{$G, w, s$}
+        \State \Call{Initialize-Single-Source}{$G, s$}
+        \State $S = \emptyset$
+        \State $Q = G.V$ \Comment{Min-priority queue keyed by $d$ values}
+        \While{$Q \ne \emptyset$}
+        \State $u = \Call{Extract-Min}{Q}$
+        \State $S = S \cup \{u\}$
+        \For{each vertex $v \in G.Adj[u]$}
+        \State \Call{Relax}{$u, v, w$} \Comment{Implicitly performs Decrease-Key if $v \in Q$}
+        \EndFor
+        \EndWhile
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Correctness}
+\begin{theorem}
+    Dijkstra's algorithm, run on a weighted, directed graph $G$ with non-negative weight function $w$ and source $s$, terminates with $u.d = \delta(s, u)$ for all vertices $u \in V$.
+\end{theorem}
+\begin{proof}
+    By invariant: At the start of each iteration of the \textbf{while} loop, $v.d = \delta(s, v)$ for each vertex $v \in S$.
+    When a vertex $u$ is added to $S$, its shortest path is already found. This relies on the fact that since weights are non-negative, taking a path through a vertex with a larger $d$ value cannot result in a shorter path to $u$.
+\end{proof}
+
+\subsubsection{Analysis}
+\begin{itemize}
+    \item \textbf{Using Binary Heap}: Each vertex extracted once: $O(V \lg V)$. Each edge relaxed once: $O(E \lg V)$. Total: $O(E \lg V)$.
+    \item \textbf{Using Fibonacci Heap}: $O(V \lg V + E)$.
+\end{itemize}
+
+\subsection{Summary of Algorithms}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Algorithm} & \textbf{Problem} & \textbf{Constraint}  & \textbf{Runtime (Binary Heap)} \\ \hline
+        Kruskal            & MST              & Undirected           & $O(E \lg V)$                   \\ \hline
+        Prim               & MST              & Undirected           & $O(E \lg V)$                   \\ \hline
+        Dijkstra           & Shortest Path    & Non-negative weights & $O(E \lg V)$                   \\ \hline
+        Bellman-Ford       & Shortest Path    & No negative cycles   & $O(VE)$                        \\ \hline
+    \end{tabular}
+    \caption{Comparison of Graph Algorithms}
+\end{table}
+
+\clearpage
+
+\printindex
+
+\end{document}

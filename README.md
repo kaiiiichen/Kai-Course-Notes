@@ -1,104 +1,71 @@
-# SUSTech-Kai-Notes
+# Kai Course Notes
 
-Launched in 2025, [SUSTech-Kai-Notes](https://github.com/kaiiiichen/SUSTech-Kai-Notes) is a personal initiative motivated by [Cambridge Notes](https://dec41.user.srcf.net/notes/). It mainly includes course resources I used or collected during my study at [SUSTech](https://www.sustech.edu.cn), and also includes a few courses taken at other universities for general study credits.
+Launched in 2025 (as *SUSTech-Kai-Notes*), [Kai Course Notes](https://github.com/kaiiiichen/Kai-Course-Notes) is a personal initiative motivated by [Cambridge Notes](https://dec41.user.srcf.net/notes/). It collects the course notes and materials from my studies at [SUSTech](https://www.sustech.edu.cn), [UC Berkeley](https://www.berkeley.edu), and elsewhere.
 
-> **Please also refer to the [Wiki](https://github.com/kaiiiichen/SUSTech-Kai-Notes/wiki) for more details.**
+> 📝 **Web-native notes** (short conceptual write-ups, best read in the browser) live on the Notion branch: **[kai-course-notes.notion.site](https://kai-course-notes.notion.site/main)**
+>
+> 🌐 Main personal website: **[kaichen.dev](https://kaichen.dev)**
+
+Repository layout: `<University>/<Course>/…` — each course folder has its own README.
 
 ---
 
-## Index by Subject
+## SUSTech
 
 ### Mathematics
 
 | Course | Term |
 |--------|------|
-| [MA215 Probability Theory](./MA215%20Probability%20Theory) | Fall 2024 |
-| [MA217 Mathematical Experiments](./MA217%20Mathematical%20Experiments) | Fall 2024 |
-| [MA219 Abstract Algebra (H)](./MA219%20Abstract%20Algebra%20(H)) | Fall 2024 |
-| [MA230 Ordinary Differential Equations A (H)](./MA230%20Ordinary%20Differential%20Equations%20A%20(H)) | Spring 2025 |
-| [MA232 Complex Analysis (H)](./MA232%20Complex%20Analysis%20(H)) | Spring 2025 |
-| [MA234 Introduction to Big Data Analysis](./MA234%20Introduction%20to%20Big%20Data%20Analysis) | Spring 2025 |
-| [MA305 Numerical Analysis](./MA305%20Numerical%20Analysis) | Fall 2025 |
-| [MA336 Partial Differential Equations (H)](./MA336%20Partial%20Differential%20Equations%20(H)) | Fall 2025 |
-| [MA337 Real Analysis (H)](./MA337%20Real%20Analysis%20(H)) | Fall 2025 |
-| [MA340 Fourier Analysis Seminar](./MA340%20Fourier%20Analysis%20Seminar) | Spring 2025 |
-| [MAT7092 Stochastic Processes](./MAT7092%20Stochastic%20Processes) | Fall 2025 |
-| [YMSC Introduction to Data Assimilation](./YMSC%20Introduction%20to%20Data%20Assimilation) | Fall 2025 |
+| [MA215 Probability Theory](<SUSTech/MA215 Probability Theory>) | Fall 2024 |
+| [MA217 Mathematical Experiments](<SUSTech/MA217 Mathematical Experiments>) | Fall 2024 |
+| [MA219 Abstract Algebra (H)](<SUSTech/MA219 Abstract Algebra (H)>) | Fall 2024 |
+| [MA230 Ordinary Differential Equations A (H)](<SUSTech/MA230 Ordinary Differential Equations A (H)>) | Spring 2025 |
+| [MA231 Mathematical Analysis III (H)](<SUSTech/MA231 Mathematical Analysis III (H)>) | — |
+| [MA232 Complex Analysis (H)](<SUSTech/MA232 Complex Analysis (H)>) | Spring 2025 |
+| [MA234 Introduction to Big Data Analysis](<SUSTech/MA234 Introduction to Big Data Analysis>) | Spring 2025 |
+| [MA305 Numerical Analysis](<SUSTech/MA305 Numerical Analysis>) | Fall 2025 |
+| [MA336 Partial Differential Equations (H)](<SUSTech/MA336 Partial Differential Equations (H)>) | Fall 2025 |
+| [MA337 Real Analysis (H)](<SUSTech/MA337 Real Analysis (H)>) | Fall 2025 |
+| [MA340 Fourier Analysis Seminar](<SUSTech/MA340 Fourier Analysis Seminar>) | Spring 2025 |
+| [MAT7092 Stochastic Processes](<SUSTech/MAT7092 Stochastic Processes>) | Fall 2025 |
 
 ### Computer Science
 
 | Course | Term |
 |--------|------|
-| [CS108 Introduction to Mathematical Logic (H)](./CS108%20Introduction%20to%20Mathematical%20Logic%20(H)) | Spring 2024 |
-| [CS109 Introduction to Computer Programming](./CS109%20Introduction%20to%20Computer%20Programming) | Fall 2024 |
-| [CS201 Discrete Mathematics](./CS201%20Discrete%20Mathematics) | Spring 2025 |
-| [CS217 Data Structures and Algorithm Analysis (H)](./CS217%20Data%20Structures%20and%20Algorithm%20Analysis%20(H)) | Fall 2025 |
+| [CS108 Introduction to Mathematical Logic (H)](<SUSTech/CS108 Introduction to Mathematical Logic (H)>) | Spring 2024 |
+| [CS109 Introduction to Computer Programming](<SUSTech/CS109 Introduction to Computer Programming>) | Fall 2024 |
+| [CS201 Discrete Mathematics](<SUSTech/CS201 Discrete Mathematics>) | Spring 2025 |
+| [CS217 Data Structures and Algorithm Analysis (H)](<SUSTech/CS217 Data Structures and Algorithm Analysis (H)>) | Fall 2025 |
 
 ### Statistics
 
 | Course | Term |
 |--------|------|
-| [STA203 Foundation of Probability Theory](./STA203%20Foudation%20of%20Probability%20Theory) | Fall 2024 |
-| [MA204 Mathematical Statistics](./MA204%20Mathematical%20Statistics) | Spring 2025 |
+| [STA203 Foundation of Probability Theory](<SUSTech/STA203 Foundation of Probability Theory>) | Fall 2024 |
+| [MA204 Mathematical Statistics](<SUSTech/MA204 Mathematical Statistics>) | Spring 2025 |
 
-### General Studies
+## UC Berkeley
+
+| Course | Notes |
+|--------|-------|
+| [COMPSCI 61A The Structure and Interpretation of Computer Programs](<UC Berkeley/COMPSCI 61A The Structure and Interpretation of Computer Programs>) | [Notion](https://kai-course-notes.notion.site/39ba3294e487812487accc12c4652e74) |
+| [COMPSCI 61BL Data Structures and Programming Methodology](<UC Berkeley/COMPSCI 61BL Data Structures and Programming Methodology>) | [Notion](https://kai-course-notes.notion.site/39ba3294e48781feb9afc1a24da04148) |
+| [COMPSCI 188 Introduction to Artificial Intelligence](<UC Berkeley/COMPSCI 188 Introduction to Artificial Intelligence>) | [Notion](https://kai-course-notes.notion.site/39ba3294e4878136b840deb58af630a6) |
+
+## Other
 
 | Course | Term |
 |--------|------|
-| [CH105 Chemistry the Central Science](./CH105%20Chemistry%20the%20Central%20Science) | Fall 2025 |
-| [HITSZ AACR1018 Fundamentals of Music Theory](./HITSZ%20AACR1018%20Fundamentals%20of%20Music%20Theory) | Fall 2025 |
-| [SZU 2024004 Economics of Social Issues](./SZU%202024004%20Economics%20of%20Social%20Issues) | Spring 2025 |
+| [YMSC Introduction to Data Assimilation](<YMSC/Introduction to Data Assimilation>) (Tsinghua YMSC) | Fall 2025 |
 
 ---
 
-## Index by Term
+## What you will (and won't) find here
 
-<details>
-<summary><b>Spring 2024</b></summary>
-
-- [CS108 Introduction to Mathematical Logic (H)](./CS108%20Introduction%20to%20Mathematical%20Logic%20(H))
-
-</details>
-
-<details>
-<summary><b>Fall 2024</b></summary>
-
-- [CS109 Introduction to Computer Programming](./CS109%20Introduction%20to%20Computer%20Programming)
-- [MA215 Probability Theory](./MA215%20Probability%20Theory)
-- [MA217 Mathematical Experiments](./MA217%20Mathematical%20Experiments)
-- [MA219 Abstract Algebra (H)](./MA219%20Abstract%20Algebra%20(H))
-- [STA203 Foundation of Probability Theory](./STA203%20Foudation%20of%20Probability%20Theory)
-
-</details>
-
-<details>
-<summary><b>Spring 2025</b></summary>
-
-- [CS201 Discrete Mathematics](./CS201%20Discrete%20Mathematics)
-- [MA204 Mathematical Statistics](./MA204%20Mathematical%20Statistics)
-- [MA230 Ordinary Differential Equations A (H)](./MA230%20Ordinary%20Differential%20Equations%20A%20(H))
-- [MA232 Complex Analysis (H)](./MA232%20Complex%20Analysis%20(H))
-- [MA234 Introduction to Big Data Analysis](./MA234%20Introduction%20to%20Big%20Data%20Analysis)
-- [MA340 Fourier Analysis Seminar](./MA340%20Fourier%20Analysis%20Seminar)
-- [SZU 2024004 Economics of Social Issues](./SZU%202024004%20Economics%20of%20Social%20Issues)
-
-</details>
-
-<details>
-<summary><b>Fall 2025</b></summary>
-
-- [CH105 Chemistry the Central Science](./CH105%20Chemistry%20the%20Central%20Science)
-- [CS217 Data Structures and Algorithm Analysis (H)](./CS217%20Data%20Structures%20and%20Algorithm%20Analysis%20(H))
-- [HITSZ AACR1018 Fundamentals of Music Theory](./HITSZ%20AACR1018%20Fundamentals%20of%20Music%20Theory)
-- [MA305 Numerical Analysis](./MA305%20Numerical%20Analysis)
-- [MA336 Partial Differential Equations (H)](./MA336%20Partial%20Differential%20Equations%20(H))
-- [MA337 Real Analysis (H)](./MA337%20Real%20Analysis%20(H))
-- [MAT7092 Stochastic Processes](./MAT7092%20Stochastic%20Processes)
-- [YMSC Introduction to Data Assimilation](./YMSC%20Introduction%20to%20Data%20Assimilation)
-
-</details>
-
----
+- ✅ My own notes (handwritten & LaTeX, with sources), homework write-ups, lab reports, projects, and lecturer-permitted materials.
+- ❌ Published textbooks — each course README lists the reference books instead; please obtain them through proper channels.
+- ❌ Homework/exam solutions and OJ reference programs — removed for academic integrity.
 
 ## License
 
@@ -114,4 +81,4 @@ Without specific clarification, all original content within this repository is p
 
 Some resources retain their rights reserved by the respective lecturers. Once a lecturer requests removal of their materials, all downloads — including those made prior to the request — are no longer authorized.
 
-Please also read the [Code of Conduct](./CODE_OF_CONDUCT.md) before using any materials in this repository.
+Please also read the [Code of Conduct](CODE_OF_CONDUCT.md) before using any materials in this repository.

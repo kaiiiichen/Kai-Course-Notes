@@ -1,0 +1,226 @@
+\contentsline {section}{\numberline {1}Getting Started}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Foundations of Algorithms}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Definitions}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Correctness}{1}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}The Computational Model}{1}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Insertion Sort}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}The Concept}{2}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}The Algorithm}{2}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Correctness via Loop Invariants}{2}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Proof of Insertion Sort}{3}{subsubsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.5}Runtime Analysis}{4}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Detailed Cost Breakdown}{4}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Best Case Analysis}{5}{subsubsection.1.5.2}%
+\contentsline {subsubsection}{\numberline {1.5.3}Worst Case Analysis}{5}{subsubsection.1.5.3}%
+\contentsline {section}{\numberline {2}Runtime and Asymptotic Notation}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Recap: Runtime of Insertion Sort}{7}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Why Focus on the Worst Case?}{7}{subsubsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.2}Asymptotic Analysis}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}The Philosophy of Asymptotics}{7}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Asymptotic Notations}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Big-Theta Notation ($\Theta $): Tight Bound}{8}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Big-O Notation ($O$): Upper Bound}{8}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Big-Omega Notation ($\Omega $): Lower Bound}{9}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Strict Bounds ($o$ and $\omega $)}{9}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Analogy with Real Numbers}{10}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Properties and Growth Hierarchy}{10}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Properties}{10}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Common Growth Functions}{10}{subsubsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.6}Application to Insertion Sort}{11}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Divide-and-Conquer}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The Paradigm Shift}{12}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Divide-and-Conquer Strategy}{12}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Motivating Example: Binary Search}{12}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Merge Sort}{13}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}The Algorithm}{13}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}The Merge Procedure}{13}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Correctness of Merge}{13}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Analysis of Merge Sort}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Recurrence Relation}{14}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Recursion Tree Visualization}{15}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Comparison with Insertion Sort}{15}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}The Master Theorem}{16}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}The Watershed Function}{16}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}The Three Cases}{16}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Examples}{17}{subsubsection.3.4.3}%
+\contentsline {section}{\numberline {4}Heapsort}{18}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Motivation: Smarter Selection}{18}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The Heap Data Structure}{18}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Definition}{18}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}The Heap Property}{19}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Core Operations}{19}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Maintaining the Property: Max-Heapify}{19}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Building the Heap: Build-Max-Heap}{20}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}The Heapsort Algorithm}{21}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Analysis}{21}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Rebuild vs. Repair}{22}{subsubsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.5}Priority Queues}{22}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Summary}{22}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Quicksort}{23}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Divide-and-Conquer Paradigm Revisited}{23}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Structural Comparison}{23}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}Partitioning: The Core Mechanism}{23}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}The Lomuto Partition Scheme}{23}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Trace Example}{24}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Loop Invariant Visualization}{24}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}Rigorous Runtime Analysis}{25}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Worst-Case: The Unbalanced Split}{25}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Best-Case: The Perfect Split}{25}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Average-Case: The Intuition of Balance}{25}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}Average-Case: Mathematical Proof}{26}{subsubsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.4}Improvements and Variants}{26}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Randomized Quicksort}{26}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Median-of-3 Partitioning}{26}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Handling Duplicates}{27}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.4}Dual-Pivot Quicksort}{27}{subsubsection.5.4.4}%
+\contentsline {section}{\numberline {6}Randomisation \& Lower Bounds}{28}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Randomisation in Algorithm Design}{28}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}The Motivation}{28}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Randomised QuickSort}{28}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Analysis of Expected Runtime}{29}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Setup: Indicator Random Variables}{29}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Linearity of Expectation}{29}{subsubsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.3}The Probability of Comparison}{30}{subsubsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.4}Summation and Result}{30}{subsubsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.3}Lower Bounds for Comparison Sorts}{31}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}The Comparison Model}{31}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Decision Trees}{31}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}The Lower Bound Theorem}{31}{subsubsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.4}Summary of Sorting Algorithms}{32}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Sorting in Linear Time}{34}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Breaking the Speed Limit}{34}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}The Comparison Bottleneck}{34}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}The Way Out}{34}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Counting Sort}{34}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}The Algorithm logic}{34}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Why Traverse Backwards? (Stability)}{35}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Complexity Analysis}{35}{subsubsection.7.2.3}%
+\contentsline {subsection}{\numberline {7.3}Radix Sort}{35}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}The Algorithm (LSD Approach)}{36}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Why LSD works (Intuition)}{36}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Trace Example}{36}{subsubsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.4}Advanced Analysis: Breaking the $O(n^3)$ Range}{36}{subsection.7.4}%
+\contentsline {subsubsection}{\numberline {7.4.1}Attempt 1: Comparison Sort}{37}{subsubsection.7.4.1}%
+\contentsline {subsubsection}{\numberline {7.4.2}Attempt 2: Counting Sort}{37}{subsubsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.3}Attempt 3: Radix Sort (Base 10)}{37}{subsubsection.7.4.3}%
+\contentsline {subsubsection}{\numberline {7.4.4}Attempt 4: Radix Sort (Base $n$)}{37}{subsubsection.7.4.4}%
+\contentsline {subsection}{\numberline {7.5}Summary Table}{37}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Elementary Data Structures}{38}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Foundations: The Limitations of Arrays}{38}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Data Structures vs. Raw Memory}{38}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}The Array Bottleneck}{38}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.2}Stacks (LIFO)}{39}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Philosophy}{39}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Array Implementation}{39}{subsubsection.8.2.2}%
+\contentsline {subsubsection}{\numberline {8.2.3}Algorithmic Applications}{39}{subsubsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.3}Queues (FIFO)}{40}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Philosophy}{40}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Circular Buffer Implementation}{40}{subsubsection.8.3.2}%
+\contentsline {subsection}{\numberline {8.4}Priority Queues}{41}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Linked Lists}{41}{subsection.8.5}%
+\contentsline {subsubsection}{\numberline {8.5.1}Breaking the Contiguity Constraint}{41}{subsubsection.8.5.1}%
+\contentsline {subsubsection}{\numberline {8.5.2}Operations Analysis}{42}{subsubsection.8.5.2}%
+\contentsline {subsection}{\numberline {8.6}Summary of Complexities}{42}{subsection.8.6}%
+\contentsline {section}{\numberline {9}Binary Search Trees}{43}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Introduction to Trees}{43}{subsection.9.1}%
+\contentsline {subsubsection}{\numberline {9.1.1}Definitions and Terminology}{43}{subsubsection.9.1.1}%
+\contentsline {subsubsection}{\numberline {9.1.2}Inductive Proofs on Trees}{43}{subsubsection.9.1.2}%
+\contentsline {subsection}{\numberline {9.2}Binary Search Trees (BST)}{44}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Tree Walks}{44}{subsubsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.3}Query Operations}{45}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Search}{45}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Minimum and Maximum}{45}{subsubsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3}Successor}{45}{subsubsection.9.3.3}%
+\contentsline {subsection}{\numberline {9.4}Modifying Operations}{46}{subsection.9.4}%
+\contentsline {subsubsection}{\numberline {9.4.1}Insertion}{46}{subsubsection.9.4.1}%
+\contentsline {subsubsection}{\numberline {9.4.2}Deletion}{47}{subsubsection.9.4.2}%
+\contentsline {subsection}{\numberline {9.5}Performance Analysis}{48}{subsection.9.5}%
+\contentsline {section}{\numberline {10}AVL Trees}{49}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Motivation}{49}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Definition and Properties}{49}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}AVL Property}{49}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}Height Analysis}{49}{subsubsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.3}Rotations}{50}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}Right Rotation}{50}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}Left Rotation}{50}{subsubsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.4}Insertion}{51}{subsection.10.4}%
+\contentsline {subsubsection}{\numberline {10.4.1}Case 1: Left-Left (LL)}{51}{subsubsection.10.4.1}%
+\contentsline {subsubsection}{\numberline {10.4.2}Case 2: Right-Right (RR)}{51}{subsubsection.10.4.2}%
+\contentsline {subsubsection}{\numberline {10.4.3}Case 3: Left-Right (LR)}{51}{subsubsection.10.4.3}%
+\contentsline {subsubsection}{\numberline {10.4.4}Case 4: Right-Left (RL)}{52}{subsubsection.10.4.4}%
+\contentsline {subsection}{\numberline {10.5}Deletion}{52}{subsection.10.5}%
+\contentsline {subsubsection}{\numberline {10.5.1}Propagation of Imbalance}{52}{subsubsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.6}Summary}{52}{subsection.10.6}%
+\contentsline {section}{\numberline {11}Dynamic Programming}{54}{section.11}%
+\contentsline {subsection}{\numberline {11.1}The Paradigm Shift}{54}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Motivation: Divide-and-Conquer vs. Dynamic Programming}{54}{subsubsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.2}Motivating Example: Fibonacci Numbers}{54}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}The Naive Recursive Approach}{54}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}The DP Approach (Memoization)}{55}{subsubsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.3}Case Study: Rod Cutting Problem}{55}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}Problem Definition}{55}{subsubsection.11.3.1}%
+\contentsline {subsubsection}{\numberline {11.3.2}Approach 1: Top-Down with Memoization}{56}{subsubsection.11.3.2}%
+\contentsline {subsubsection}{\numberline {11.3.3}Approach 2: Bottom-Up (Tabulation)}{56}{subsubsection.11.3.3}%
+\contentsline {subsection}{\numberline {11.4}Reconstructing the Solution}{57}{subsection.11.4}%
+\contentsline {subsubsection}{\numberline {11.4.1}Printing the Cuts}{57}{subsubsection.11.4.1}%
+\contentsline {subsection}{\numberline {11.5}Theoretical Foundations}{58}{subsection.11.5}%
+\contentsline {subsubsection}{\numberline {11.5.1}Optimal Substructure}{58}{subsubsection.11.5.1}%
+\contentsline {subsubsection}{\numberline {11.5.2}Overlapping Subproblems}{58}{subsubsection.11.5.2}%
+\contentsline {subsection}{\numberline {11.6}Summary Comparison}{58}{subsection.11.6}%
+\contentsline {section}{\numberline {12}Greedy Algorithms}{60}{section.12}%
+\contentsline {subsection}{\numberline {12.1}The Philosophy of Greed}{60}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Core Concept}{60}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Comparison with Dynamic Programming}{60}{subsubsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.2}Case Study: Activity Selection Problem}{60}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}The Problem}{60}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}The Greedy Strategy}{61}{subsubsection.12.2.2}%
+\contentsline {subsubsection}{\numberline {12.2.3}Runtime Analysis}{61}{subsubsection.12.2.3}%
+\contentsline {subsection}{\numberline {12.3}Theoretical Foundations}{61}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}Greedy Choice Property}{62}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Optimal Substructure}{62}{subsubsection.12.3.2}%
+\contentsline {subsection}{\numberline {12.4}The Tale of Two Knapsacks}{62}{subsection.12.4}%
+\contentsline {subsubsection}{\numberline {12.4.1}Problem Definitions}{62}{subsubsection.12.4.1}%
+\contentsline {subsubsection}{\numberline {12.4.2}The Greedy Strategy: Value Density}{62}{subsubsection.12.4.2}%
+\contentsline {subsubsection}{\numberline {12.4.3}Analysis: Why Greedy Fails for 0-1 Knapsack}{62}{subsubsection.12.4.3}%
+\contentsline {subsubsection}{\numberline {12.4.4}Analysis: Why Greedy Works for Fractional Knapsack}{63}{subsubsection.12.4.4}%
+\contentsline {subsection}{\numberline {12.5}5. Summary Comparison}{63}{subsection.12.5}%
+\contentsline {section}{\numberline {13}Elementary Graph Algorithms}{64}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Graph Representations}{64}{subsection.13.1}%
+\contentsline {subsubsection}{\numberline {13.1.1}Adjacency Lists}{64}{subsubsection.13.1.1}%
+\contentsline {subsubsection}{\numberline {13.1.2}Adjacency Matrix}{64}{subsubsection.13.1.2}%
+\contentsline {subsection}{\numberline {13.2}Breadth-First Search (BFS)}{64}{subsection.13.2}%
+\contentsline {subsubsection}{\numberline {13.2.1}Algorithm}{64}{subsubsection.13.2.1}%
+\contentsline {subsubsection}{\numberline {13.2.2}Analysis}{65}{subsubsection.13.2.2}%
+\contentsline {subsection}{\numberline {13.3}Depth-First Search (DFS)}{66}{subsection.13.3}%
+\contentsline {subsubsection}{\numberline {13.3.1}Algorithm}{66}{subsubsection.13.3.1}%
+\contentsline {subsubsection}{\numberline {13.3.2}Analysis}{67}{subsubsection.13.3.2}%
+\contentsline {subsubsection}{\numberline {13.3.3}Edge Classification}{67}{subsubsection.13.3.3}%
+\contentsline {subsection}{\numberline {13.4}Applications of DFS}{67}{subsection.13.4}%
+\contentsline {subsubsection}{\numberline {13.4.1}Topological Sort}{67}{subsubsection.13.4.1}%
+\contentsline {subsubsection}{\numberline {13.4.2}Strongly Connected Components (SCC)}{68}{subsubsection.13.4.2}%
+\contentsline {section}{\numberline {14}Depth First Search \& Applications}{69}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Review of DFS}{69}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Properties of DFS}{70}{subsection.14.2}%
+\contentsline {subsubsection}{\numberline {14.2.1}Parenthesis Structure}{70}{subsubsection.14.2.1}%
+\contentsline {subsubsection}{\numberline {14.2.2}White-Path Theorem}{70}{subsubsection.14.2.2}%
+\contentsline {subsubsection}{\numberline {14.2.3}Edge Classification}{70}{subsubsection.14.2.3}%
+\contentsline {subsection}{\numberline {14.3}Applications}{70}{subsection.14.3}%
+\contentsline {subsubsection}{\numberline {14.3.1}Cycle Detection}{70}{subsubsection.14.3.1}%
+\contentsline {subsubsection}{\numberline {14.3.2}Topological Sort}{71}{subsubsection.14.3.2}%
+\contentsline {subsubsection}{\numberline {14.3.3}Strongly Connected Components (SCC)}{71}{subsubsection.14.3.3}%
+\contentsline {section}{\numberline {15}Minimum Spanning Trees and Shortest Paths}{73}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Minimum Spanning Trees (MST)}{73}{subsection.15.1}%
+\contentsline {subsubsection}{\numberline {15.1.1}Problem Definition}{73}{subsubsection.15.1.1}%
+\contentsline {subsubsection}{\numberline {15.1.2}Generic Greedy Approach}{73}{subsubsection.15.1.2}%
+\contentsline {subsection}{\numberline {15.2}Kruskal's Algorithm}{74}{subsection.15.2}%
+\contentsline {subsubsection}{\numberline {15.2.1}Disjoint Set Data Structure}{74}{subsubsection.15.2.1}%
+\contentsline {subsubsection}{\numberline {15.2.2}Analysis}{74}{subsubsection.15.2.2}%
+\contentsline {subsection}{\numberline {15.3}Prim's Algorithm}{75}{subsection.15.3}%
+\contentsline {subsubsection}{\numberline {15.3.1}Analysis}{76}{subsubsection.15.3.1}%
+\contentsline {subsection}{\numberline {15.4}Single-Source Shortest Paths}{76}{subsection.15.4}%
+\contentsline {subsubsection}{\numberline {15.4.1}Relaxation}{76}{subsubsection.15.4.1}%
+\contentsline {subsection}{\numberline {15.5}Dijkstra's Algorithm}{76}{subsection.15.5}%
+\contentsline {subsubsection}{\numberline {15.5.1}Correctness}{77}{subsubsection.15.5.1}%
+\contentsline {subsubsection}{\numberline {15.5.2}Analysis}{78}{subsubsection.15.5.2}%
+\contentsline {subsection}{\numberline {15.6}Summary of Algorithms}{78}{subsection.15.6}%
+\contentsline {section}{Index}{79}{section*.2}%
