@@ -78,7 +78,7 @@ Everything **I authored** — handwritten & LaTeX notes (with sources), homework
 
 ## Contact
 
-**For instructors and rights holders:** if you would prefer that any of your material not appear here, email me directly at **[kaichen.dev.37@gmail.com](mailto:kaichen.dev.37@gmail.com)** — no GitHub account needed — or open a [takedown request](https://github.com/kaiiiichen/Kai-Course-Notes/issues/new/choose). Removal is honored promptly, and per the license note below, prior downloads of removed material become unauthorized.
+**For instructors and rights holders:** if you would prefer that any of your material not appear here, I sincerely apologize — please email me directly at **[kaichen.dev.37@gmail.com](mailto:kaichen.dev.37@gmail.com)**, or open a [takedown request](https://github.com/kaiiiichen/Kai-Course-Notes/issues/new/choose). Removal is honored promptly, and per the license note below, prior downloads of removed material become unauthorized.
 
 ## License
 
